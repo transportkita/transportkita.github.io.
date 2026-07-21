@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary Perjalanan: Airport - Kuta | Rinjani Transport</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F2C59',
+                            orange: '#F86F03',
+                            dark: '#0B132B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- NAVIGASI KEMBALI -->
+    <div class="max-w-4xl mx-auto px-4 pt-8">
+        <a href="../rinjanitransport.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:text-brand-orange transition text-sm">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+        </a>
+    </div>
+
+    <!-- KONTEN UTAMA ITINERARY -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            
+            <!-- Banner Atas -->
+            <div class="h-64 sm:h-80 bg-brand-dark relative">
+                <div class="absolute inset-0 bg-[url('../images/mobil-kuta.jpg')] bg-cover bg-center opacity-40"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-6 sm:p-8">
+                    <div>
+                        <span class="bg-brand-orange text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2 inline-block">Rute Sirkuit & Pesisir Selatan</span>
+                        <h1 class="text-2xl sm:text-4xl font-black text-white">Itinerary Perjalanan: Airport - Kuta Mandalika</h1>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-1"><i class="fa-solid fa-clock text-brand-orange mr-1"></i> Estimasi Durasi Perjalanan: ± 25 hingga 35 Menit</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail & Garis Waktu -->
+            <div class="p-6 sm:p-10 space-y-8">
+                
+                <!-- Ringkasan Rute -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60 flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-orange-100 text-brand-orange flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-blue">Deskripsi Rute</h4>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Layanan penjemputan privat express dari Bandara Internasional Lombok menuju area Kuta Mandalika. Rute terdekat yang sangat efisien untuk mengakses resort pantai, Sirkuit Internasional Mandalika, serta spot selancar terbaik di Lombok Selatan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Rencana Perjalanan (Timeline) -->
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-orange"></i> Rencana Perjalanan Ringkas
+                    </h3>
+                    
+                    <div class="relative border-l-2 border-slate-200 ml-3 space-y-8 pb-2">
+                        
+                        <!-- Titik 1 -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-blue border-4 border-white shadow-sm"></div>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 1: Penjemputan Cepat</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Bandara Internasional Lombok (BIL)</h5>
+                            <p class="text-slate-500 text-sm mt-1">Driver kami akan menyambut Anda langsung saat keluar terminal kedatangan. Bagasi dimasukkan ke dalam mobil privat ber-AC tanpa perlu menunggu penumpang lain.</p>
+                        </div>
+
+                        <!-- Titik 2 -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white shadow-sm"></div>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 2: Bypass Mandalika</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Jalur Bypass Mandalika</h5>
+                            <p class="text-slate-500 text-sm mt-1">Melintasi jalan raya modern yang mulus dan bebas hambatan. Jalur singkat ini menyuguhkan pemandangan perbukitan khas Lombok Selatan.</p>
+                        </div>
+
+                        <!-- Titik 3 -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white shadow-sm"></div>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 3: Kawasan Pariwisata Mandalika</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Memasuki Area Kuta Lombok</h5>
+                            <p class="text-slate-500 text-sm mt-1">Armada tiba di area pusat Kuta Mandalika yang penuh dengan café, resto, dan dekat dengan objek wisata pantai hits.</p>
+                        </div>
+
+                        <!-- Titik 4 -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-green-500 border-4 border-white shadow-sm"></div>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 4: Tiba di Tujuan</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Drop-off Penginapan / Homestay / Resort Kuta</h5>
+                            <p class="text-slate-500 text-sm mt-1">Pengantaran aman hingga ke depan pintu penginapan Anda di Kuta Mandalika. Layanan pengantaran selesai dengan memuaskan.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Fasilitas Terintegrasi -->
+                <div class="border-t border-slate-100 pt-6">
+                    <h3 class="text-lg font-bold text-brand-blue mb-3">Fasilitas Sudah Termasuk:</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm text-slate-600">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Mobil Pribadi (Bukan Gabungan)</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Driver Profesional & BBM</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Full AC & Antar Jemput Fleksibel</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Biaya Parkir Bandara & Rest Area</div>
+                    </div>
+                </div>
+
+                <!-- Footer Pemesanan -->
+                <div class="border-t border-slate-100 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div>
+                        <span class="text-xs text-slate-400 block font-medium uppercase">Sistem Tarif</span>
+                        <span class="text-xl font-black text-brand-blue">Harga Transparan / Fix Rate</span>
+                    </div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Rinjani%20Transport,%20saya%20ingin%20booking%20privat%20shuttle%20rute%20Airport%20-%20Kuta" target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Konfirmasi Booking via WA
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-xs text-slate-400">
+        <p>&copy; 2026 Rinjani Transport. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
