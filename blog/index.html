@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Informasi Wisata Lombok | TransportKita</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F2C59',
+                            orange: '#F86F03',
+                            dark: '#0B132B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
+    <!-- NAVIGASI KEMBALI & SWITCHER BAHASA -->
+    <div class="max-w-6xl mx-auto px-4 pt-8 flex justify-between items-center">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:text-brand-orange transition text-sm">
+            <i class="fa-solid fa-arrow-left"></i> <span data-id="blog-back" data-en="Back to Home">Kembali ke Beranda</span>
+        </a>
+
+        <!-- Tombol Ganti Bahasa -->
+        <div class="flex items-center bg-white p-1 rounded-lg border border-slate-200 text-sm shadow-sm">
+            <button onclick="switchLanguage('id')" id="lang-id-btn" class="px-2.5 py-1 rounded bg-brand-blue text-white font-bold transition">ID</button>
+            <button onclick="switchLanguage('en')" id="lang-en-btn" class="px-2.5 py-1 rounded text-slate-600 font-bold transition">EN</button>
+        </div>
+    </div>
+
+    <!-- HEADER BLOG -->
+    <header class="max-w-6xl mx-auto px-4 pt-10 pb-6 text-center">
+        <span class="bg-orange-100 text-brand-orange text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block mb-3" data-id="blog-badge" data-en="Travel Guide & Tips">Panduan & Tips Wisata</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-brand-blue" data-id="blog-title" data-en="Lombok Travel Blog">Blog Wisata Lombok</h1>
+        <p class="text-slate-500 mt-3 max-w-2xl mx-auto text-sm sm:text-base" data-id="blog-desc" data-en="Latest information, tips, and transport guides to explore the beauty of Lombok Island.">Dapatkan informasi terbaru, tips perjalanan, dan panduan rute transportasi terbaik untuk menjelajahi keindahan Pulau Lombok.</p>
+    </header>
+
+    <!-- KONTEN UTAMA BLOG (GRID ARTIKEL) -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- ARTIKEL 1 -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div>
+                    <div class="h-48 w-full bg-slate-200 overflow-hidden relative">
+                        <img src="../images/mobil-senaru.jpg" alt="Tips Mendaki Rinjani" class="w-full h-full object-cover block" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-brand-orange font-bold uppercase tracking-wider block mb-2" data-id="art1-cat" data-en="Trekking & Mountain">Pendakian & Gunung</span>
+                        <h3 class="text-lg font-bold text-brand-blue mb-2 hover:text-brand-orange transition" data-id="art1-t" data-en="Complete Guide from Airport to Senaru Basecamp">Panduan Lengkap dari Bandara ke Basecamp Senaru Rinjani</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm leading-relaxed" data-id="art1-d" data-en="Planning to climb Mount Rinjani? Read transport options, estimated travel time, and key preparation tips.">Rencana mendaki Gunung Rinjani? Simak pilihan transportasi, estimasi waktu tempuh, dan persiapan penting sebelum berangkat.</p>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                    <span><i class="fa-regular fa-calendar mr-1"></i> 2026</span>
+                    <a href="#" class="text-brand-blue font-bold hover:text-brand-orange transition" data-id="btn-read" data-en="Read More">Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                </div>
+            </article>
+
+            <!-- ARTIKEL 2 -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div>
+                    <div class="h-48 w-full bg-slate-200 overflow-hidden relative">
+                        <img src="../images/mobil-bangsal.jpg" alt="Penyeberangan Gili Trawangan" class="w-full h-full object-cover block" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-brand-orange font-bold uppercase tracking-wider block mb-2" data-id="art2-cat" data-en="Island & Crossing">Pulau & Penyeberangan</span>
+                        <h3 class="text-lg font-bold text-brand-blue mb-2 hover:text-brand-orange transition" data-id="art2-t" data-en="How to Get to Gili Trawangan via Bangsal Port">Cara Mudah Menuju Gili Trawangan via Pelabuhan Bangsal</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm leading-relaxed" data-id="art2-d" data-en="Everything you need to know about private airport shuttles and public/fast boats to 3 Gili.">Segala hal yang perlu Anda ketahui tentang shuttle privat dari bandara hingga info kapal ke 3 Gili.</p>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                    <span><i class="fa-regular fa-calendar mr-1"></i> 2026</span>
+                    <a href="#" class="text-brand-blue font-bold hover:text-brand-orange transition" data-id="btn-read" data-en="Read More">Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                </div>
+            </article>
+
+            <!-- ARTIKEL 3 -->
+            <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div>
+                    <div class="h-48 w-full bg-slate-200 overflow-hidden relative">
+                        <img src="../images/mobil-kuta.jpg" alt="Wisata Kuta Mandalika" class="w-full h-full object-cover block" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-brand-orange font-bold uppercase tracking-wider block mb-2" data-id="art3-cat" data-en="Beaches & Resort">Pantai & Resort</span>
+                        <h3 class="text-lg font-bold text-brand-blue mb-2 hover:text-brand-orange transition" data-id="art3-t" data-en="5 Best Destinations Around Kuta Mandalika Circuit">5 Destinasi Terbaik Sekitar Sirkuit Kuta Mandalika</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm leading-relaxed" data-id="art3-d" data-en="Explore pristine white sand beaches and hills near Mandalika in just a short drive.">Jelajahi pantai pasir putih dan perbukitan indah di sekitar Mandalika hanya dalam hitungan menit.</p>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                    <span><i class="fa-regular fa-calendar mr-1"></i> 2026</span>
+                    <a href="#" class="text-brand-blue font-bold hover:text-brand-orange transition" data-id="btn-read" data-en="Read More">Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-8 text-xs text-slate-400 border-t border-slate-200 mt-12">
+        <p>&copy; 2026 TransportKita. All Rights Reserved.</p>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20mengenai%20layanan%20transportasi" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat WhatsApp"
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs sm:max-w-xs transition-all duration-500 ease-in-out font-bold text-sm pr-1">
+            Chat via WhatsApp
+        </span>
+    </a>
+
+    <!-- JAVASCRIPT MULTILINGUAL WITH LOCALSTORAGE -->
+    <script>
+        const originalText = {};
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const id = el.getAttribute('data-id');
+                originalText[id] = el.innerHTML;
+            });
+
+            const savedLang = localStorage.getItem('transportkita_lang') || 'id';
+            switchLanguage(savedLang, false);
+        });
+
+        function switchLanguage(lang, savePreference = true) {
+            if (savePreference) {
+                localStorage.setItem('transportkita_lang', lang);
+            }
+
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const id = el.getAttribute('data-id');
+                if (lang === 'en') {
+                    const enText = el.getAttribute('data-en');
+                    if (enText) el.innerHTML = enText;
+                } else {
+                    if (originalText[id]) el.innerHTML = originalText[id];
+                }
+            });
+
+            updateButtonStyles(lang);
+        }
+
+        function updateButtonStyles(lang) {
+            const activeClasses = ["bg-brand-blue", "text-white"];
+            const inactiveClasses = ["text-slate-600"];
+
+            const idBtn = document.getElementById('lang-id-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+
+            if (lang === 'en') {
+                if(enBtn) { enBtn.classList.add(...activeClasses); enBtn.classList.remove(...inactiveClasses); }
+                if(idBtn) { idBtn.classList.remove(...activeClasses); idBtn.classList.add(...inactiveClasses); }
+            } else {
+                if(idBtn) { idBtn.classList.add(...activeClasses); idBtn.classList.remove(...inactiveClasses); }
+                if(enBtn) { enBtn.classList.remove(...activeClasses); enBtn.classList.add(...inactiveClasses); }
+            }
+        }
+    </script>
+</body>
+</html>
