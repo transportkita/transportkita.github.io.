@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Trekking Gunung Rinjani | TransportKita</title>
+    <meta name="description" content="Pilihan Paket Pendakian Gunung Rinjani Lombok: 2D1N Summit, 3D2N Sembalun - Torean, dan 3D2N Sembalun - Senaru. Lengkap dengan transportasi privat.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F2C59',
+                            orange: '#F86F03',
+                            dark: '#0B132B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
+    <!-- NAVIGASI KEMBALI & SWITCHER BAHASA -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex justify-between items-center">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:text-brand-orange transition text-sm">
+            <i class="fa-solid fa-arrow-left"></i> <span data-id="rinjani-back" data-en="Back to Home">Kembali ke Beranda</span>
+        </a>
+
+        <!-- Tombol Ganti Bahasa -->
+        <div class="flex items-center bg-white p-1 rounded-lg border border-slate-200 text-sm shadow-sm">
+            <button onclick="switchLanguage('id')" id="lang-id-btn" class="px-2.5 py-1 rounded bg-brand-blue text-white font-bold transition">ID</button>
+            <button onclick="switchLanguage('en')" id="lang-en-btn" class="px-2.5 py-1 rounded text-slate-600 font-bold transition">EN</button>
+        </div>
+    </div>
+
+    <!-- HEADER SECTION -->
+    <header class="max-w-4xl mx-auto px-4 pt-10 pb-6 text-center">
+        <span class="bg-orange-100 text-brand-orange text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block mb-3" data-id="rinjani-badge" data-en="Mount Rinjani Trekking Packages">Paket Pendakian Gunung Rinjani</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-brand-blue" data-id="rinjani-title" data-en="Choose Your Rinjani Adventure">Pilihan Paket Trekking Rinjani</h1>
+        <p class="text-slate-500 mt-3 max-w-2xl mx-auto text-sm sm:text-base" data-id="rinjani-subtitle" data-en="Enjoy an unforgettable trekking experience with guide, porter, complete equipment, and private airport shuttle.">Nikmati pengalaman mendaki Gunung Rinjani terbaik dengan dukungan guide, porter profesional, alat camp berkualitas, serta jemputan mobil privat dari kami.</p>
+    </header>
+
+    <!-- KONTEN UTAMA: GRID 3 PAKET TREKKING -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- PAKET 1: 2D1N SEMBALUN SUMMIT -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div>
+                    <div class="h-48 w-full bg-slate-200 overflow-hidden relative">
+                        <img src="../images/mobil-sembalun.jpg" alt="Rinjani Trekking 2D1N" class="w-full h-full object-cover block" loading="lazy">
+                        <span class="absolute top-3 right-3 bg-brand-orange text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full shadow">Fast Trek</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-blue mb-1" data-id="p1-title" data-en="2D1N Summit & Crater Rim">2D1N Summit & Crater Rim Sembalun</h3>
+                        <p class="text-slate-500 text-xs mb-4" data-id="p1-desc" data-en="Suitable for experienced climbers seeking a quick summit attempt.">Khusus pendaki dengan fisik prima yang ingin menuju puncak Rinjani dalam waktu singkat.</p>
+                        
+                        <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-route text-brand-orange"></i> <span data-id="p1-r" data-en="Sembalun -> Summit -> Sembalun">Rute: Sembalun - Puncak 3726m - Sembalun</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-campground text-brand-orange"></i> <span data-id="p1-c" data-en="Camp at Sembalun Crater Rim">Camp: Plawangan Sembalun</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> <span data-id="p1-i" data-en="Guide, Porter, Tent, Meals & Transport">Termasuk: Guide, Porter, Tenda & Transport</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20detail%20Paket%20Rinjani%202D1N" target="_blank" class="w-full block text-center bg-brand-blue hover:bg-opacity-95 text-white font-bold py-3 rounded-xl transition shadow-md text-sm">
+                        <i class="fa-brands fa-whatsapp mr-1 text-base"></i> <span data-id="btn-book" data-en="Book Package via WA">Pesan Paket via WA</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PAKET 2: 3D2N SEMBALUN - TOREAN (MOST POPULAR) -->
+            <div class="bg-white rounded-2xl border-2 border-brand-orange shadow-md overflow-hidden flex flex-col justify-between hover:shadow-2xl transition duration-300 relative">
+                <div class="bg-brand-orange text-white text-[11px] font-extrabold uppercase text-center py-1 tracking-wider" data-id="p2-badge" data-en="Most Favorite Scenic Route">Paling Populer & Indah</div>
+                <div>
+                    <div class="h-48 w-full bg-slate-200 overflow-hidden relative">
+                        <img src="../images/mobil-senaru.jpg" alt="Rinjani Trekking 3D2N Torean" class="w-full h-full object-cover block" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-blue mb-1" data-id="p2-title" data-en="3D2N Sembalun - Torean Trail">3D2N Sembalun - Summit - Torean</h3>
+                        <p class="text-slate-500 text-xs mb-4" data-id="p2-desc" data-en="Combining summit climb with stunning waterfalls & Jurassic Park valley of Torean.">Perpaduan puncak Rinjani, Danau Segara Anak, dan jalur lembah spektakuler Torean.</p>
+                        
+                        <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-route text-brand-orange"></i> <span data-id="p2-r" data-en="Sembalun -> Lake -> Torean Valley">Rute: Sembalun - Puncak - Danau - Torean</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-water text-brand-orange"></i> <span data-id="p2-c" data-en="Hot Springs & Segara Anak Lake">Danau Segara Anak & Air Panas Alami</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> <span data-id="p2-i" data-en="Full Service & Private Transport">Termasuk: Layanan Penuh & Transport Privat</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20detail%20Paket%20Rinjani%203D2N%20Sembalun%20Torean" target="_blank" class="w-full block text-center bg-brand-orange hover:bg-opacity-95 text-white font-bold py-3 rounded-xl transition shadow-md text-sm">
+                        <i class="fa-brands fa-whatsapp mr-1 text-base"></i> <span data-id="btn-book" data-en="Book Package via WA">Pesan Paket via WA</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PAKET 3: 3D2N SEMBALUN - SENARU -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div>
+                    <div class="h-48 w-full bg-slate-200 overflow-hidden relative">
+                        <img src="../images/mobil-senggigi.jpg" alt="Rinjani Trekking 3D2N Senaru" class="w-full h-full object-cover block" loading="lazy">
+                        <span class="absolute top-3 right-3 bg-brand-blue text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full shadow">Classic Route</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-blue mb-1" data-id="p3-title" data-en="3D2N Sembalun - Senaru Route">3D2N Sembalun - Summit - Senaru</h3>
+                        <p class="text-slate-500 text-xs mb-4" data-id="p3-desc" data-en="Classic complete circuit route crossing Rinjani from East to North.">Rute klasik paling lengkap melintasi Rinjani dari jalur timur hingga hutan tropis Senaru di utara.</p>
+                        
+                        <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-route text-brand-orange"></i> <span data-id="p3-r" data-en="Sembalun -> Lake -> Senaru Forest">Rute: Sembalun - Puncak - Danau - Senaru</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-tree text-brand-orange"></i> <span data-id="p3-c" data-en="Tropical Rainforest Experience">Lintas Hutan Tropis Senaru</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> <span data-id="p3-i" data-en="Full Service & Private Transport">Termasuk: Layanan Penuh & Transport Privat</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20detail%20Paket%20Rinjani%203D2N%20Sembalun%20Senaru" target="_blank" class="w-full block text-center bg-brand-blue hover:bg-opacity-95 text-white font-bold py-3 rounded-xl transition shadow-md text-sm">
+                        <i class="fa-brands fa-whatsapp mr-1 text-base"></i> <span data-id="btn-book" data-en="Book Package via WA">Pesan Paket via WA</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-8 text-xs text-slate-400 border-t border-slate-200 mt-12">
+        <p>&copy; 2026 TransportKita. All Rights Reserved.</p>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20mengenai%20paket%20pendakian%20Rinjani" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat WhatsApp"
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs sm:max-w-xs transition-all duration-500 ease-in-out font-bold text-sm pr-1">
+            Chat via WhatsApp
+        </span>
+    </a>
+
+    <!-- JAVASCRIPT MULTILINGUAL WITH LOCALSTORAGE -->
+    <script>
+        const originalText = {};
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const id = el.getAttribute('data-id');
+                originalText[id] = el.innerHTML;
+            });
+
+            const savedLang = localStorage.getItem('transportkita_lang') || 'id';
+            switchLanguage(savedLang, false);
+        });
+
+        function switchLanguage(lang, savePreference = true) {
+            if (savePreference) {
+                localStorage.setItem('transportkita_lang', lang);
+            }
+
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const id = el.getAttribute('data-id');
+                if (lang === 'en') {
+                    const enText = el.getAttribute('data-en');
+                    if (enText) el.innerHTML = enText;
+                } else {
+                    if (originalText[id]) el.innerHTML = originalText[id];
+                }
+            });
+
+            updateButtonStyles(lang);
+        }
+
+        function updateButtonStyles(lang) {
+            const activeClasses = ["bg-brand-blue", "text-white"];
+            const inactiveClasses = ["text-slate-600"];
+
+            const idBtn = document.getElementById('lang-id-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+
+            if (lang === 'en') {
+                if(enBtn) { enBtn.classList.add(...activeClasses); enBtn.classList.remove(...inactiveClasses); }
+                if(idBtn) { idBtn.classList.remove(...activeClasses); idBtn.classList.add(...inactiveClasses); }
+            } else {
+                if(idBtn) { idBtn.classList.add(...activeClasses); idBtn.classList.remove(...inactiveClasses); }
+                if(enBtn) { enBtn.classList.remove(...activeClasses); enBtn.classList.add(...inactiveClasses); }
+            }
+        }
+    </script>
+</body>
+</html>
