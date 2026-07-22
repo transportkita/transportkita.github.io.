@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Pendakian Rinjani 2D1N Sembalun Summit | TransportKita</title>
+    <meta name="description" content="Paket trekking express Rinjani 2 Hari 1 Malam menuju Puncak 3726m via Sembalun. Khusus pendaki dengan fisik prima untuk menaklukkan puncak Rinjani secara singkat.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { blue: '#0F2C59', orange: '#F86F03', dark: '#0B132B' } } } } }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- NAVIGASI KEMBALI & SWITCHER BAHASA -->
+    <div class="max-w-4xl mx-auto px-4 pt-8 flex justify-between items-center">
+        <a href="list-trekking.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:text-brand-orange transition text-sm">
+            <i class="fa-solid fa-arrow-left"></i> <span data-id="pkg-back" data-en="Back to Packages">Kembali ke Daftar Paket</span>
+        </a>
+        <div class="flex items-center bg-white p-1 rounded-lg border border-slate-200 text-sm shadow-sm">
+            <button onclick="switchLanguage('id')" id="lang-id-btn" class="px-2.5 py-1 rounded bg-brand-blue text-white font-bold transition">ID</button>
+            <button onclick="switchLanguage('en')" id="lang-en-btn" class="px-2.5 py-1 rounded text-slate-600 font-bold transition">EN</button>
+        </div>
+    </div>
+
+    <!-- MAIN KONTEN -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            
+            <!-- Banner Atas -->
+            <div class="h-64 sm:h-80 bg-brand-dark relative">
+                <div class="absolute inset-0 bg-[url('../images/mobil-sembalun.jpg')] bg-cover bg-center opacity-40"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-6 sm:p-8">
+                    <div>
+                        <span class="bg-brand-orange text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2 inline-block" data-id="badge" data-en="Fast Trek & Summit Push">Fast Trek & Penaklukan Puncak</span>
+                        <h1 class="text-2xl sm:text-4xl font-black text-white" data-id="title" data-en="2D1N Sembalun Summit & Crater Rim">Paket Pendakian Rinjani 2D1N: Sembalun - Puncak 3.726m</h1>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-1 flex flex-wrap gap-4">
+                            <span><i class="fa-solid fa-mountain text-brand-orange mr-1"></i> <span data-id="alt" data-en="Summit: 3,726m">Puncak Rinjani: 3.726 mdpl</span></span>
+                            <span><i class="fa-solid fa-clock text-brand-orange mr-1"></i> <span data-id="dur" data-en="Duration: 2 Days 1 Night">Durasi: 2 Hari 1 Malam</span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-10 space-y-8">
+                
+                <!-- Overview -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200/60 space-y-2">
+                    <h3 class="font-bold text-lg text-brand-blue" data-id="ov-t" data-en="Overview">Gambaran Ringkas Paket</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-id="ov-d" data-en="A challenging and fast-paced trek designed specifically for experienced hikers with excellent physical fitness who want to reach the 3,726m summit of Mount Rinjani in a short time. You will hike through the open Sembalun savannah, camp at Sembalun Crater Rim (2,639m), push for the summit at dawn, and descend back via Sembalun.">
+                        Paket pendakian *express* yang dirancang khusus bagi pendaki berpengalaman dengan kondisi fisik prima yang ingin menaklukkan Puncak Rinjani (3.726 mdpl) dalam waktu terbatas. Anda akan menyusuri padang savana Sembalun yang luas, bermalam di Plawangan Sembalun (2.639m), melakukan *summit attack* dini hari, lalu turun kembali melalui jalur Sembalun.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-xs font-semibold text-slate-700">
+                        <div class="bg-white p-3 rounded-lg border text-center"><span class="block text-slate-400 font-normal">Start Point</span> Sembalun (1.156m)</div>
+                        <div class="bg-white p-3 rounded-lg border text-center"><span class="block text-slate-400 font-normal">Finish Point</span> Desa Sembalun</div>
+                        <div class="bg-white p-3 rounded-lg border text-center"><span class="block text-slate-400 font-normal">Tingkat Kesulitan</span> Menantang / Berpengalaman</div>
+                        <div class="bg-white p-3 rounded-lg border text-center"><span class="block text-slate-400 font-normal">Highlight</span> Puncak 3.726m & Sunrise</div>
+                    </div>
+                </div>
+
+                <!-- Itinerary Timeline -->
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-route text-brand-orange"></i> <span data-id="it-title" data-en="Detailed Itinerary">Rencana Perjalanan Detail</span>
+                    </h3>
+                    
+                    <div class="space-y-8">
+                        <!-- Hari 1 -->
+                        <div class="border rounded-xl p-5 border-slate-200">
+                            <span class="bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-md" data-id="d1-tag" data-en="DAY 1: Sembalun Village - Sembalun Crater Rim">HARI 1: Desa Sembalun - Plawangan Sembalun (Camp)</span>
+                            <div class="mt-4 relative border-l-2 border-slate-200 ml-2 space-y-4 pl-4 text-sm text-slate-600">
+                                <div>
+                                    <strong class="text-brand-blue">07:00 WITA</strong> - Pick-up privat dari hotel/bandara menuju Desa Sembalun.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">08:30 WITA</strong> - Registrasi medis & tiket resmi di Rinjani Information Center (RIC) Sembalun.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">09:00 WITA</strong> - Memulai pendakian melintasi perbukitan savana Sembalun yang terbuka menuju Pos 1 & Pos 2.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">12:00 WITA</strong> - Makan siang hangat dan istirahat di Pos 2 (Tengengean - 1.500m).
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">13:30 WITA</strong> - Lanjut mendaki melintasi Pos 3 dan Bukit Penyesalan yang menanjak terjal.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">17:00 WITA</strong> - Tiba di Plawangan Sembalun (2.639m). Camp, makan malam, dan istirahat awal untuk persiapan *summit attack*.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hari 2 -->
+                        <div class="border rounded-xl p-5 border-slate-200">
+                            <span class="bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-md" data-id="d2-tag" data-en="DAY 2: Summit Push (3,726m) - Descent to Sembalun">HARI 2: Summit Push (3.726m) - Turun ke Sembalun</span>
+                            <div class="mt-4 relative border-l-2 border-slate-200 ml-2 space-y-4 pl-4 text-sm text-slate-600">
+                                <div>
+                                    <strong class="text-brand-blue">02:00 WITA</strong> - Bangun, *light breakfast* (roti/biskuit & teh hangat), memulai pendakian ke Puncak Rinjani.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">06:00 WITA</strong> - Tiba di Puncak Rinjani (3.726 mdpl). Menikmati Golden Sunrise spektakuler dengan latar Danau Segara Anak, Pulau Bali, dan Sumbawa.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">07:30 WITA</strong> - Turun kembali ke perkemahan Plawangan Sembalun.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">09:00 WITA</strong> - Sarapan lengkap di camp, dilanjutkan packing peralatan.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">10:00 WITA</strong> - Perjalanan turun kembali menuju Desa Sembalun.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">14:00 WITA</strong> - Tiba di Desa Sembalun, makan siang perpisahan di basecamp.
+                                </div>
+                                <div>
+                                    <strong class="text-brand-blue">15:00 WITA</strong> - Transfer privat ke destinasi Anda selanjutnya (Senggigi / Pelabuhan Bangsal / Bandara Lombok).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fasilitas Inc / Exc -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+                    <div class="bg-green-50/50 p-5 rounded-xl border border-green-100">
+                        <h4 class="font-bold text-green-800 mb-3 flex items-center gap-2" data-id="inc-t" data-en="Price Includes:"><i class="fa-solid fa-circle-check text-green-500"></i> Harga Sudah Termasuk:</h4>
+                        <ul class="text-xs sm:text-sm text-slate-600 space-y-2">
+                            <li>• Guide Berlisensi & Bahasa Inggris</li>
+                            <li>• Porter Berpengalaman (Membawa alat camp & logistik)</li>
+                            <li>• Peralatan Camping Lengkap (Tenda, Sleeping Bag, Matras, Tenda Toilet)</li>
+                            <li>• Makanan 3x Sehari, Buah Segar & Air Mineral Melimpah</li>
+                            <li>• Tiket Masuk Taman Nasional (TNGR) & Asuransi Pendakian</li>
+                            <li>• Antar-Jemput Mobil Privat dari & ke Bandara/Hotel</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-50/50 p-5 rounded-xl border border-red-100">
+                        <h4 class="font-bold text-red-800 mb-3 flex items-center gap-2" data-id="exc-t" data-en="Price Excludes:"><i class="fa-solid fa-circle-xmark text-red-500"></i> Harga Belum Termasuk:</h4>
+                        <ul class="text-xs sm:text-sm text-slate-600 space-y-2">
+                            <li>• Porter Pribadi (Untuk membawa ransel/daypack Anda)</li>
+                            <li>• Tipping sukarela untuk Guide & Porter</li>
+                            <li>• Sepatu Trekking, Headlamp, Sarung Tangan & Jaket Tebal</li>
+                            <li>• Tiket Pesawat / Pengeluaran Pribadi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Pemesanan -->
+                <div class="bg-slate-900 text-white p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-6">
+                    <div>
+                        <span class="text-xs text-slate-400 block uppercase" data-id="price-lbl" data-en="Start From">Mulai Dari</span>
+                        <span class="text-3xl font-black text-brand-orange">$190 <span class="text-sm font-normal text-slate-300">/ pax</span></span>
+                        <p class="text-xs text-slate-400 mt-1" data-id="price-sub" data-en="Fast Trek Package & Private Transport Included">Paket Puncak Fast-Trek & Transport Privat Lengkap.</p>
+                    </div>
+                    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20booking%20Paket%20Rinjani%202D1N%20Sembalun%20Summit" target="_blank" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> <span data-id="btn-wa" data-en="Book via WhatsApp">Konsultasi & Booking via WA</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-xs text-slate-400">
+        <p>&copy; 2026 TransportKita. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const originalText = {};
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('[data-id]').forEach(el => originalText[el.getAttribute('data-id')] = el.innerHTML);
+            const savedLang = localStorage.getItem('transportkita_lang') || 'id';
+            switchLanguage(savedLang, false);
+        });
+
+        function switchLanguage(lang, savePreference = true) {
+            if (savePreference) localStorage.setItem('transportkita_lang', lang);
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const id = el.getAttribute('data-id');
+                if (lang === 'en') {
+                    const enText = el.getAttribute('data-en');
+                    if (enText) el.innerHTML = enText;
+                } else if (originalText[id]) el.innerHTML = originalText[id];
+            });
+            updateButtonStyles(lang);
+        }
+
+        function updateButtonStyles(lang) {
+            const activeClasses = ["bg-brand-blue", "text-white"];
+            const inactiveClasses = ["text-slate-600"];
+            const idBtn = document.getElementById('lang-id-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            if (lang === 'en') {
+                enBtn.classList.add(...activeClasses); enBtn.classList.remove(...inactiveClasses);
+                idBtn.classList.remove(...activeClasses); idBtn.classList.add(...inactiveClasses);
+            } else {
+                idBtn.classList.add(...activeClasses); idBtn.classList.remove(...inactiveClasses);
+                enBtn.classList.remove(...activeClasses); enBtn.classList.add(...inactiveClasses);
+            }
+        }
+    </script>
+</body>
+</html>
