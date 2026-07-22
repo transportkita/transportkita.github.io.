@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itinerary Perjalanan: Airport - Mataram | Rinjani Transport</title>
+    <title>Itinerary Perjalanan: Airport - Mataram | TransportKita</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome untuk Icon -->
@@ -26,11 +26,17 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- NAVIGASI KEMBALI -->
-    <div class="max-w-4xl mx-auto px-4 pt-8">
+    <!-- NAVIGASI KEMBALI & SWITCHER BAHASA -->
+    <div class="max-w-4xl mx-auto px-4 pt-8 flex justify-between items-center">
         <a href="../index.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:text-brand-orange transition text-sm">
-            <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+            <i class="fa-solid fa-arrow-left"></i> <span data-id="pkg-back" data-en="Back to Home">Kembali ke Beranda</span>
         </a>
+
+        <!-- Tombol Ganti Bahasa -->
+        <div class="flex items-center bg-white p-1 rounded-lg border border-slate-200 text-sm shadow-sm">
+            <button onclick="switchLanguage('id')" id="lang-id-btn" class="px-2.5 py-1 rounded bg-brand-blue text-white font-bold transition">ID</button>
+            <button onclick="switchLanguage('en')" id="lang-en-btn" class="px-2.5 py-1 rounded text-slate-600 font-bold transition">EN</button>
+        </div>
     </div>
 
     <!-- KONTEN UTAMA ITINERARY -->
@@ -42,9 +48,12 @@
                 <div class="absolute inset-0 bg-[url('../images/mobil-mataram.jpg')] bg-cover bg-center opacity-40"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-6 sm:p-8">
                     <div>
-                        <span class="bg-brand-orange text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2 inline-block">Rute Perkotaan & Bisnis</span>
-                        <h1 class="text-2xl sm:text-4xl font-black text-white">Itinerary Perjalanan: Airport - Kota Mataram</h1>
-                        <p class="text-slate-300 text-xs sm:text-sm mt-1"><i class="fa-solid fa-clock text-brand-orange mr-1"></i> Estimasi Durasi Perjalanan: ± 45 hingga 60 Menit</p>
+                        <span class="bg-brand-orange text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2 inline-block" data-id="pkg-badge" data-en="Urban & Business Route">Rute Perkotaan & Bisnis</span>
+                        <h1 class="text-2xl sm:text-4xl font-black text-white" data-id="pkg-title" data-en="Travel Itinerary: Airport - Mataram City">Itinerary Perjalanan: Airport - Kota Mataram</h1>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-1">
+                            <i class="fa-solid fa-clock text-brand-orange mr-1"></i> 
+                            <span data-id="pkg-duration" data-en="Estimated Travel Duration: ± 45 to 60 Minutes">Estimasi Durasi Perjalanan: ± 45 hingga 60 Menit</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -58,8 +67,8 @@
                         <i class="fa-solid fa-route"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-brand-blue">Deskripsi Rute</h4>
-                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                        <h4 class="font-bold text-brand-blue" data-id="pkg-desc-title" data-en="Route Description">Deskripsi Rute</h4>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed" data-id="pkg-desc-body" data-en="Private car transfer service from Lombok International Airport to Mataram City center. The ideal transport solution for business trips, official visits, family travel, or city-center hotel stays.">
                             Layanan sewa mobil privat dari Bandara Internasional Lombok menuju pusat Kota Mataram. Solusi transportasi ideal untuk urusan bisnis, kedinasan, kunjungan keluarga, maupun menginap di hotel pusat kota.
                         </p>
                     </div>
@@ -68,7 +77,8 @@
                 <!-- Rencana Perjalanan (Timeline) -->
                 <div>
                     <h3 class="text-xl font-bold text-brand-blue mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-list-check text-brand-orange"></i> Rencana Perjalanan Ringkas
+                        <i class="fa-solid fa-list-check text-brand-orange"></i> 
+                        <span data-id="pkg-timeline-title" data-en="Brief Travel Plan">Rencana Perjalanan Ringkas</span>
                     </h3>
                     
                     <div class="relative border-l-2 border-slate-200 ml-3 space-y-8 pb-2">
@@ -76,33 +86,33 @@
                         <!-- Titik 1 -->
                         <div class="relative pl-6">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-blue border-4 border-white shadow-sm"></div>
-                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 1: Penjemputan</span>
-                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Bandara Internasional Lombok (BIL)</h5>
-                            <p class="text-slate-500 text-sm mt-1">Driver menantikan Anda di kedatangan bandara. Penanganan koper dan barang dilakukan secara rapi sebelum perjalanan dimulai.</p>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block" data-id="t1-stage" data-en="Stage 1: Pickup">Tahap 1: Penjemputan</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5" data-id="t1-title" data-en="Lombok International Airport (BIL)">Bandara Internasional Lombok (BIL)</h5>
+                            <p class="text-slate-500 text-sm mt-1" data-id="t1-desc" data-en="Your driver awaits you at airport arrivals. Luggage is neatly loaded before starting the journey.">Driver menantikan Anda di kedatangan bandara. Penanganan koper dan barang dilakukan secara rapi sebelum perjalanan dimulai.</p>
                         </div>
 
                         <!-- Titik 2 -->
                         <div class="relative pl-6">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white shadow-sm"></div>
-                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 2: Bypass BIL - Mataram</span>
-                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Jalur Utama Bypass Bandara</h5>
-                            <p class="text-slate-500 text-sm mt-1">Perjalanan lancar melintasi jalan tol/bypass utama. Driver siap fleksibel jika Anda membutuhkan stop sejenak untuk kebutuhan mendadak.</p>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block" data-id="t2-stage" data-en="Stage 2: BIL - Mataram Bypass">Tahap 2: Bypass BIL - Mataram</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5" data-id="t2-title" data-en="Main Airport Highway">Jalur Utama Bypass Bandara</h5>
+                            <p class="text-slate-500 text-sm mt-1" data-id="t2-desc" data-en="Smooth ride via the main highway/bypass. The driver is flexible if you need a quick stop for errand needs.">Perjalanan lancar melintasi jalan tol/bypass utama. Driver siap fleksibel jika Anda membutuhkan stop sejenak untuk kebutuhan mendadak.</p>
                         </div>
 
                         <!-- Titik 3 -->
                         <div class="relative pl-6">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white shadow-sm"></div>
-                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 3: Memasuki Kota</span>
-                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Gapura Kota Mataram / Cakranegara</h5>
-                            <p class="text-slate-500 text-sm mt-1">Memasuki kawasan bisnis, pusat perbelanjaan, dan perkantoran pemerintahan di Kota Mataram.</p>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block" data-id="t3-stage" data-en="Stage 3: Entering the City">Tahap 3: Memasuki Kota</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5" data-id="t3-title" data-en="Mataram City Gate / Cakranegara">Gapura Kota Mataram / Cakranegara</h5>
+                            <p class="text-slate-500 text-sm mt-1" data-id="t3-desc" data-en="Entering Mataram's business districts, commercial centers, and government offices area.">Memasuki kawasan bisnis, pusat perbelanjaan, dan perkantoran pemerintahan di Kota Mataram.</p>
                         </div>
 
                         <!-- Titik 4 -->
                         <div class="relative pl-6">
                             <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-green-500 border-4 border-white shadow-sm"></div>
-                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block">Tahap 4: Tiba di Tujuan</span>
-                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">Drop-off di Hotel / Kantor / Alamat Tujuan di Mataram</h5>
-                            <p class="text-slate-500 text-sm mt-1">Pengantaran tepat waktu sampai di lokasi spesifik Anda di Kota Mataram. Driver membantu menurunkan seluruh barang bawaan Anda.</p>
+                            <span class="text-xs font-bold text-brand-orange uppercase tracking-wide block" data-id="t4-stage" data-en="Stage 4: Arrival at Destination">Tahap 4: Tiba di Tujuan</span>
+                            <h5 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5" data-id="t4-title" data-en="Drop-off at Hotel / Office / Address in Mataram">Drop-off di Hotel / Kantor / Alamat Tujuan di Mataram</h5>
+                            <p class="text-slate-500 text-sm mt-1" data-id="t4-desc" data-en="Punctual drop-off right at your specific location in Mataram City. Driver assists with all your bags.">Pengantaran tepat waktu sampai di lokasi spesifik Anda di Kota Mataram. Driver membantu menurunkan seluruh barang bawaan Anda.</p>
                         </div>
 
                     </div>
@@ -110,23 +120,23 @@
 
                 <!-- Fasilitas Terintegrasi -->
                 <div class="border-t border-slate-100 pt-6">
-                    <h3 class="text-lg font-bold text-brand-blue mb-3">Fasilitas Sudah Termasuk:</h3>
+                    <h3 class="text-lg font-bold text-brand-blue mb-3" data-id="pkg-inc-title" data-en="Included Facilities:">Fasilitas Sudah Termasuk:</h3>
                     <div class="grid grid-cols-2 gap-3 text-sm text-slate-600">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Mobil Pribadi (Bukan Gabungan)</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Driver Profesional & BBM</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Full AC & Antar Jemput Fleksibel</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Biaya Parkir Bandara & Rest Area</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> <span data-id="inc-1" data-en="Private Car (Non-Sharing)">Mobil Pribadi (Bukan Gabungan)</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> <span data-id="inc-2" data-en="Professional Driver & Fuel">Driver Profesional & BBM</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> <span data-id="inc-3" data-en="Full AC & Flexible Pickup">Full AC & Antar Jemput Fleksibel</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> <span data-id="inc-4" data-en="Airport Parking & Toll Fees">Biaya Parkir Bandara & Rest Area</span></div>
                     </div>
                 </div>
 
                 <!-- Footer Pemesanan -->
                 <div class="border-t border-slate-100 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <div>
-                        <span class="text-xs text-slate-400 block font-medium uppercase">Sistem Tarif</span>
-                        <span class="text-xl font-black text-brand-blue">Harga Transparan / Fix Rate</span>
+                        <span class="text-xs text-slate-400 block font-medium uppercase" data-id="pkg-rate-label" data-en="Rate System">Sistem Tarif</span>
+                        <span class="text-xl font-black text-brand-blue" data-id="pkg-rate-val" data-en="Transparent Price / Fixed Rate">Harga Transparan / Fix Rate</span>
                     </div>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Rinjani%20Transport,%20saya%20ingin%20booking%20privat%20shuttle%20rute%20Airport%20-%20Mataram" target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Konfirmasi Booking via WA
+                    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20booking%20privat%20shuttle%20rute%20Airport%20-%20Mataram" target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> <span data-id="pkg-btn-wa" data-en="Confirm Booking via WA">Konfirmasi Booking via WA</span>
                     </a>
                 </div>
 
@@ -135,8 +145,61 @@
     </main>
 
     <footer class="text-center py-6 text-xs text-slate-400">
-        <p>&copy; 2026 Rinjani Transport. All Rights Reserved.</p>
+        <p>&copy; 2026 TransportKita. All Rights Reserved.</p>
     </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20mengenai%20layanan%20transportasi" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat WhatsApp"
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs sm:max-w-xs transition-all duration-500 ease-in-out font-bold text-sm pr-1">
+            Chat via WhatsApp
+        </span>
+    </a>
+
+    <!-- JAVASCRIPT MULTILINGUAL FOR PACKAGES -->
+    <script>
+        const originalText = {};
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const id = el.getAttribute('data-id');
+                originalText[id] = el.innerHTML;
+            });
+        });
+
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const id = el.getAttribute('data-id');
+                if (lang === 'en') {
+                    const enText = el.getAttribute('data-en');
+                    if (enText) el.innerHTML = enText;
+                } else {
+                    if (originalText[id]) el.innerHTML = originalText[id];
+                }
+            });
+            updateButtonStyles(lang);
+        }
+
+        function updateButtonStyles(lang) {
+            const activeClasses = ["bg-brand-blue", "text-white"];
+            const inactiveClasses = ["text-slate-600"];
+
+            const idBtn = document.getElementById('lang-id-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+
+            if (lang === 'en') {
+                enBtn.classList.add(...activeClasses); enBtn.classList.remove(...inactiveClasses);
+                idBtn.classList.remove(...activeClasses); idBtn.classList.add(...inactiveClasses);
+            } else {
+                idBtn.classList.add(...activeClasses); idBtn.classList.remove(...inactiveClasses);
+                enBtn.classList.remove(...activeClasses); enBtn.classList.add(...inactiveClasses);
+            }
+        }
+    </script>
 
 </body>
 </html>
