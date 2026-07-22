@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TransportKita - Solusi Transportasi Terpercaya di Lombok</title>
+    
+    <!-- SEO & OPEN GRAPH META TAGS -->
+    <title>TransportKita - Solusi Transportasi & Sewa Mobil Terpercaya di Lombok</title>
+    <meta name="description" content="Layanan sewa mobil privat, antar jemput Bandara Lombok (BIL), transfer Pelabuhan Bangsal, Sembalun, Senaru, Senggigi & Kuta Mandalika dengan harga transparan.">
+    <meta property="og:title" content="TransportKita - Solusi Transportasi Terpercaya di Lombok">
+    <meta property="og:description" content="Sewa mobil privat aman, nyaman, dan tepat waktu di Lombok. Mulai dari antar jemput bandara hingga tur wisata.">
+    <meta property="og:image" content="images/hero-bg.jpg">
+    <meta property="og:type" content="website">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome untuk Icon -->
@@ -37,10 +45,11 @@
                 </div>
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-8 font-medium">
-                    <a href="#beranda" class="text-brand-blue border-b-2 border-brand-orange py-2" data-id="nav-home" data-en="Home">Beranda</a>
+                    <a href="#beranda" class="text-slate-600 hover:text-brand-blue transition py-2" data-id="nav-home" data-en="Home">Beranda</a>
                     <a href="#keunggulan" class="text-slate-600 hover:text-brand-blue transition" data-id="nav-why" data-en="Why Us">Mengapa Kami</a>
-                    <a href="#tentang" class="text-slate-600 hover:text-brand-blue transition" data-id="nav-blog" data-en="Blog">Blog</a>
                     <a href="#layanan" class="text-slate-600 hover:text-brand-blue transition" data-id="nav-services" data-en="Services">Paket Layanan</a>
+                    <a href="#armada" class="text-slate-600 hover:text-brand-blue transition" data-id="nav-fleet" data-en="Fleet">Armada</a>
+                    <a href="#rute-populer" class="text-slate-600 hover:text-brand-blue transition" data-id="nav-routes" data-en="Popular Routes">Rute Populer</a>
                     <a href="contact.html" class="bg-brand-orange text-white px-5 py-2.5 rounded-lg hover:bg-opacity-90 transition shadow-md" data-id="nav-contact" data-en="Contact Us">Hubungi Kami</a>
                     
                     <!-- Tombol Ganti Bahasa (Desktop) -->
@@ -51,7 +60,6 @@
                 </div>
                 <!-- Tombol Mobile Menu & Bahasa Mobile -->
                 <div class="flex items-center space-x-4 md:hidden">
-                    <!-- Tombol Ganti Bahasa (Mobile) -->
                     <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
                         <button onclick="switchLanguage('id')" id="lang-id-btn-mob" class="px-2 py-0.5 rounded bg-brand-blue text-white font-bold">ID</button>
                         <button onclick="switchLanguage('en')" id="lang-en-btn-mob" class="px-2 py-0.5 rounded text-slate-600 font-bold">EN</button>
@@ -66,8 +74,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-2 shadow-inner">
             <a href="#beranda" class="block px-3 py-2 rounded-md text-brand-blue bg-slate-50 font-medium" data-id="nav-home" data-en="Home">Beranda</a>
             <a href="#keunggulan" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-why" data-en="Why Us">Mengapa Kami</a>
-            <a href="#tentang" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-blog" data-en="Tentang Kami">Tentang Kami</a>
             <a href="#layanan" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-services" data-en="Services">Paket Layanan</a>
+            <a href="#armada" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-fleet" data-en="Fleet">Armada Kami</a>
+            <a href="#rute-populer" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-routes" data-en="Popular Routes">Rute Populer</a>
             <a href="contact.html" class="block text-center bg-brand-orange text-white px-3 py-2 rounded-md font-medium" data-id="nav-contact" data-en="Contact Us">Hubungi Kami</a>
         </div>
     </nav>
@@ -87,7 +96,7 @@
                     Komitmen memberikan layanan perjalanan yang aman, nyaman, tepat waktu, dan menyenangkan untuk liburan maupun bisnis Anda.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#layanan" class="bg-brand-orange text-white px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition shadow-lg shadow-brand-orange/20" data-id="hero-btn1" data-en="Explore Packages">Jelajahi Paket</a>
+                    <a href="#rute-populer" class="bg-brand-orange text-white px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition shadow-lg shadow-brand-orange/20" data-id="hero-btn1" data-en="Explore Packages">Jelajahi Paket</a>
                     <a href="contact.html" class="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/20 transition" data-id="hero-btn2" data-en="Contact Us">Hubungi Kontak</a>
                 </div>
             </div>
@@ -153,8 +162,8 @@
                             Informasi jadwal rute perjalanan reguler antarkota, peta jalur perjalanan dinas/keluarga teroptimasi di area Pulau Lombok.
                         </p>
                     </div>
-                    <a href="packages/rute-perjalanan.html" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
-                        <span data-id="btn-detail" data-en="View Package Details">Lihat Detail Paket</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                    <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
+                        <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                     </a>
                 </div>
 
@@ -169,8 +178,8 @@
                             Layanan antar-jemput terjadwal langsung secara privat dari atau menuju Bandara Internasional Lombok secara aman dan on-time.
                         </p>
                     </div>
-                    <a href="packages/airport-shuttle.html" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
-                        <span data-id="btn-detail" data-en="View Package Details">Lihat Detail Paket</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                    <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
+                        <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                     </a>
                 </div>
 
@@ -185,15 +194,76 @@
                             Trip eksplorasi destinasi populer: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, hingga transfer penyeberangan ke Gili Trawangan.
                         </p>
                     </div>
-                    <a href="packages/tour-wisata.html" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
-                        <span data-id="btn-detail" data-en="View Package Details">Lihat Detail Paket</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                    <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
+                        <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-  <!-- SECTION: PILIHAN RUTE POPULER -->
+    <!-- SECTION TAMBAHAN: PILIHAN ARMADA KAMI -->
+    <section id="armada" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase" data-id="fleet-badge" data-en="Vehicle Fleet">Armada Kendaraan</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2" data-id="fleet-title" data-en="Pilihan Kendaraan Prima">Pilihan Armada Prima Kami</h2>
+                <p class="text-slate-500 mt-4" data-id="fleet-desc" data-en="Clean, well-maintained vehicles with driver included to ensure your journey comfort.">Kendaraan bersih, terawat, dan sudah termasuk pengemudi profesional untuk menjamin kenyamanan Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Fleet 1 -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-200 rounded-xl mb-4 overflow-hidden flex items-center justify-center text-slate-400">
+                            <i class="fa-solid fa-car text-6xl text-brand-blue/30"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Avanza / Xenia / Ertiga</h3>
+                        <p class="text-slate-500 text-xs mt-1" data-id="f1-desc" data-en="Ideal for families or small groups">Ideal untuk perjalanan keluarga atau rombongan kecil.</p>
+                        <div class="mt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f1-p" data-en="Max 5 Passengers">Kapasitas Maks. 5 Penumpang</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f1-b" data-en="2-3 Medium Bags">Bagasi 2-3 Koper</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-snowflake text-brand-orange"></i> <span data-id="f1-a" data-en="Full Double AC">Full AC Dual Zone</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet 2 -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-200 rounded-xl mb-4 overflow-hidden flex items-center justify-center text-slate-400">
+                            <i class="fa-solid fa-car-side text-6xl text-brand-blue/30"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Innova Reborn / Zenix</h3>
+                        <p class="text-slate-500 text-xs mt-1" data-id="f2-desc" data-en="Premium comfort for long distances">Kenyamanan ekstra premium untuk perjalanan jarak jauh.</p>
+                        <div class="mt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f2-p" data-en="Max 6 Passengers">Kapasitas Maks. 6 Penumpang</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f2-b" data-en="3-4 Large Bags">Bagasi 3-4 Koper Besar</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-couch text-brand-orange"></i> <span data-id="f2-a" data-en="Spacious Cabin Comfort">Kabin Luas & Suspensi Nyaman</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet 3 -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-slate-200 rounded-xl mb-4 overflow-hidden flex items-center justify-center text-slate-400">
+                            <i class="fa-solid fa-van-shuttle text-6xl text-brand-blue/30"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Toyota HiAce Commuter/Premio</h3>
+                        <p class="text-slate-500 text-xs mt-1" data-id="f3-desc" data-en="Best choice for large groups & trekking teams">Solusi terbaik untuk grup besar & tim pendaki.</p>
+                        <div class="mt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f3-p" data-en="Max 12-14 Passengers">Kapasitas 12 - 14 Penumpang</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f3-b" data-en="Large Cargo Capacity">Kapasitas Bagasi/Carrier Melimpah</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-wifi text-brand-orange"></i> <span data-id="f3-a" data-en="Group Travel Luxury">Kabin Tinggi & Nyaman</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION: PILIHAN RUTE POPULER -->
     <section id="rute-populer" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -207,17 +277,18 @@
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
                         <div class="w-full bg-slate-50 overflow-hidden relative">
-                            <img src="images/mobil-senaru.jpg" alt="Airport - Senaru" class="w-full h-auto block" loading="lazy">
+                            <img src="images/mobil-senaru.jpg" alt="Airport - Senaru" class="w-full h-48 object-cover block" loading="lazy">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-blue mb-2">Airport - Senaru</h3>
+                            <h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Senaru</h3>
+                            <span class="text-brand-orange font-black text-lg block mb-3" data-id="rt1-price" data-en="Start from IDR 650.000">Mulai Rp 650.000</span>
                             <p class="text-slate-500 text-sm leading-relaxed" data-id="rt1-d" data-en="Ideal and practical for climbers who want to head to the Mount Rinjani area.">
                                 Ideal dan praktis untuk para pendaki yang ingin menuju kawasan Gunung Rinjani.
                             </p>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
-                        <a href="packages/itinerary-senaru.html" target="_blank" class="w-full block text-center bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md" data-id="btn-book" data-en="Book Now">
+                        <a href="packages/itinerary-senaru.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition shadow-md" data-id="btn-book" data-en="View Itinerary">
                             Pesan Sekarang
                         </a>
                     </div>
@@ -227,17 +298,18 @@
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
                         <div class="w-full bg-slate-50 overflow-hidden relative">
-                            <img src="images/mobil-bangsal.jpg" alt="Airport - Bangsal" class="w-full h-auto block" loading="lazy">
+                            <img src="images/mobil-bangsal.jpg" alt="Airport - Bangsal" class="w-full h-48 object-cover block" loading="lazy">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-blue mb-2">Airport - Bangsal</h3>
+                            <h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Bangsal</h3>
+                            <span class="text-brand-orange font-black text-lg block mb-3" data-id="rt2-price" data-en="Start from IDR 350.000">Mulai Rp 350.000</span>
                             <p class="text-slate-500 text-sm leading-relaxed" data-id="rt2-d" data-en="Quick and comfortable access to the Gili Trawangan crossing port.">
                                 Akses cepat dan nyaman menuju pelabuhan penyeberangan Gili Trawangan.
                             </p>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
-                        <a href="packages/airport-bangsal.html" target="_blank" class="w-full block text-center bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md" data-id="btn-book" data-en="Book Now">
+                        <a href="packages/airport-bangsal.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition shadow-md" data-id="btn-book" data-en="View Itinerary">
                             Pesan Sekarang
                         </a>
                     </div>
@@ -247,17 +319,18 @@
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
                         <div class="w-full bg-slate-50 overflow-hidden relative">
-                            <img src="images/mobil-senggigi.jpg" alt="Airport - Senggigi" class="w-full h-auto block" loading="lazy">
+                            <img src="images/mobil-senggigi.jpg" alt="Airport - Senggigi" class="w-full h-48 object-cover block" loading="lazy">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-blue mb-2">Airport - Senggigi</h3>
+                            <h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Senggigi</h3>
+                            <span class="text-brand-orange font-black text-lg block mb-3" data-id="rt3-price" data-en="Start from IDR 300.000">Mulai Rp 300.000</span>
                             <p class="text-slate-500 text-sm leading-relaxed" data-id="rt3-d" data-en="Heading to the central area of hotels, resorts, and the beauty of Lombok's west coast.">
                                 Menuju kawasan pusat hotel, resort, dan keindahan pantai barat Lombok.
                             </p>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
-                        <a href="packages/airport-senggigi.html" target="_blank" class="w-full block text-center bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md" data-id="btn-book" data-en="Book Now">
+                        <a href="packages/airport-senggigi.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition shadow-md" data-id="btn-book" data-en="View Itinerary">
                             Pesan Sekarang
                         </a>
                     </div>
@@ -267,17 +340,18 @@
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
                         <div class="w-full bg-slate-50 overflow-hidden relative">
-                            <img src="images/mobil-kuta.jpg" alt="Airport - Kuta" class="w-full h-auto block" loading="lazy">
+                            <img src="images/mobil-kuta.jpg" alt="Airport - Kuta" class="w-full h-48 object-cover block" loading="lazy">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-blue mb-2">Airport - Kuta</h3>
+                            <h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Kuta</h3>
+                            <span class="text-brand-orange font-black text-lg block mb-3" data-id="rt4-price" data-en="Start from IDR 200.000">Mulai Rp 200.000</span>
                             <p class="text-slate-500 text-sm leading-relaxed" data-id="rt4-d" data-en="Direct route to Mandalika Circuit and the beauty of South Coast beaches.">
                                 Rute langsung menuju Sirkuit Mandalika dan keindahan Pantai Selatan.
                             </p>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
-                        <a href="packages/airport-kuta.html" target="_blank" class="w-full block text-center bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md" data-id="btn-book" data-en="Book Now">
+                        <a href="packages/airport-kuta.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition shadow-md" data-id="btn-book" data-en="View Itinerary">
                             Pesan Sekarang
                         </a>
                     </div>
@@ -287,17 +361,18 @@
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
                         <div class="w-full bg-slate-50 overflow-hidden relative">
-                            <img src="images/mobil-sembalun.jpg" alt="Airport - Sembalun" class="w-full h-auto block" loading="lazy">
+                            <img src="images/mobil-sembalun.jpg" alt="Airport - Sembalun" class="w-full h-48 object-cover block" loading="lazy">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-blue mb-2">Airport - Sembalun</h3>
+                            <h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Sembalun</h3>
+                            <span class="text-brand-orange font-black text-lg block mb-3" data-id="rt5-price" data-en="Start from IDR 650.000">Mulai Rp 650.000</span>
                             <p class="text-slate-500 text-sm leading-relaxed" data-id="rt5-d" data-en="Comfortable journey to the cool mountain tourist area.">
                                 Perjalanan nyaman menuju kawasan wisata pegunungan berudara sejuk.
                             </p>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
-                        <a href="packages/airport-sembalun.html" target="_blank" class="w-full block text-center bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md" data-id="btn-book" data-en="Book Now">
+                        <a href="packages/airport-sembalun.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition shadow-md" data-id="btn-book" data-en="View Itinerary">
                             Pesan Sekarang
                         </a>
                     </div>
@@ -307,17 +382,18 @@
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
                         <div class="w-full bg-slate-50 overflow-hidden relative">
-                            <img src="images/mobil-senaru.jpg" alt="Airport - Mataram" class="w-full h-auto block" loading="lazy">
+                            <img src="images/mobil-mataram.jpg" alt="Airport - Mataram" class="w-full h-48 object-cover block" loading="lazy">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-blue mb-2">Airport - Mataram</h3>
+                            <h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Mataram</h3>
+                            <span class="text-brand-orange font-black text-lg block mb-3" data-id="rt6-price" data-en="Start from IDR 250.000">Mulai Rp 250.000</span>
                             <p class="text-slate-500 text-sm leading-relaxed" data-id="rt6-d" data-en="Drop-off service to the government, business, and culinary center of Mataram City.">
                                 Layanan drop-off menuju pusat pemerintahan, bisnis, dan kuliner Kota Mataram.
                             </p>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
-                        <a href="packages/airport-mataram.html" target="_blank" class="w-full block text-center bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md" data-id="btn-book" data-en="Book Now">
+                        <a href="packages/airport-mataram.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition shadow-md" data-id="btn-book" data-en="View Itinerary">
                             Pesan Sekarang
                         </a>
                     </div>
@@ -325,7 +401,62 @@
             </div>
         </div>
     </section>
-    <!-- 5. FOOTER -->
+
+    <!-- SECTION TAMBAHAN: TESTIMONI PELANGGAN -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase" data-id="testi-badge" data-en="Customer Reviews">Ulasan Wisatawan</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2" data-id="testi-title" data-en="What Our Customers Say">Apa Kata Pelanggan Kami?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-orange mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic" data-id="t1-text" data-en="Driver came on time at BIL airport with a clear name board. Very clean car and friendly service to Senaru. Highly recommended!">"Driver datang tepat waktu di bandara BIL membawa papan nama. Mobil sangat bersih dan pelayanan ramah menuju Senaru. Sangat direkomendasikan!"</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <h5 class="font-bold text-brand-blue text-sm">Budi Santoso</h5>
+                        <span class="text-xs text-slate-400">Jakarta (Wisatawan Pendaki)</span>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-orange mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic" data-id="t2-text" data-en="Great service! Driver helped us with public boat tickets to Gili Trawangan at Bangsal port. Very smooth journey.">"Layanan luar biasa! Driver membantu kami hingga area penyeberangan ke Gili Trawangan di Pelabuhan Bangsal. Perjalanan sangat mulus."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <h5 class="font-bold text-brand-blue text-sm">Sarah Jenkins</h5>
+                        <span class="text-xs text-slate-400">Australia (Tourist)</span>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-orange mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic" data-id="t3-text" data-en="Transparent fixed pricing as promised. No hidden fees. The Innova car was very comfortable for our family trip to Kuta Mandalika.">"Harga transparan tanpa biaya tersembunyi sesuai kesepakatan WA. Mobil Innova bersih dan nyaman untuk perjalanan keluarga ke Kuta Mandalika."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <h5 class="font-bold text-brand-blue text-sm">Hendrik Kurniawan</h5>
+                        <span class="text-xs text-slate-400">Surabaya (Liburan Keluarga)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
     <footer class="bg-brand-dark text-slate-400 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
             <div class="space-y-4">
@@ -351,42 +482,44 @@
     </footer>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20mengenai%20layanan%20transportasi" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   aria-label="Chat WhatsApp"
-   class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group">
-    
-    <!-- Icon WhatsApp -->
-    <i class="fa-brands fa-whatsapp text-3xl"></i>
-    
-    <!-- Teks (Bisa disesuaikan / disembunyikan di layar sangat kecil) -->
-    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs sm:max-w-xs transition-all duration-500 ease-in-out font-bold text-sm pr-1">
-        Chat via WhatsApp
-    </span>
-</a>
+    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20mengenai%20layanan%20transportasi" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat WhatsApp"
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs sm:max-w-xs transition-all duration-500 ease-in-out font-bold text-sm pr-1">
+            Chat via WhatsApp
+        </span>
+    </a>
 
-    <!-- JAVASCRIPT: MULTILINGUAL & MOBILE MENU -->
+    <!-- JAVASCRIPT: MULTILINGUAL (WITH LOCALSTORAGE) & MOBILE MENU -->
     <script>
         // Toggle Menu Mobile
         document.getElementById('menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Data Penyimpanan Bahasa Asli (Indonesia)
         const originalText = {};
-        
-        // Kumpulkan teks asli saat halaman pertama loaded
+
         document.addEventListener("DOMContentLoaded", () => {
+            // Kumpulkan teks asli
             document.querySelectorAll('[data-id]').forEach(el => {
                 const id = el.getAttribute('data-id');
-                // Simpan struktur HTML internal asli (agar tag span/warna orange tidak hilang)
                 originalText[id] = el.innerHTML;
             });
+
+            // Cek bahasa tersimpan di localStorage
+            const savedLang = localStorage.getItem('transportkita_lang') || 'id';
+            switchLanguage(savedLang, false);
         });
 
         // Fungsi Switcher Bahasa
-        function switchLanguage(lang) {
+        function switchLanguage(lang, savePreference = true) {
+            if (savePreference) {
+                localStorage.setItem('transportkita_lang', lang);
+            }
+
             document.querySelectorAll('[data-id]').forEach(el => {
                 const id = el.getAttribute('data-id');
                 if (lang === 'en') {
@@ -397,7 +530,6 @@
                 }
             });
 
-            // Update Gaya Visual Tombol Aktif
             updateButtonStyles(lang);
         }
 
@@ -411,19 +543,15 @@
             const enBtnMob = document.getElementById('lang-en-btn-mob');
 
             if (lang === 'en') {
-                // Desktop
-                enBtn.classList.add(...activeClasses); enBtn.classList.remove(...inactiveClasses);
-                idBtn.classList.remove(...activeClasses); idBtn.classList.add(...inactiveClasses);
-                // Mobile
-                enBtnMob.classList.add(...activeClasses); enBtnMob.classList.remove(...inactiveClasses);
-                idBtnMob.classList.remove(...activeClasses); idBtnMob.classList.add(...inactiveClasses);
+                if(enBtn) { enBtn.classList.add(...activeClasses); enBtn.classList.remove(...inactiveClasses); }
+                if(idBtn) { idBtn.classList.remove(...activeClasses); idBtn.classList.add(...inactiveClasses); }
+                if(enBtnMob) { enBtnMob.classList.add(...activeClasses); enBtnMob.classList.remove(...inactiveClasses); }
+                if(idBtnMob) { idBtnMob.classList.remove(...activeClasses); idBtnMob.classList.add(...inactiveClasses); }
             } else {
-                // Desktop
-                idBtn.classList.add(...activeClasses); idBtn.classList.remove(...inactiveClasses);
-                enBtn.classList.remove(...activeClasses); enBtn.classList.add(...inactiveClasses);
-                // Mobile
-                idBtnMob.classList.add(...activeClasses); idBtnMob.classList.remove(...inactiveClasses);
-                enBtnMob.classList.remove(...activeClasses); enBtnMob.classList.add(...inactiveClasses);
+                if(idBtn) { idBtn.classList.add(...activeClasses); idBtn.classList.remove(...inactiveClasses); }
+                if(enBtn) { enBtn.classList.remove(...activeClasses); enBtn.classList.add(...inactiveClasses); }
+                if(idBtnMob) { idBtnMob.classList.add(...activeClasses); idBtnMob.classList.remove(...inactiveClasses); }
+                if(enBtnMob) { enBtnMob.classList.remove(...activeClasses); enBtnMob.classList.add(...inactiveClasses); }
             }
         }
     </script>
