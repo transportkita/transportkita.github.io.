@@ -39,15 +39,18 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- 1. NAVBAR -->
+   <!-- 1. NAVBAR -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <span class="text-2xl font-black text-brand-blue tracking-wider flex items-center gap-2">
+            <div class="flex justify-between items-center h-20 gap-2">
+                
+                <!-- Logo Company -->
+                <div class="flex items-center shrink-0">
+                    <span class="text-lg sm:text-2xl font-black text-brand-blue tracking-wider flex items-center gap-1.5 sm:gap-2">
                         <i class="fa-solid fa-car-side text-brand-orange"></i> TRANSPORTKITA
                     </span>
                 </div>
+
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-8 font-medium">
                     <a href="#beranda" class="text-slate-600 hover:text-brand-blue transition py-2" data-id="nav-home" data-en="Home">Beranda</a>
@@ -63,19 +66,22 @@
                         <button onclick="switchLanguage('en')" id="lang-en-btn" class="px-2 py-1 rounded text-slate-600 font-bold transition">EN</button>
                     </div>
                 </div>
+
                 <!-- Tombol Mobile Menu & Bahasa Mobile -->
-                <div class="flex items-center space-x-4 md:hidden">
-                    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
-                        <button onclick="switchLanguage('id')" id="lang-id-btn-mob" class="px-2 py-0.5 rounded bg-brand-blue text-white font-bold">ID</button>
-                        <button onclick="switchLanguage('en')" id="lang-en-btn-mob" class="px-2 py-0.5 rounded text-slate-600 font-bold">EN</button>
+                <div class="flex items-center gap-2 md:hidden shrink-0">
+                    <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-[11px]">
+                        <button onclick="switchLanguage('id')" id="lang-id-btn-mob" class="px-1.5 py-0.5 rounded bg-brand-blue text-white font-bold">ID</button>
+                        <button onclick="switchLanguage('en')" id="lang-en-btn-mob" class="px-1.5 py-0.5 rounded text-slate-600 font-bold">EN</button>
                     </div>
-                    <button id="menu-btn" class="text-slate-600 focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                    <button id="menu-btn" class="text-slate-700 hover:text-brand-blue p-1.5 focus:outline-none" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
+
             </div>
         </div>
-        <!-- Menu Mobile -->
+
+        <!-- Dropdown Menu Mobile -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-2 shadow-inner">
             <a href="#beranda" class="block px-3 py-2 rounded-md text-brand-blue bg-slate-50 font-medium" data-id="nav-home" data-en="Home">Beranda</a>
             <a href="#keunggulan" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-why" data-en="Why Us">Mengapa Kami</a>
