@@ -12,6 +12,10 @@
     <meta property="og:image" content="images/hero-bg.jpg">
     <meta property="og:type" content="website">
 
+    <!-- OPTIMASI PEMUATAN CSS UTAMA (CSS ASYNC) -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome untuk Icon -->
@@ -77,8 +81,7 @@
             <a href="#layanan" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-services" data-en="Services">Paket Layanan</a>
             <a href="#armada" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-fleet" data-en="Fleet">Armada Kami</a>
             <a href="#rute-populer" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-routes" data-en="Popular Routes">Rute Populer</a>
-           <!-- GANTI KODE BLOG MOBILE MENJADI INI: -->
-<a href="blog/index.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-blog" data-en="Blog">Blog</a>
+            <a href="blog/index.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50" data-id="nav-blog" data-en="Blog">Blog</a>
         </div>
     </nav>
 
@@ -203,100 +206,83 @@
         </div>
     </section>
 
-   <!-- SECTION: PILIHAN ARMADA KAMI -->
-<section id="armada" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-brand-orange font-bold text-sm tracking-wider uppercase" data-id="fleet-badge" data-en="Vehicle Fleet">Armada Kendaraan</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2" data-id="fleet-title" data-en="Our Prime Vehicle Choices">Pilihan Armada Prima Kami</h2>
-            <p class="text-slate-500 mt-4" data-id="fleet-desc" data-en="Clean, well-maintained vehicles with driver included to ensure your journey comfort.">Kendaraan bersih, terawat, dan sudah termasuk pengemudi profesional untuk menjamin kenyamanan Anda.</p>
+    <!-- SECTION: PILIHAN ARMADA KAMI -->
+    <section id="armada" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase" data-id="fleet-badge" data-en="Vehicle Fleet">Armada Kendaraan</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2" data-id="fleet-title" data-en="Our Prime Vehicle Choices">Pilihan Armada Prima Kami</h2>
+                <p class="text-slate-500 mt-4" data-id="fleet-desc" data-en="Clean, well-maintained vehicles with driver included to ensure your journey comfort.">Kendaraan bersih, terawat, dan sudah termasuk pengemudi profesional untuk menjamin kenyamanan Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Fleet 1: Avanza -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="images/mobil-senggigi.jpg" alt="Avanza / Xenia / Ertiga" class="w-full h-full object-cover block" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Avanza / Xenia / Ertiga</h3>
+                        <p class="text-slate-500 text-xs mt-1" data-id="f1-desc" data-en="Ideal for families or small groups">Ideal untuk perjalanan keluarga atau rombongan kecil.</p>
+                        <div class="mt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f1-p" data-en="Max 5 Passengers">Kapasitas Maks. 5 Penumpang</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f1-b" data-en="2-3 Medium Bags">Bagasi 2-3 Koper</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-snowflake text-brand-orange"></i> <span data-id="f1-a" data-en="Full Double AC">Full AC Dual Zone</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet 2: Innova -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="images/mobil-bangsal.jpg" alt="Innova Reborn / Zenix" class="w-full h-full object-cover block" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Innova Reborn / Zenix</h3>
+                        <p class="text-slate-500 text-xs mt-1" data-id="f2-desc" data-en="Premium comfort for long distances">Kenyamanan ekstra premium untuk perjalanan jarak jauh.</p>
+                        <div class="mt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f2-p" data-en="Max 6 Passengers">Kapasitas Maks. 6 Penumpang</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f2-b" data-en="3-4 Large Bags">Bagasi 3-4 Koper Besar</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-couch text-brand-orange"></i> <span data-id="f2-a" data-en="Spacious Cabin Comfort">Kabin Luas & Suspensi Nyaman</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet 3: HiAce -->
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="images/mobil-sembalun.jpg" alt="Toyota HiAce Commuter / Premio" class="w-full h-full object-cover block" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Toyota HiAce Commuter/Premio</h3>
+                        <p class="text-slate-500 text-xs mt-1" data-id="f3-desc" data-en="Best choice for large groups & trekking teams">Solusi terbaik untuk grup besar & tim pendaki.</p>
+                        <div class="mt-4 space-y-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f3-p" data-en="Max 12-14 Passengers">Kapasitas 12 - 14 Penumpang</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f3-b" data-en="Large Cargo Capacity">Kapasitas Bagasi/Carrier Melimpah</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-van-shuttle text-brand-orange"></i> <span data-id="f3-a" data-en="Group Travel Luxury">Kabin Tinggi & Legah</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- Fleet 1: Avanza -->
-            <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-xl transition duration-300">
-                <div>
-                    <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
-                        <img src="images/mobil-senggigi.jpg" 
-                             alt="Avanza / Xenia / Ertiga" 
-                             class="w-full h-full object-cover block" 
-                             loading="lazy">
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue">Avanza / Xenia / Ertiga</h3>
-                    <p class="text-slate-500 text-xs mt-1" data-id="f1-desc" data-en="Ideal for families or small groups">Ideal untuk perjalanan keluarga atau rombongan kecil.</p>
-                    <div class="mt-4 space-y-2 text-xs text-slate-600">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f1-p" data-en="Max 5 Passengers">Kapasitas Maks. 5 Penumpang</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f1-b" data-en="2-3 Medium Bags">Bagasi 2-3 Koper</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-snowflake text-brand-orange"></i> <span data-id="f1-a" data-en="Full Double AC">Full AC Dual Zone</span></div>
-                    </div>
-                </div>
+    <!-- KOTAK PROMO RINJANI -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+        <div class="p-6 sm:p-8 bg-gradient-to-r from-brand-blue to-slate-900 rounded-2xl text-white shadow-xl relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center sm:text-left z-10">
+                <span class="bg-brand-orange text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block" data-id="rinjani-badge" data-en="Special Trekking Shuttle">Layanan Khusus Pendaki</span>
+                <h3 class="text-xl sm:text-2xl font-black text-white" data-id="rinjani-title" data-en="Mount Rinjani Trekking Package">Transportasi & Paket Pendakian Rinjani</h3>
+                <p class="text-slate-300 text-xs sm:text-sm max-w-xl" data-id="rinjani-desc" data-en="Private airport shuttle to Sembalun/Senaru basecamp + full trekking service support available.">Layanan jemput privat Bandara ke Basecamp Senaru/Sembalun + dukungan penuh logistik pendakian Rinjani.</p>
             </div>
-
-            <!-- Fleet 2: Innova -->
-            <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-xl transition duration-300">
-                <div>
-                    <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
-                        <img src="images/mobil-bangsal.jpg" 
-                             alt="Innova Reborn / Zenix" 
-                             class="w-full h-full object-cover block" 
-                             loading="lazy">
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue">Innova Reborn / Zenix</h3>
-                    <p class="text-slate-500 text-xs mt-1" data-id="f2-desc" data-en="Premium comfort for long distances">Kenyamanan ekstra premium untuk perjalanan jarak jauh.</p>
-                    <div class="mt-4 space-y-2 text-xs text-slate-600">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f2-p" data-en="Max 6 Passengers">Kapasitas Maks. 6 Penumpang</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f2-b" data-en="3-4 Large Bags">Bagasi 3-4 Koper Besar</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-couch text-brand-orange"></i> <span data-id="f2-a" data-en="Spacious Cabin Comfort">Kabin Luas & Suspensi Nyaman</span></div>
-                    </div>
-                </div>
+            <div class="shrink-0 z-10 w-full sm:w-auto">
+                <a href="rinjani/list-trekking.html" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-sm">
+                    <i class="fa-solid fa-mountain"></i>
+                    <span data-id="rinjani-btn" data-en="Explore Rinjani Packages">Lihat Paket Rinjani</span>
+                </a>
             </div>
-
-            <!-- Fleet 3: HiAce -->
-            <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-xl transition duration-300">
-                <div>
-                    <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
-                        <img src="images/mobil-sembalun.jpg" 
-                             alt="Toyota HiAce Commuter / Premio" 
-                             class="w-full h-full object-cover block" 
-                             loading="lazy">
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue">Toyota HiAce Commuter/Premio</h3>
-                    <p class="text-slate-500 text-xs mt-1" data-id="f3-desc" data-en="Best choice for large groups & trekking teams">Solusi terbaik untuk grup besar & tim pendaki.</p>
-                    <div class="mt-4 space-y-2 text-xs text-slate-600">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> <span data-id="f3-p" data-en="Max 12-14 Passengers">Kapasitas 12 - 14 Penumpang</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> <span data-id="f3-b" data-en="Large Cargo Capacity">Kapasitas Bagasi/Carrier Melimpah</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-van-shuttle text-brand-orange"></i> <span data-id="f3-a" data-en="Group Travel Luxury">Kabin Tinggi & Legah</span></div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
-</section>
-    <!-- ... penutup section #armada ... -->
-</section>
-
-<!-- SISIPKAN KOTAK PROMO RINJANI DI SINI -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
-    <div class="p-6 sm:p-8 bg-gradient-to-r from-brand-blue to-slate-900 rounded-2xl text-white shadow-xl relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-6">
-        <div class="space-y-2 text-center sm:text-left z-10">
-            <span class="bg-brand-orange text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block" data-id="rinjani-badge" data-en="Special Trekking Shuttle">Layanan Khusus Pendaki</span>
-            <h3 class="text-xl sm:text-2xl font-black text-white" data-id="rinjani-title" data-en="Mount Rinjani Trekking Package">Transportasi & Paket Pendakian Rinjani</h3>
-            <p class="text-slate-300 text-xs sm:text-sm max-w-xl" data-id="rinjani-desc" data-en="Private airport shuttle to Sembalun/Senaru basecamp + full trekking service support available.">Layanan jemput privat Bandara ke Basecamp Senaru/Sembalun + dukungan penuh logistik pendakian Rinjani.</p>
-        </div>
-        <div class="shrink-0 z-10 w-full sm:w-auto">
-            <!-- Di file index.html -->
-        <a href="rinjani/list-trekking.html" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-sm">
-      <i class="fa-solid fa-mountain"></i>
-    <span data-id="rinjani-btn" data-en="Explore Rinjani Packages">Lihat Paket Rinjani</span>
-</a>
-        </div>
-    </div>
-</div>
-
-<!-- ... awal section #rute-populer ... -->
-<section id="rute-populer" class="py-20 bg-slate-50">
 
     <!-- 5. SECTION: PILIHAN RUTE POPULER -->
     <section id="rute-populer" class="py-20 bg-slate-50">
@@ -528,67 +514,7 @@
         </span>
     </a>
 
-    <!-- JAVASCRIPT: MULTILINGUAL (WITH LOCALSTORAGE) & MOBILE MENU -->
-    <script>
-        // Toggle Menu Mobile
-        document.getElementById('menu-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        const originalText = {};
-
-        document.addEventListener("DOMContentLoaded", () => {
-            // Kumpulkan teks asli
-            document.querySelectorAll('[data-id]').forEach(el => {
-                const id = el.getAttribute('data-id');
-                originalText[id] = el.innerHTML;
-            });
-
-            // Cek bahasa tersimpan di localStorage
-            const savedLang = localStorage.getItem('transportkita_lang') || 'id';
-            switchLanguage(savedLang, false);
-        });
-
-        // Fungsi Switcher Bahasa
-        function switchLanguage(lang, savePreference = true) {
-            if (savePreference) {
-                localStorage.setItem('transportkita_lang', lang);
-            }
-
-            document.querySelectorAll('[data-id]').forEach(el => {
-                const id = el.getAttribute('data-id');
-                if (lang === 'en') {
-                    const enText = el.getAttribute('data-en');
-                    if (enText) el.innerHTML = enText;
-                } else {
-                    if (originalText[id]) el.innerHTML = originalText[id];
-                }
-            });
-
-            updateButtonStyles(lang);
-        }
-
-        function updateButtonStyles(lang) {
-            const activeClasses = ["bg-brand-blue", "text-white"];
-            const inactiveClasses = ["text-slate-600"];
-
-            const idBtn = document.getElementById('lang-id-btn');
-            const enBtn = document.getElementById('lang-en-btn');
-            const idBtnMob = document.getElementById('lang-id-btn-mob');
-            const enBtnMob = document.getElementById('lang-en-btn-mob');
-
-            if (lang === 'en') {
-                if(enBtn) { enBtn.classList.add(...activeClasses); enBtn.classList.remove(...inactiveClasses); }
-                if(idBtn) { idBtn.classList.remove(...activeClasses); idBtn.classList.add(...inactiveClasses); }
-                if(enBtnMob) { enBtnMob.classList.add(...activeClasses); enBtnMob.classList.remove(...inactiveClasses); }
-                if(idBtnMob) { idBtnMob.classList.remove(...activeClasses); idBtnMob.classList.add(...inactiveClasses); }
-            } else {
-                if(idBtn) { idBtn.classList.add(...activeClasses); idBtn.classList.remove(...inactiveClasses); }
-                if(enBtn) { enBtn.classList.remove(...activeClasses); enBtn.classList.add(...inactiveClasses); }
-                if(idBtnMob) { idBtnMob.classList.add(...activeClasses); idBtnMob.classList.remove(...inactiveClasses); }
-                if(enBtnMob) { enBtnMob.classList.remove(...activeClasses); enBtnMob.classList.add(...inactiveClasses); }
-            }
-        }
-    </script>
+    <!-- PEMUATAN JAVASCRIPT EXTERNAL (DEFER UNTUK PERFORMA TERBAIK) -->
+    <script src="js/main.js" defer></script>
 </body>
 </html>
