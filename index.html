@@ -36,15 +36,21 @@
             }
         }
     </script>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-  <!-- 1. NAVBAR -->
+    <!-- STYLE UNTUK Sembunyikan Scrollbar & Efek Smooth Scroll -->
+    <style>
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- 1. NAVBAR -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 
-                <!-- Logo Brand (Sangat Responsif) -->
+                <!-- Logo Brand -->
                 <div class="flex items-center">
                     <a href="#beranda" class="text-base sm:text-2xl font-black text-brand-blue tracking-wider flex items-center gap-1.5">
                         <i class="fa-solid fa-car-side text-brand-orange text-lg sm:text-2xl"></i> 
@@ -68,15 +74,13 @@
                     </div>
                 </div>
 
-                <!-- Tombol Mobile Menu & Bahasa (Ringkas & Lega) -->
+                <!-- Tombol Mobile Menu & Bahasa -->
                 <div class="flex items-center gap-1.5 md:hidden">
-                    <!-- Tombol Bahasa Kompak -->
                     <div class="flex items-center bg-slate-100 p-0.5 rounded-md border border-slate-200 text-[10px]">
                         <button onclick="switchLanguage('id')" id="lang-id-btn-mob" class="px-1 py-0.5 rounded bg-brand-blue text-white font-bold">ID</button>
                         <button onclick="switchLanguage('en')" id="lang-en-btn-mob" class="px-1 py-0.5 rounded text-slate-600 font-bold">EN</button>
                     </div>
                     
-                    <!-- Tombol Garis Tiga dengan Padding Pas -->
                     <button id="menu-btn" class="text-slate-700 hover:text-brand-blue p-2 focus:outline-none" aria-label="Open Menu">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
@@ -118,7 +122,7 @@
         </div>
     </section>
 
-    <!-- 3. MENGAPA MEMILIH KAMI -->
+    <!-- 3. MENGAPA MEMILIH KAMI (SLIDER PROPORSIONAL DI HP) -->
     <section id="keunggulan" class="py-16 sm:py-20 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
@@ -127,10 +131,10 @@
                 <p class="text-slate-500 mt-2 sm:mt-4 text-sm sm:text-base" data-id="why-desc" data-en="Customer trust is our greatest asset. We continue to ensure every aspect of your journey is handled professionally.">Kepercayaan pelanggan adalah aset terbesar kami. Kami terus memastikan setiap aspek perjalanan Anda ditangani secara profesional.</p>
             </div>
 
-            <!-- Horizontal Slider untuk HP / Grid 3 Kolom untuk Desktop -->
-            <div id="why-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4">
+            <!-- Horizontal Slider (Lebar pas & presisi) -->
+            <div id="why-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 px-2 sm:px-0">
                 <!-- Poin 1 -->
-                <div class="why-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-xl mb-4">
                             <i class="fa-solid fa-user-tie"></i>
@@ -140,7 +144,7 @@
                     </div>
                 </div>
                 <!-- Poin 2 -->
-                <div class="why-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center text-xl mb-4">
                             <i class="fa-solid fa-tags"></i>
@@ -150,7 +154,7 @@
                     </div>
                 </div>
                 <!-- Poin 3 -->
-                <div class="why-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-xl mb-4">
                             <i class="fa-solid fa-compass"></i>
@@ -163,7 +167,7 @@
         </div>
     </section>
 
-    <!-- 4. PILIHAN LAYANAN -->
+    <!-- 4. PILIHAN LAYANAN (SLIDER PROPORSIONAL DI HP) -->
     <section id="layanan" class="py-16 sm:py-20 bg-slate-100 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
@@ -172,15 +176,15 @@
                 <p class="text-slate-500 mt-2 sm:mt-4 text-sm sm:text-base" data-id="serv-desc" data-en="All our fleets are regularly cleaned, equipped with cool AC, and maintained periodically to ensure full comfort.">Seluruh armada kami dibersihkan secara rutin, dilengkapi AC dingin, dan dirawat berkala untuk memastikan kenyamanan penuh.</p>
             </div>
 
-            <!-- Horizontal Slider untuk HP / Grid 3 Kolom untuk Desktop -->
-            <div id="serv-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4">
+            <!-- Horizontal Slider (Lebar pas & presisi) -->
+            <div id="serv-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 px-2 sm:px-0">
                 <!-- Kolom 1 -->
-                <div class="serv-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-orange-50 text-brand-orange text-xl sm:text-2xl flex items-center justify-center rounded-xl mb-4 sm:mb-6">
+                        <div class="w-12 h-12 bg-orange-50 text-brand-orange text-xl flex items-center justify-center rounded-xl mb-4">
                             <i class="fa-solid fa-route"></i>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-brand-blue mb-2 sm:mb-3" data-id="serv-c1-t" data-en="Travel Routes">Rute Perjalanan</h3>
+                        <h3 class="text-lg font-bold text-brand-blue mb-2" data-id="serv-c1-t" data-en="Travel Routes">Rute Perjalanan</h3>
                         <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6" data-id="serv-c1-d" data-en="Information on regular intercity travel routes, optimized business/family travel maps in the Lombok Island area.">
                             Informasi jadwal rute perjalanan reguler antarkota, peta jalur perjalanan dinas/keluarga teroptimasi di area Pulau Lombok.
                         </p>
@@ -191,12 +195,12 @@
                 </div>
 
                 <!-- Kolom 2 -->
-                <div class="serv-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-brand-blue text-xl sm:text-2xl flex items-center justify-center rounded-xl mb-4 sm:mb-6">
+                        <div class="w-12 h-12 bg-blue-50 text-brand-blue text-xl flex items-center justify-center rounded-xl mb-4">
                             <i class="fa-solid fa-plane-arrival"></i>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-brand-blue mb-2 sm:mb-3" data-id="serv-c2-t" data-en="Drop Airport Shuttle">Drop Airport Shuttle</h3>
+                        <h3 class="text-lg font-bold text-brand-blue mb-2" data-id="serv-c2-t" data-en="Drop Airport Shuttle">Drop Airport Shuttle</h3>
                         <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6" data-id="serv-c2-d" data-en="Private scheduled shuttle service directly from or to Lombok International Airport safely and on-time.">
                             Layanan antar-jemput terjadwal langsung secara privat dari atau menuju Bandara Internasional Lombok secara aman dan on-time.
                         </p>
@@ -207,12 +211,12 @@
                 </div>
 
                 <!-- Kolom 3 -->
-                <div class="serv-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
                     <div>
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-orange-50 text-brand-orange text-xl sm:text-2xl flex items-center justify-center rounded-xl mb-4 sm:mb-6">
+                        <div class="w-12 h-12 bg-orange-50 text-brand-orange text-xl flex items-center justify-center rounded-xl mb-4">
                             <i class="fa-solid fa-map-location-dot"></i>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-brand-blue mb-2 sm:mb-3" data-id="serv-c3-t" data-en="Destination Tour">Tour Wisata Destinasi</h3>
+                        <h3 class="text-lg font-bold text-brand-blue mb-2" data-id="serv-c3-t" data-en="Destination Tour">Tour Wisata Destinasi</h3>
                         <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6" data-id="serv-c3-d" data-en="Exploration trips to popular destinations: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, to boat transfers to Gili Trawangan.">
                             Trip eksplorasi destinasi populer: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, hingga transfer penyeberangan ke Gili Trawangan.
                         </p>
@@ -225,61 +229,6 @@
         </div>
     </section>
 
-    <!-- SECTION TAMBAHAN: TESTIMONI PELANGGAN -->
-    <section class="py-16 sm:py-20 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-                <span class="text-brand-orange font-bold text-xs sm:text-sm tracking-wider uppercase" data-id="testi-badge" data-en="Customer Reviews">Ulasan Wisatawan</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-1 sm:mt-2" data-id="testi-title" data-en="What Our Customers Say">Apa Kata Pelanggan Kami?</h2>
-            </div>
-
-            <!-- Horizontal Slider untuk HP / Grid 3 Kolom untuk Desktop -->
-            <div id="testi-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4">
-                <!-- Testi 1 -->
-                <div class="testi-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="text-brand-orange mb-3 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-xs sm:text-sm italic" data-id="t1-text" data-en="Driver came on time at BIL airport with a clear name board. Very clean car and friendly service to Senaru. Highly recommended!">"Driver datang tepat waktu di bandara BIL membawa papan nama. Mobil sangat bersih dan pelayanan ramah menuju Senaru. Sangat direkomendasikan!"</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200">
-                        <h5 class="font-bold text-brand-blue text-sm">Budi Santoso</h5>
-                        <span class="text-xs text-slate-400">Jakarta (Wisatawan Pendaki)</span>
-                    </div>
-                </div>
-
-                <!-- Testi 2 -->
-                <div class="testi-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="text-brand-orange mb-3 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-xs sm:text-sm italic" data-id="t2-text" data-en="Great service! Driver helped us with public boat tickets to Gili Trawangan at Bangsal port. Very smooth journey.">"Layanan luar biasa! Driver membantu kami hingga area penyeberangan ke Gili Trawangan di Pelabuhan Bangsal. Perjalanan sangat mulus."</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200">
-                        <h5 class="font-bold text-brand-blue text-sm">Sarah Jenkins</h5>
-                        <span class="text-xs text-slate-400">Australia (Tourist)</span>
-                    </div>
-                </div>
-
-                <!-- Testi 3 -->
-                <div class="testi-card min-w-[85%] sm:min-w-[70%] md:min-w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="text-brand-orange mb-3 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-sm italic" data-id="t3-text" data-en="Transparent fixed pricing as promised. No hidden fees. The Innova car was very comfortable for our family trip to Kuta Mandalika.">"Harga transparan tanpa biaya tersembunyi sesuai kesepakatan WA. Mobil Innova bersih dan nyaman untuk perjalanan keluarga ke Kuta Mandalika."</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200">
-                        <h5 class="font-bold text-brand-blue text-sm">Hendrik Kurniawan</h5>
-                        <span class="text-xs text-slate-400">Surabaya (Liburan Keluarga)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- SECTION: PILIHAN ARMADA KAMI -->
     <section id="armada" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -497,95 +446,61 @@
         </div>
     </section>
 
-   <!-- SECTION TAMBAHAN: TESTIMONI PELANGGAN (SLIDER AUTOMATIC) -->
+    <!-- SECTION TAMBAHAN: TESTIMONI PELANGGAN (SLIDER PROPORSIONAL DI HP) -->
     <section class="py-16 sm:py-20 bg-white overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
                 <span class="text-brand-orange font-bold text-xs sm:text-sm tracking-wider uppercase" data-id="testi-badge" data-en="Customer Reviews">Ulasan Wisatawan</span>
                 <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-1 sm:mt-2" data-id="testi-title" data-en="What Our Customers Say">Apa Kata Pelanggan Kami?</h2>
             </div>
 
-            <!-- Container Slider -->
-            <div class="relative">
-                <!-- Wrapper Kartu Testimoni -->
-                <div id="testimonial-slider" class="relative min-h-[220px] sm:min-h-[200px]">
-                    
-                    <!-- Testi 1 -->
-                    <div class="testi-slide transition-opacity duration-500 ease-in-out absolute inset-0 opacity-100 z-10 pointer-events-auto">
-                        <div class="p-6 sm:p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full">
-                            <div>
-                                <div class="text-brand-orange mb-3 text-sm sm:text-base">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                                <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed" data-id="t1-text" data-en="Driver came on time at BIL airport with a clear name board. Very clean car and friendly service to Senaru. Highly recommended!">"Driver datang tepat waktu di bandara BIL membawa papan nama. Mobil sangat bersih dan pelayanan ramah menuju Senaru. Sangat direkomendasikan!"</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
-                                <div>
-                                    <h5 class="font-bold text-brand-blue text-sm sm:text-base">Budi Santoso</h5>
-                                    <span class="text-xs text-slate-400">Jakarta (Wisatawan Pendaki)</span>
-                                </div>
-                                <i class="fa-solid fa-quote-right text-slate-200 text-3xl"></i>
-                            </div>
+            <!-- Horizontal Slider (Lebar pas & presisi) -->
+            <div id="testi-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 px-2 sm:px-0">
+                <!-- Testi 1 -->
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-orange mb-3 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
+                        <p class="text-slate-600 text-xs sm:text-sm italic" data-id="t1-text" data-en="Driver came on time at BIL airport with a clear name board. Very clean car and friendly service to Senaru. Highly recommended!">"Driver datang tepat waktu di bandara BIL membawa papan nama. Mobil sangat bersih dan pelayanan ramah menuju Senaru. Sangat direkomendasikan!"</p>
                     </div>
-
-                    <!-- Testi 2 -->
-                    <div class="testi-slide transition-opacity duration-500 ease-in-out absolute inset-0 opacity-0 z-0 pointer-events-none">
-                        <div class="p-6 sm:p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full">
-                            <div>
-                                <div class="text-brand-orange mb-3 text-sm sm:text-base">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                                <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed" data-id="t2-text" data-en="Great service! Driver helped us with public boat tickets to Gili Trawangan at Bangsal port. Very smooth journey.">"Layanan luar biasa! Driver membantu kami hingga area penyeberangan ke Gili Trawangan di Pelabuhan Bangsal. Perjalanan sangat mulus."</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
-                                <div>
-                                    <h5 class="font-bold text-brand-blue text-sm sm:text-base">Sarah Jenkins</h5>
-                                    <span class="text-xs text-slate-400">Australia (Tourist)</span>
-                                </div>
-                                <i class="fa-solid fa-quote-right text-slate-200 text-3xl"></i>
-                            </div>
-                        </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <h5 class="font-bold text-brand-blue text-sm">Budi Santoso</h5>
+                        <span class="text-xs text-slate-400">Jakarta (Wisatawan Pendaki)</span>
                     </div>
-
-                    <!-- Testi 3 -->
-                    <div class="testi-slide transition-opacity duration-500 ease-in-out absolute inset-0 opacity-0 z-0 pointer-events-none">
-                        <div class="p-6 sm:p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full">
-                            <div>
-                                <div class="text-brand-orange mb-3 text-sm sm:text-base">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                </div>
-                                <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed" data-id="t3-text" data-en="Transparent fixed pricing as promised. No hidden fees. The Innova car was very comfortable for our family trip to Kuta Mandalika.">"Harga transparan tanpa biaya tersembunyi sesuai kesepakatan WA. Mobil Innova bersih dan nyaman untuk perjalanan keluarga ke Kuta Mandalika."</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
-                                <div>
-                                    <h5 class="font-bold text-brand-blue text-sm sm:text-base">Hendrik Kurniawan</h5>
-                                    <span class="text-xs text-slate-400">Surabaya (Liburan Keluarga)</span>
-                                </div>
-                                <i class="fa-solid fa-quote-right text-slate-200 text-3xl"></i>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
-                <!-- Tombol Navigasi Kiri / Kanan -->
-                <button id="prev-testi" class="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 bg-white text-brand-blue w-9 h-9 sm:w-11 sm:h-11 rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-brand-blue hover:text-white transition z-20">
-                    <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
-                </button>
-                <button id="next-testi" class="absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 bg-white text-brand-blue w-9 h-9 sm:w-11 sm:h-11 rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-brand-blue hover:text-white transition z-20">
-                    <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
-                </button>
-            </div>
+                <!-- Testi 2 -->
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-orange mb-3 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-xs sm:text-sm italic" data-id="t2-text" data-en="Great service! Driver helped us with public boat tickets to Gili Trawangan at Bangsal port. Very smooth journey.">"Layanan luar biasa! Driver membantu kami hingga area penyeberangan ke Gili Trawangan di Pelabuhan Bangsal. Perjalanan sangat mulus."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <h5 class="font-bold text-brand-blue text-sm">Sarah Jenkins</h5>
+                        <span class="text-xs text-slate-400">Australia (Tourist)</span>
+                    </div>
+                </div>
 
-            <!-- Indikator Titik (Dots) -->
-            <div class="flex justify-center items-center gap-2 mt-6">
-                <button class="testi-dot w-2.5 h-2.5 rounded-full bg-brand-blue transition-all" onclick="goToTestiSlide(0)"></button>
-                <button class="testi-dot w-2.5 h-2.5 rounded-full bg-slate-300 transition-all" onclick="goToTestiSlide(1)"></button>
-                <button class="testi-dot w-2.5 h-2.5 rounded-full bg-slate-300 transition-all" onclick="goToTestiSlide(2)"></button>
+                <!-- Testi 3 -->
+                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-orange mb-3 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic" data-id="t3-text" data-en="Transparent fixed pricing as promised. No hidden fees. The Innova car was very comfortable for our family trip to Kuta Mandalika.">"Harga transparan tanpa biaya tersembunyi sesuai kesepakatan WA. Mobil Innova bersih dan nyaman untuk perjalanan keluarga ke Kuta Mandalika."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <h5 class="font-bold text-brand-blue text-sm">Hendrik Kurniawan</h5>
+                        <span class="text-xs text-slate-400">Surabaya (Liburan Keluarga)</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     <!-- 6. FOOTER -->
     <footer class="bg-brand-dark text-slate-400 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -611,7 +526,7 @@
         </div>
     </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON (BULAT SEMPURNA DI MOBILE) -->
+    <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20mengenai%20layanan%20transportasi" 
        target="_blank" 
        rel="noopener noreferrer" 
@@ -622,6 +537,7 @@
             Chat via WhatsApp
         </span>
     </a>
+
     <!-- PEMUATAN JAVASCRIPT EXTERNAL (DEFER UNTUK PERFORMA TERBAIK) -->
     <script src="js/main.js" defer></script>
 </body>
