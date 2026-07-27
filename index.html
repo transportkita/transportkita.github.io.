@@ -118,105 +118,148 @@
         </div>
     </section>
 
-    <!-- 3. MENGAPA MEMILIH KAMI -->
-    <section id="keunggulan" class="py-20 bg-white">
+    <!-- 3. MENGAPA MEMILIH KAMI (SLIDER IN MOBILE / GRID IN DESKTOP) -->
+    <section id="keunggulan" class="py-16 sm:py-20 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold text-sm uppercase tracking-wider" data-id="why-badge" data-en="Our Advantages">Kelebihan Kami</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2" data-id="why-title" data-en="Why Choose TransportKita?">Mengapa Memilih TransportKita?</h2>
-                <p class="text-slate-500 mt-4 text-base" data-id="why-desc" data-en="Customer trust is our greatest asset. We continue to ensure every aspect of your journey is handled professionally.">Kepercayaan pelanggan adalah aset terbesar kami. Kami terus memastikan setiap aspek perjalanan Anda ditangani secara profesional.</p>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+                <span class="text-brand-orange font-bold text-xs sm:text-sm uppercase tracking-wider" data-id="why-badge" data-en="Our Advantages">Kelebihan Kami</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-1 sm:mt-2" data-id="why-title" data-en="Why Choose TransportKita?">Mengapa Memilih TransportKita?</h2>
+                <p class="text-slate-500 mt-2 sm:mt-4 text-sm sm:text-base" data-id="why-desc" data-en="Customer trust is our greatest asset. We continue to ensure every aspect of your journey is handled professionally.">Kepercayaan pelanggan adalah aset terbesar kami. Kami terus memastikan setiap aspek perjalanan Anda ditangani secara profesional.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Poin 1 -->
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-user-tie"></i>
+            <!-- Slider Wrapper for Mobile / Grid for Desktop -->
+            <div class="relative">
+                <div id="why-slider" class="relative min-h-[220px] md:min-h-0 md:grid md:grid-cols-3 md:gap-8">
+                    
+                    <!-- Poin 1 -->
+                    <div class="why-slide transition-opacity duration-500 ease-in-out absolute md:relative inset-0 opacity-100 z-10 pointer-events-auto md:opacity-100 md:z-auto md:pointer-events-auto">
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-xl mb-4">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                <h4 class="font-bold text-lg text-brand-blue mb-2" data-id="why-p1-t" data-en="Professional Service">Pelayanan Profesional</h4>
+                                <p class="text-slate-500 text-sm leading-relaxed" data-id="why-p1-d" data-en="Our team is always ready to assist from the booking process to the end of the trip with a friendly and responsive attitude.">Tim kami selalu siap membantu mulai dari proses pemesanan hingga perjalanan selesai dengan ramah dan responsif.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-lg text-brand-blue mb-2" data-id="why-p1-t" data-en="Professional Service">Pelayanan Profesional</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed" data-id="why-p1-d" data-en="Our team is always ready to assist from the booking process to the end of the trip with a friendly and responsive attitude.">Tim kami selalu siap membantu mulai dari proses pemesanan hingga perjalanan selesai dengan ramah dan responsif.</p>
+
+                    <!-- Poin 2 -->
+                    <div class="why-slide transition-opacity duration-500 ease-in-out absolute md:relative inset-0 opacity-0 z-0 pointer-events-none md:opacity-100 md:z-auto md:pointer-events-auto">
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center text-xl mb-4">
+                                    <i class="fa-solid fa-tags"></i>
+                                </div>
+                                <h4 class="font-bold text-lg text-brand-blue mb-2" data-id="why-p2-t" data-en="Transparent Pricing">Harga Transparan</h4>
+                                <p class="text-slate-500 text-sm leading-relaxed" data-id="why-p2-d" data-en="Competitive prices with no hidden fees. You will know the detailed costs clearly before departing.">Harga kompetitif tanpa biaya tersembunyi. Anda akan mengetahui rincian biaya secara jelas sebelum berangkat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Poin 3 -->
+                    <div class="why-slide transition-opacity duration-500 ease-in-out absolute md:relative inset-0 opacity-0 z-0 pointer-events-none md:opacity-100 md:z-auto md:pointer-events-auto">
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-xl mb-4">
+                                    <i class="fa-solid fa-compass"></i>
+                                </div>
+                                <h4 class="font-bold text-lg text-brand-blue mb-2" data-id="why-p3-t" data-en="Experienced Drivers">Driver Berpengalaman</h4>
+                                <p class="text-slate-500 text-sm leading-relaxed" data-id="why-p3-d" data-en="Reliable drivers who understand the ins and outs of Lombok routes while prioritizing safety aspects.">Pengemudi andal yang memahami seluk-beluk rute Lombok dengan tetap mengutamakan aspek keselamatan.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <!-- Poin 2 -->
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-brand-blue mb-2" data-id="why-p2-t" data-en="Transparent Pricing">Harga Transparan</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed" data-id="why-p2-d" data-en="Competitive prices with no hidden fees. You will know the detailed costs clearly before departing.">Harga kompetitif tanpa biaya tersembunyi. Anda akan mengetahui rincian biaya secara jelas sebelum berangkat.</p>
-                </div>
-                <!-- Poin 3 -->
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-compass"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-brand-blue mb-2" data-id="why-p3-t" data-en="Experienced Drivers">Driver Berpengalaman</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed" data-id="why-p3-d" data-en="Reliable drivers who understand the ins and outs of Lombok routes while prioritizing safety aspects.">Pengemudi andal yang memahami seluk-beluk rute Lombok dengan tetap mengutamakan aspek keselamatan.</p>
+
+                <!-- Indikator Titik Khusus Mobile (Why) -->
+                <div class="flex md:hidden justify-center items-center gap-2 mt-6">
+                    <button class="why-dot w-6 h-2.5 rounded-full bg-brand-blue transition-all" onclick="goToWhySlide(0)"></button>
+                    <button class="why-dot w-2.5 h-2.5 rounded-full bg-slate-300 transition-all" onclick="goToWhySlide(1)"></button>
+                    <button class="why-dot w-2.5 h-2.5 rounded-full bg-slate-300 transition-all" onclick="goToWhySlide(2)"></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. PILIHAN LAYANAN -->
-    <section id="layanan" class="py-20 bg-slate-100">
+    <!-- 4. PILIHAN LAYANAN (SLIDER IN MOBILE / GRID IN DESKTOP) -->
+    <section id="layanan" class="py-16 sm:py-20 bg-slate-100 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase" data-id="serv-badge" data-en="Our Services">Layanan Kami</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2" data-id="serv-title" data-en="Service Options & Fleet Quality">Pilihan Layanan & Kualitas Armada</h2>
-                <p class="text-slate-500 mt-4" data-id="serv-desc" data-en="All our fleets are regularly cleaned, equipped with cool AC, and maintained periodically to ensure full comfort.">Seluruh armada kami dibersihkan secara rutin, dilengkapi AC dingin, dan dirawat berkala untuk memastikan kenyamanan penuh.</p>
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+                <span class="text-brand-orange font-bold text-xs sm:text-sm tracking-wider uppercase" data-id="serv-badge" data-en="Our Services">Layanan Kami</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-1 sm:mt-2" data-id="serv-title" data-en="Service Options & Fleet Quality">Pilihan Layanan & Kualitas Armada</h2>
+                <p class="text-slate-500 mt-2 sm:mt-4 text-sm sm:text-base" data-id="serv-desc" data-en="All our fleets are regularly cleaned, equipped with cool AC, and maintained periodically to ensure full comfort.">Seluruh armada kami dibersihkan secara rutin, dilengkapi AC dingin, dan dirawat berkala untuk memastikan kenyamanan penuh.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Kolom 1 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div>
-                        <div class="w-14 h-14 bg-orange-50 text-brand-orange text-2xl flex items-center justify-center rounded-xl mb-6">
-                            <i class="fa-solid fa-route"></i>
+            <!-- Slider Wrapper for Mobile / Grid for Desktop -->
+            <div class="relative">
+                <div id="serv-slider" class="relative min-h-[300px] md:min-h-0 md:grid md:grid-cols-3 md:gap-8">
+                    
+                    <!-- Kolom 1 -->
+                    <div class="serv-slide transition-opacity duration-500 ease-in-out absolute md:relative inset-0 opacity-100 z-10 pointer-events-auto md:opacity-100 md:z-auto md:pointer-events-auto">
+                        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full hover:shadow-xl transition duration-300">
+                            <div>
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-orange-50 text-brand-orange text-xl sm:text-2xl flex items-center justify-center rounded-xl mb-4 sm:mb-6">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-blue mb-2 sm:mb-3" data-id="serv-c1-t" data-en="Travel Routes">Rute Perjalanan</h3>
+                                <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6" data-id="serv-c1-d" data-en="Information on regular intercity travel routes, optimized business/family travel maps in the Lombok Island area.">
+                                    Informasi jadwal rute perjalanan reguler antarkota, peta jalur perjalanan dinas/keluarga teroptimasi di area Pulau Lombok.
+                                </p>
+                            </div>
+                            <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-xs sm:text-sm hover:bg-opacity-95 transition">
+                                <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
                         </div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-3" data-id="serv-c1-t" data-en="Travel Routes">Rute Perjalanan</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6" data-id="serv-c1-d" data-en="Information on regular intercity travel routes, optimized business/family travel maps in the Lombok Island area.">
-                            Informasi jadwal rute perjalanan reguler antarkota, peta jalur perjalanan dinas/keluarga teroptimasi di area Pulau Lombok.
-                        </p>
                     </div>
-                    <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
-                        <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                    </a>
+
+                    <!-- Kolom 2 -->
+                    <div class="serv-slide transition-opacity duration-500 ease-in-out absolute md:relative inset-0 opacity-0 z-0 pointer-events-none md:opacity-100 md:z-auto md:pointer-events-auto">
+                        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full hover:shadow-xl transition duration-300">
+                            <div>
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-brand-blue text-xl sm:text-2xl flex items-center justify-center rounded-xl mb-4 sm:mb-6">
+                                    <i class="fa-solid fa-plane-arrival"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-blue mb-2 sm:mb-3" data-id="serv-c2-t" data-en="Drop Airport Shuttle">Drop Airport Shuttle</h3>
+                                <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6" data-id="serv-c2-d" data-en="Private scheduled shuttle service directly from or to Lombok International Airport safely and on-time.">
+                                    Layanan antar-jemput terjadwal langsung secara privat dari atau menuju Bandara Internasional Lombok secara aman dan on-time.
+                                </p>
+                            </div>
+                            <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-xs sm:text-sm hover:bg-opacity-95 transition">
+                                <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kolom 3 -->
+                    <div class="serv-slide transition-opacity duration-500 ease-in-out absolute md:relative inset-0 opacity-0 z-0 pointer-events-none md:opacity-100 md:z-auto md:pointer-events-auto">
+                        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-full hover:shadow-xl transition duration-300">
+                            <div>
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-orange-50 text-brand-orange text-xl sm:text-2xl flex items-center justify-center rounded-xl mb-4 sm:mb-6">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-brand-blue mb-2 sm:mb-3" data-id="serv-c3-t" data-en="Destination Tour">Tour Wisata Destinasi</h3>
+                                <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6" data-id="serv-c3-d" data-en="Exploration trips to popular destinations: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, to boat transfers to Gili Trawangan.">
+                                    Trip eksplorasi destinasi populer: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, hingga transfer penyeberangan ke Gili Trawangan.
+                                </p>
+                            </div>
+                            <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-xs sm:text-sm hover:bg-opacity-95 transition">
+                                <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Kolom 2 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div>
-                        <div class="w-14 h-14 bg-blue-50 text-brand-blue text-2xl flex items-center justify-center rounded-xl mb-6">
-                            <i class="fa-solid fa-plane-arrival"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-3" data-id="serv-c2-t" data-en="Drop Airport Shuttle">Drop Airport Shuttle</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6" data-id="serv-c2-d" data-en="Private scheduled shuttle service directly from or to Lombok International Airport safely and on-time.">
-                            Layanan antar-jemput terjadwal langsung secara privat dari atau menuju Bandara Internasional Lombok secara aman dan on-time.
-                        </p>
-                    </div>
-                    <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
-                        <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                    </a>
-                </div>
-
-                <!-- Kolom 3 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div>
-                        <div class="w-14 h-14 bg-orange-50 text-brand-orange text-2xl flex items-center justify-center rounded-xl mb-6">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-3" data-id="serv-c3-t" data-en="Destination Tour">Tour Wisata Destinasi</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6" data-id="serv-c3-d" data-en="Exploration trips to popular destinations: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, to boat transfers to Gili Trawangan.">
-                            Trip eksplorasi destinasi populer: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, hingga transfer penyeberangan ke Gili Trawangan.
-                        </p>
-                    </div>
-                    <a href="#rute-populer" class="w-full text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-sm hover:bg-opacity-95 transition">
-                        <span data-id="btn-detail" data-en="View Route Details">Lihat Pilihan Rute</span> <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                    </a>
+                <!-- Indikator Titik Khusus Mobile (Services) -->
+                <div class="flex md:hidden justify-center items-center gap-2 mt-6">
+                    <button class="serv-dot w-6 h-2.5 rounded-full bg-brand-blue transition-all" onclick="goToServSlide(0)"></button>
+                    <button class="serv-dot w-2.5 h-2.5 rounded-full bg-slate-300 transition-all" onclick="goToServSlide(1)"></button>
+                    <button class="serv-dot w-2.5 h-2.5 rounded-full bg-slate-300 transition-all" onclick="goToServSlide(2)"></button>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- SECTION: PILIHAN ARMADA KAMI -->
     <section id="armada" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
