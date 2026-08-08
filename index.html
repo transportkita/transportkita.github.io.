@@ -72,22 +72,16 @@
             }
         }
 
-         html {
-        max-width: 1280px;  /* ← Batas lebar maksimum */
-        margin: 0 auto;      /* ← Halaman jadi di tengah */
-        width: 100%;
-    }
-    body {
-        max-width: 1280px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    /* Kode CSS lama Anda tetap ada di bawah sini */
-    .package-card {
-        transition: all 0.3s ease;
-    }
-    ...
+        html {
+            max-width: 1280px;  /* Batas lebar maksimum */
+            margin: 0 auto;      /* Halaman jadi di tengah */
+            width: 100%;
+        }
+        body {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 antialiased">
@@ -100,8 +94,8 @@
     </a>
 
     <!-- Top Bar -->
-    <div class="bg-primary text-white text-xs md:text-sm py-2 hidden md:block">
-        <div class="container mx-auto px-2 flex justify-between items-center">
+    <div class="bg-primary text-white text-xs md:text-sm py-1.5 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex space-x-6">
                 <span><i class="fa-solid fa-check-circle mr-2"></i>Free Cancellation (7 days before)</span>
                 <span><i class="fa-solid fa-shield-halved mr-2"></i>Best Price Guarantee</span>
@@ -113,57 +107,52 @@
         </div>
     </div>
 
-  <!-- Header / Navbar -->
-<header class="bg-white shadow-sm sticky top-0 z-50">
-    <!-- Padding atas-bawah diperkecil (py-2 md:py-3) -->
-    <div class="container mx-auto px-4 py-2 md:py-3 flex justify-between items-center">
-        
-        <!-- Logo & Text -->
-        <a href="#" class="flex items-center gap-2 group">
-            <!-- Ukuran logo diperkecil di mobile (h-8 md:h-10) -->
-            <img src="images/logo.png" alt="AVENTRA Logo" class="h-8 md:h-10 w-auto rounded-lg">
-            
-            <!-- Teks Judul & Subjudul diperkecil -->
-            <div>
-                <h1 class="text-lg md:text-xl font-bold text-dark tracking-tight leading-none">AVENTRA</h1>
-                <p class="text-[8px] md:text-[9px] text-gray-500 font-medium uppercase tracking-wider">Official Rinjani Trekking Agency</p>
-            </div>
-        </a>
+    <!-- Header / Navbar (Super Compact) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-1.5 md:py-2.5 flex justify-between items-center">
+            <!-- Logo & Text -->
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="images/logo.png" alt="AVENTRA Logo" class="h-7 md:h-9 w-auto rounded-lg">
+                <div>
+                    <h1 class="text-base md:text-lg font-bold text-dark tracking-tight leading-none">AVENTRA</h1>
+                    <p class="text-[7px] md:text-[8px] text-gray-500 font-medium uppercase tracking-wider mt-0.5">Official Rinjani Trekking Agency</p>
+                </div>
+            </a>
 
-        <!-- Bagian Kanan -->
-        <div class="flex items-center gap-3">
-            <a href="https://wa.me/6281770570669" class="hidden lg:flex items-center gap-2 text-gray-600 hover:text-primary font-medium transition-colors">
-                <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i>
-                +62 817-7057-0669
-            </a>
-            <!-- Ukuran tombol diperkecil di mobile (px-3.5 py-1.5 text-xs) -->
-            <a href="https://wa.me/6281770570669" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-3.5 py-1.5 md:px-5 md:py-2 rounded-full font-semibold transition-all shadow hover:shadow-md text-xs md:text-sm flex items-center gap-1.5">
-                Book Now <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
+            <!-- Bagian Kanan -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/6281770570669" class="hidden lg:flex items-center gap-2 text-gray-600 hover:text-primary text-sm font-medium transition-colors">
+                    <i class="fa-brands fa-whatsapp text-green-500 text-lg"></i>
+                    +62 817-7057-0669
+                </a>
+                <a href="https://wa.me/6281770570669" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-3 py-1 md:px-4 md:py-1.5 rounded-full font-semibold transition-all shadow-sm hover:shadow text-xs md:text-sm flex items-center gap-1.5">
+                    Book Now <i class="fa-solid fa-arrow-right text-[10px] md:text-xs"></i>
+                </a>
+            </div>
         </div>
-    </div>
-</header>
-    <!-- Bagian Hero -->
+    </header>
+
+    <!-- Bagian Hero (Pop-up dihapus) -->
     <section class="relative bg-dark hero-section">
         <div class="absolute inset-0 overflow-hidden">
             <img src="images/hero.webp" alt="Mount Rinjani Summit" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
         </div>
 
-        <div class="relative container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 text-center md:text-left flex flex-col md:flex-row items-center">
+        <div class="relative container mx-auto px-4 pt-16 pb-28 md:pt-24 md:pb-40 text-center md:text-left flex flex-col md:flex-row items-center">
             
-            <div class="w-full md:w-2/3 lg:w-1/2 text-white z-10">
-                <div class="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+            <div class="w-full md:w-3/4 lg:w-2/3 text-white z-10">
+                <div class="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-3.5 py-1 rounded-full text-xs md:text-sm font-semibold mb-5">
                     🏆 Rated #1 Rinjani Trekking Agency — Licensed & Certified
                 </div>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3">
                     Mount Rinjani Trekking<br>
                     <span class="font-cursive text-secondary text-5xl md:text-7xl lg:text-8xl font-normal tracking-wide">From $127</span>
                 </h2>
-                <p class="text-lg md:text-xl text-gray-200 mb-4">
+                <p class="text-base md:text-xl text-gray-200 mb-4">
                     All-inclusive: Guide · Porter · Meals · Gear · Permit · Transport
                 </p>
-                <div class="flex flex-wrap gap-2 mb-6 text-sm">
+                <div class="flex flex-wrap gap-2 mb-6 text-xs md:text-sm justify-center md:justify-start">
                     <span class="bg-white/10 px-3 py-1 rounded-full">✅ Guide</span>
                     <span class="bg-white/10 px-3 py-1 rounded-full">✅ Porter</span>
                     <span class="bg-white/10 px-3 py-1 rounded-full">✅ Meals</span>
@@ -172,41 +161,27 @@
                     <span class="bg-white/10 px-3 py-1 rounded-full">✅ Transport</span>
                 </div>
 
-                <div class="flex items-center justify-center md:justify-start gap-2 mb-8 text-sm font-medium text-gray-300">
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-8 text-xs md:text-sm font-medium text-gray-300">
                     <i class="fa-solid fa-location-dot text-secondary"></i>
                     <p>Senaru, North Lombok — Officially Licensed Agency</p>
                 </div>
                 <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                    <a href="#packages" class="w-full sm:w-auto bg-primary hover:bg-blue-700 text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all shadow-lg shadow-primary/30">
+                    <a href="#packages" class="w-full sm:w-auto bg-primary hover:bg-blue-700 text-white px-7 py-3 rounded-full font-bold text-base md:text-lg transition-all shadow-lg shadow-primary/30 text-center">
                         View Packages
                     </a>
-                    <a href="https://wa.me/6281770570669" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all">
+                    <a href="https://wa.me/6281770570669" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-7 py-3 rounded-full font-bold text-base md:text-lg transition-all text-center">
                         <i class="fa-brands fa-whatsapp mr-2"></i> Chat on WhatsApp
                     </a>
                 </div>
                 
-                <div class="mt-10 flex items-center justify-center md:justify-start gap-4">
-                    <div class="flex -space-x-3">
-                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Traveler">
-                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Traveler">
-                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Traveler">
-                        <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-800 text-xs flex items-center justify-center font-bold">5k+</div>
+                <div class="mt-8 flex items-center justify-center md:justify-start gap-3">
+                    <div class="flex -space-x-2">
+                        <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-800 text-[10px] text-white flex items-center justify-center font-bold">5k+</div>
                     </div>
-                    <p class="text-sm font-medium text-gray-300">Trusted by <span class="text-white font-bold">5,000+</span> trekkers since 2018.</p>
-                </div>
-            </div>
-
-            <div class="hidden md:block w-full md:w-1/3 lg:w-auto absolute right-10 top-1/2 transform -translate-y-1/2 z-10">
-                <div class="bg-white rounded-2xl p-6 shadow-2xl text-center border-t-4 border-secondary animate-bounce" style="animation-duration: 3s;">
-                    <div class="text-secondary font-bold text-sm uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
-                        <i class="fa-solid fa-fire"></i> Special Offer
-                    </div>
-                    <div class="text-gray-800 font-bold text-xl mb-1">2D1N Summit</div>
-                    <div class="text-5xl font-extrabold text-primary mb-2">$127</div>
-                    <p class="text-gray-500 text-sm mb-4">Group of 7+ people. All-inclusive.</p>
-                    <a href="https://wa.me/6281770570669" target="_blank" class="block w-full bg-secondary hover:bg-orange-600 text-white font-bold py-2 rounded-xl transition-colors">
-                        Book Now on WhatsApp
-                    </a>
+                    <p class="text-xs md:text-sm font-medium text-gray-300">Trusted by <span class="text-white font-bold">5,000+</span> trekkers since 2018.</p>
                 </div>
             </div>
 
@@ -286,7 +261,6 @@
     <!-- Paket Trekking -->
     <section id="packages" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            
             <div class="flex justify-between items-end mb-10">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Our Trekking Packages</h2>
@@ -295,7 +269,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
                 <!-- Paket 1: 2D1N Summit -->
                 <div class="package-card bg-white rounded-2xl overflow-hidden border border-gray-100 relative group cursor-pointer">
                     <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
@@ -377,7 +350,6 @@
         </div>
     </section>
 
-    
     <!-- Apa yang Termasuk & Tidak Termasuk -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -447,7 +419,6 @@
         </div>
     </section>
 
-
     <!-- FAQ Pertanyaan Umum -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -456,7 +427,6 @@
                 <p class="text-gray-500">Pertanyaan Umum — Click to expand</p>
             </div>
             <div class="max-w-3xl mx-auto space-y-4">
-                
                 <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
                     <div class="p-5 flex justify-between items-center">
                         <h4 class="font-bold text-gray-800 text-lg">Why Choose AVENTRA?</h4>
@@ -546,8 +516,8 @@
                         <p>Public toilets are available at some campsites but are basic. For your comfort, we provide a <strong>private toilet tent</strong> with portable toilet for our groups — you'll have your own private toilet throughout the trek. This is one of the ways we ensure a comfortable experience!</p>
                     </div>
                 </div>
-
             </div>
+
             <div class="text-center mt-10">
                 <p class="text-gray-600 mb-4">Still have questions?</p>
                 <a href="https://wa.me/6281770570669" target="_blank" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full transition-colors">
@@ -608,7 +578,7 @@
         </div>
     </section>
 
-        <!-- Layanan Transportasi -->
+    <!-- Layanan Transportasi -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
@@ -658,7 +628,6 @@
     <footer class="bg-dark text-white pt-16 pb-8 border-t border-gray-800">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                
                 <div class="lg:col-span-1">
                     <div class="flex items-center gap-2 mb-4">
                         <div class="bg-primary text-white p-2 rounded-lg">
