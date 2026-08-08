@@ -63,18 +63,31 @@
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
         }
+
+        /* Dropdown animasi untuk Transport details */
+        .transport-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        .transport-details.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .hero-section {
-                padding-bottom: 8rem;
+                padding-bottom: 5rem;
             }
             .floating-form-container {
-                margin-top: -6rem;
+                margin-top: -3.5rem;
             }
         }
 
         html {
-            max-width: 1280px;  /* Batas lebar maksimum */
-            margin: 0 auto;      /* Halaman jadi di tengah */
+            max-width: 1280px;
+            margin: 0 auto;
             width: 100%;
         }
         body {
@@ -107,10 +120,9 @@
         </div>
     </div>
 
-    <!-- Header / Navbar (Super Compact) -->
+    <!-- Header / Navbar Compact -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-1.5 md:py-2.5 flex justify-between items-center">
-            <!-- Logo & Text -->
             <a href="#" class="flex items-center gap-2 group">
                 <img src="images/logo.png" alt="AVENTRA Logo" class="h-7 md:h-9 w-auto rounded-lg">
                 <div>
@@ -119,7 +131,6 @@
                 </div>
             </a>
 
-            <!-- Bagian Kanan -->
             <div class="flex items-center gap-3">
                 <a href="https://wa.me/6281770570669" class="hidden lg:flex items-center gap-2 text-gray-600 hover:text-primary text-sm font-medium transition-colors">
                     <i class="fa-brands fa-whatsapp text-green-500 text-lg"></i>
@@ -132,56 +143,56 @@
         </div>
     </header>
 
-    <!-- Bagian Hero (Pop-up dihapus) -->
+    <!-- Bagian Hero (Dibuat Lebih Pendek/Compact) -->
     <section class="relative bg-dark hero-section">
         <div class="absolute inset-0 overflow-hidden">
             <img src="images/hero.webp" alt="Mount Rinjani Summit" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
         </div>
 
-        <div class="relative container mx-auto px-4 pt-16 pb-28 md:pt-24 md:pb-40 text-center md:text-left flex flex-col md:flex-row items-center">
+        <div class="relative container mx-auto px-4 pt-10 pb-20 md:pt-16 md:pb-28 text-center md:text-left flex flex-col md:flex-row items-center">
             
             <div class="w-full md:w-3/4 lg:w-2/3 text-white z-10">
-                <div class="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-3.5 py-1 rounded-full text-xs md:text-sm font-semibold mb-5">
+                <div class="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-3 py-0.5 rounded-full text-xs font-semibold mb-3">
                     🏆 Rated #1 Rinjani Trekking Agency — Licensed & Certified
                 </div>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3">
+                <h2 class="text-3xl md:text-5xl lg:text-5xl font-bold leading-tight mb-2">
                     Mount Rinjani Trekking<br>
-                    <span class="font-cursive text-secondary text-5xl md:text-7xl lg:text-8xl font-normal tracking-wide">From $127</span>
+                    <span class="font-cursive text-secondary text-4xl md:text-6xl lg:text-7xl font-normal tracking-wide">From $127</span>
                 </h2>
-                <p class="text-base md:text-xl text-gray-200 mb-4">
+                <p class="text-sm md:text-lg text-gray-200 mb-3">
                     All-inclusive: Guide · Porter · Meals · Gear · Permit · Transport
                 </p>
-                <div class="flex flex-wrap gap-2 mb-6 text-xs md:text-sm justify-center md:justify-start">
-                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Guide</span>
-                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Porter</span>
-                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Meals</span>
-                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Gear</span>
-                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Tiket Rinjani</span>
-                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Transport</span>
+                <div class="flex flex-wrap gap-1.5 mb-4 text-xs justify-center md:justify-start">
+                    <span class="bg-white/10 px-2.5 py-0.5 rounded-full">✅ Guide</span>
+                    <span class="bg-white/10 px-2.5 py-0.5 rounded-full">✅ Porter</span>
+                    <span class="bg-white/10 px-2.5 py-0.5 rounded-full">✅ Meals</span>
+                    <span class="bg-white/10 px-2.5 py-0.5 rounded-full">✅ Gear</span>
+                    <span class="bg-white/10 px-2.5 py-0.5 rounded-full">✅ Permit</span>
+                    <span class="bg-white/10 px-2.5 py-0.5 rounded-full">✅ Transport</span>
                 </div>
 
-                <div class="flex items-center justify-center md:justify-start gap-2 mb-8 text-xs md:text-sm font-medium text-gray-300">
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-6 text-xs font-medium text-gray-300">
                     <i class="fa-solid fa-location-dot text-secondary"></i>
                     <p>Senaru, North Lombok — Officially Licensed Agency</p>
                 </div>
-                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                    <a href="#packages" class="w-full sm:w-auto bg-primary hover:bg-blue-700 text-white px-7 py-3 rounded-full font-bold text-base md:text-lg transition-all shadow-lg shadow-primary/30 text-center">
+                <div class="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
+                    <a href="#packages" class="w-full sm:w-auto bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold text-sm md:text-base transition-all shadow-lg shadow-primary/30 text-center">
                         View Packages
                     </a>
-                    <a href="https://wa.me/6281770570669" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-7 py-3 rounded-full font-bold text-base md:text-lg transition-all text-center">
-                        <i class="fa-brands fa-whatsapp mr-2"></i> Chat on WhatsApp
+                    <a href="https://wa.me/6281770570669" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-2.5 rounded-full font-bold text-sm md:text-base transition-all text-center">
+                        <i class="fa-brands fa-whatsapp mr-1.5"></i> Chat on WhatsApp
                     </a>
                 </div>
                 
-                <div class="mt-8 flex items-center justify-center md:justify-start gap-3">
+                <div class="mt-6 flex items-center justify-center md:justify-start gap-3">
                     <div class="flex -space-x-2">
-                        <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Traveler">
-                        <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Traveler">
-                        <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Traveler">
-                        <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-800 text-[10px] text-white flex items-center justify-center font-bold">5k+</div>
+                        <img class="w-7 h-7 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <img class="w-7 h-7 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <img class="w-7 h-7 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <div class="w-7 h-7 rounded-full border-2 border-white bg-gray-800 text-[9px] text-white flex items-center justify-center font-bold">5k+</div>
                     </div>
-                    <p class="text-xs md:text-sm font-medium text-gray-300">Trusted by <span class="text-white font-bold">5,000+</span> trekkers since 2018.</p>
+                    <p class="text-xs font-medium text-gray-300">Trusted by <span class="text-white font-bold">5,000+</span> trekkers since 2018.</p>
                 </div>
             </div>
 
@@ -190,7 +201,7 @@
 
     <!-- Formulir Pemesanan -->
     <div class="container mx-auto px-4 relative z-20 floating-form-container">
-        <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 -mt-20 md:-mt-24 border border-gray-100">
+        <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 -mt-10 md:-mt-14 border border-gray-100">
             
             <div class="flex gap-4 md:gap-8 border-b border-gray-200 mb-6 pb-4 overflow-x-auto whitespace-nowrap">
                 <button class="text-primary font-bold border-b-2 border-primary pb-4 -mb-[17px] flex items-center gap-2">
@@ -269,7 +280,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Paket 1: 2D1N Summit -->
+                <!-- Paket 1 -->
                 <div class="package-card bg-white rounded-2xl overflow-hidden border border-gray-100 relative group cursor-pointer">
                     <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
                         Popular Choice
@@ -295,7 +306,7 @@
                     </div>
                 </div>
 
-                <!-- Paket 2: 3D2N Summit & Lake -->
+                <!-- Paket 2 -->
                 <div class="package-card bg-white rounded-2xl overflow-hidden border border-gray-100 relative group cursor-pointer">
                     <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
                         ⭐ Best Seller
@@ -321,7 +332,7 @@
                     </div>
                 </div>
 
-                <!-- Paket 3: 4D3N Complete -->
+                <!-- Paket 3 -->
                 <div class="package-card bg-white rounded-2xl overflow-hidden border border-gray-100 relative group cursor-pointer">
                     <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
                         Premium
@@ -350,7 +361,7 @@
         </div>
     </section>
 
-    <!-- Apa yang Termasuk & Tidak Termasuk -->
+    <!-- What's Included & Excluded -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
@@ -358,7 +369,7 @@
                 <p class="text-gray-500">Transparent pricing — know exactly what you pay for.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Termasuk -->
+                <!-- Included -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-green-100">
                     <h3 class="text-xl font-bold text-green-700 mb-5 flex items-center gap-2">
                         <i class="fa-solid fa-check-circle"></i> Price Includes
@@ -391,7 +402,7 @@
                     </ul>
                 </div>
 
-                <!-- Tidak Termasuk -->
+                <!-- Excluded -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-red-100">
                     <h3 class="text-xl font-bold text-red-600 mb-5 flex items-center gap-2">
                         <i class="fa-solid fa-xmark-circle"></i> Price Excludes
@@ -419,12 +430,12 @@
         </div>
     </section>
 
-    <!-- FAQ Pertanyaan Umum -->
+    <!-- FAQ -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Common Questions</h2>
-                <p class="text-gray-500">Pertanyaan Umum — Click to expand</p>
+                <p class="text-gray-500">General Questions — Click to expand</p>
             </div>
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
@@ -578,47 +589,64 @@
         </div>
     </section>
 
-    <!-- Layanan Transportasi -->
+    <!-- Layanan Transportasi (English + Dropdown "Read More") -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Transportasi</h2>
-                <p class="text-gray-500">Antar-jemput aman & nyaman di seluruh Lombok</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Transport Services</h2>
+                <p class="text-gray-500">Safe, reliable & comfortable transfers across all Lombok</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <!-- Gambar -->
+                <!-- Image -->
                 <div class="rounded-2xl overflow-hidden shadow-lg">
-                    <img src="images/transport.jpg" alt="Layanan Transportasi Lombok" class="w-full h-72 object-cover">
+                    <img src="images/transport.jpg" alt="Lombok Transport Service" class="w-full h-72 object-cover">
                 </div>
 
-                <!-- Keterangan -->
+                <!-- Content -->
                 <div class="space-y-4">
-                    <h3 class="text-2xl font-bold text-gray-800">Antar-Jemput Bandara & Hotel</h3>
+                    <h3 class="text-2xl font-bold text-gray-800">Airport & Hotel Transfers</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Kami menyediakan layanan transportasi pribadi yang nyaman dan aman. Pengemudi berpengalaman, kendaraan bersih ber-AC, siap mengantar-jemput dari Bandara Internasional Lombok, Pelabuhan, hingga hotel di Senggigi, Kuta, Senaru, dan seluruh wilayah Lombok.
+                        We provide private, comfortable, and safe transfer services. Experienced drivers and clean, air-conditioned vehicles are ready to pick you up from Lombok International Airport (LOP), Harbors (Bangsal, Lembar), or your hotels in Senggigi, Kuta, Mataram, and Senaru.
                     </p>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-green-500 mt-1"></i>
-                            <span>Bandara ⇄ Hotel / Tempat Mulai Trek</span>
+                            <span>Airport ⇄ Hotel / Trekking Starting Points</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-green-500 mt-1"></i>
-                            <span>Semua tarif sudah termasuk biaya parkir & bahan bakar</span>
+                            <span>All rates include parking fees, toll & fuel</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-green-500 mt-1"></i>
-                            <span>Kendaraan bersih, ber-AC & pengemudi ramah</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
-                            <span>Tersedia mobil pribadi atau rombongan</span>
+                            <span>Clean, fully air-conditioned vehicles & friendly drivers</span>
                         </li>
                     </ul>
-                    <a href="https://wa.me/6281770570669?text=Halo%2C%20saya%20butuh%20layanan%20transportasi" target="_blank" class="inline-block bg-secondary hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-md mt-2">
-                        <i class="fa-brands fa-whatsapp mr-2"></i> Pesan Transportasi
-                    </a>
+
+                    <!-- Tombol Read More / Read Less -->
+                    <button id="transportToggleBtn" onclick="toggleTransportDetails()" class="inline-flex items-center gap-2 bg-secondary hover:bg-orange-600 text-white font-bold px-6 py-2.5 rounded-full transition-colors shadow-md mt-2 text-sm">
+                        <span>Read More</span>
+                        <i id="transportToggleIcon" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <!-- Dropdown Konten Tambahan -->
+                    <div id="transportDetails" class="transport-details">
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 mt-3 space-y-2 text-sm text-gray-600">
+                            <p class="font-semibold text-gray-800">Available Fleets & Routes:</p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong>Fleets:</strong> Toyota Avanza (up to 4 pax), Toyota Innova (up to 5 pax), Toyota HiAce (up to 12 pax).</li>
+                                <li><strong>Popular Routes:</strong> Lombok Airport to Senaru/Sembalun, Bangsal Harbor (Gili Islands) to Senaru, and Senggigi / Kuta Lombok transfers.</li>
+                                <li><strong>Flexible Timing:</strong> 24/7 on-demand pickup schedule tailored to your flight or boat arrival.</li>
+                            </ul>
+                            <div class="pt-2">
+                                <a href="https://wa.me/6281770570669?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20transport%20service" target="_blank" class="text-primary font-bold hover:underline inline-flex items-center gap-1 text-xs">
+                                    <i class="fa-brands fa-whatsapp text-green-500 text-sm"></i> Contact us directly on WhatsApp for transport booking
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -706,9 +734,26 @@
             trekDateInput.value = trekDateInput.min = `${yyyy}-${mm}-${dd}`;
         }
 
-        // FAQ Toggle Function
+        // FAQ Toggle
         function toggleFaq(element) {
             element.classList.toggle('active');
+        }
+
+        // Transport Read More Dropdown Toggle
+        function toggleTransportDetails() {
+            const details = document.getElementById('transportDetails');
+            const btnSpan = document.querySelector('#transportToggleBtn span');
+            const icon = document.getElementById('transportToggleIcon');
+
+            if (details.classList.contains('open')) {
+                details.classList.remove('open');
+                btnSpan.textContent = 'Read More';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                details.classList.add('open');
+                btnSpan.textContent = 'Read Less';
+                icon.style.transform = 'rotate(180deg)';
+            }
         }
     </script>
 </body>
