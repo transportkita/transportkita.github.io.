@@ -113,33 +113,36 @@
         </div>
     </div>
 
-   <!-- Header / Navbar -->
+  <!-- Header / Navbar -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <!-- Logo Bisa Diklik ke Atas Halaman, Gambar di Kiri, Teks di Kanan -->
-        <a href="#" class="flex items-center gap-3 group">
-            <!-- Gambar Logo dari folder images/ -->
-            <img src="images/logo.png" alt="AVENTRA Logo" class="h-10 w-auto rounded-lg">
-            <!-- Teks di Sebelah Kanan Logo -->
+    <!-- Padding atas-bawah diperkecil (py-2 md:py-3) -->
+    <div class="container mx-auto px-4 py-2 md:py-3 flex justify-between items-center">
+        
+        <!-- Logo & Text -->
+        <a href="#" class="flex items-center gap-2 group">
+            <!-- Ukuran logo diperkecil di mobile (h-8 md:h-10) -->
+            <img src="images/logo.png" alt="AVENTRA Logo" class="h-8 md:h-10 w-auto rounded-lg">
+            
+            <!-- Teks Judul & Subjudul diperkecil -->
             <div>
-                <h1 class="text-2xl font-bold text-dark tracking-tight leading-none">AVENTRA</h1>
-                <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest">Official Rinjani Trekking Agency</p>
+                <h1 class="text-lg md:text-xl font-bold text-dark tracking-tight leading-none">AVENTRA</h1>
+                <p class="text-[8px] md:text-[9px] text-gray-500 font-medium uppercase tracking-wider">Official Rinjani Trekking Agency</p>
             </div>
         </a>
 
-        <!-- Bagian Kanan: WhatsApp + Tombol Book Now -->
-        <div class="flex items-center gap-4">
+        <!-- Bagian Kanan -->
+        <div class="flex items-center gap-3">
             <a href="https://wa.me/6281770570669" class="hidden lg:flex items-center gap-2 text-gray-600 hover:text-primary font-medium transition-colors">
                 <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i>
                 +62 817-7057-0669
             </a>
-            <a href="https://wa.me/6281770570669" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm md:text-base flex items-center gap-2">
-                Book Now <i class="fa-solid fa-arrow-right"></i>
+            <!-- Ukuran tombol diperkecil di mobile (px-3.5 py-1.5 text-xs) -->
+            <a href="https://wa.me/6281770570669" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-3.5 py-1.5 md:px-5 md:py-2 rounded-full font-semibold transition-all shadow hover:shadow-md text-xs md:text-sm flex items-center gap-1.5">
+                Book Now <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
         </div>
     </div>
 </header>
-
     <!-- Bagian Hero -->
     <section class="relative bg-dark hero-section">
         <div class="absolute inset-0 overflow-hidden">
