@@ -1,456 +1,680 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVENTRA | Mount Rinjani Trekking — Official Agency</title>
+    <meta name="description" content="Official Mount Rinjani trekking agency. Licensed guides, all-inclusive packages with porter, meals, gear, permit & transport. Best price guaranteed.">
     
-    <!-- SEO & OPEN GRAPH META TAGS -->
-    <title>TransportKita - Layanan Transfer & Sewa Mobil + Sopir di Lombok</title>
-    <meta name="description" content="Layanan sewa mobil lengkap dengan pengemudi, antar jemput Bandara Lombok, transfer Pelabuhan Bangsal, Sembalun, Senaru, Senggigi & Kuta Mandalika. Tidak melayani sewa lepas kunci.">
-    <meta property="og:title" content="TransportKita - Layanan Transfer & Sewa Mobil + Sopir Lombok">
-    <meta property="og:description" content="Kendaraan bersih, nyaman, dan pengemudi profesional. Antar jemput bandara, wisata, hingga pendakian Rinjani.">
-    <meta property="og:image" content="images/hero-bg.jpg">
-    <meta property="og:type" content="website">
-
-    <!-- OPTIMASI PEMUATAN CSS UTAMA -->
-    <link rel="preload" href="css/style.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
-
-    <!-- FontAwesome untuk Icon -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        cursive: ['Caveat', 'cursive'],
+                    },
                     colors: {
-                        brand: {
-                            blue: '#0F2C59',
-                            orange: '#F86F03',
-                            dark: '#0B132B'
-                        }
+                        primary: '#1d4ed8',
+                        secondary: '#f97316',
+                        dark: '#0f172a',
                     }
                 }
             }
         }
     </script>
 
-    <!-- STYLE UNTUK Sembunyikan Scrollbar & Efek Smooth Scroll -->
     <style>
-        .scrollbar-none::-webkit-scrollbar { display: none; }
-        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+        .package-card {
+            transition: all 0.3s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+        }
+        .faq-item .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+        .faq-item .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-bottom: 8rem;
+            }
+            .floating-form-container {
+                margin-top: -6rem;
+            }
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+<body class="font-sans text-gray-800 bg-gray-50 antialiased">
 
-    <!-- 1. NAVBAR -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 sm:h-20">
-                
-                <!-- Logo Brand -->
-                <div class="flex items-center">
-                    <a href="#beranda" class="text-base sm:text-2xl font-black text-brand-blue tracking-wider flex items-center gap-1.5">
-                        <i class="fa-solid fa-car-side text-brand-orange text-lg sm:text-2xl"></i> 
-                        <span>TRANSPORTKITA</span>
-                    </a>
-                </div>
-
-                <!-- Menu Desktop -->
-                <div class="hidden md:flex items-center space-x-8 font-medium">
-                    <a href="#beranda" class="text-slate-600 hover:text-brand-blue transition py-2">Beranda</a>
-                    <a href="#keunggulan" class="text-slate-600 hover:text-brand-blue transition">Mengapa Kami</a>
-                    <a href="#layanan" class="text-slate-600 hover:text-brand-blue transition">Paket Layanan</a>
-                    <a href="#armada" class="text-slate-600 hover:text-brand-blue transition">Armada</a>
-                    <a href="#rute-populer" class="text-slate-600 hover:text-brand-blue transition">Rute Populer</a>
-                    <a href="#faq" class="text-slate-600 hover:text-brand-blue transition">FAQ</a>
-                    <a href="blog/index.html" class="text-slate-600 hover:text-brand-blue transition">Blog</a>
-                    
-                    <!-- Tombol Ganti Bahasa -->
-                    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 text-sm">
-                        <button onclick="switchLanguage('id')" class="px-2 py-1 rounded bg-brand-blue text-white font-bold transition">ID</button>
-                        <button onclick="switchLanguage('en')" class="px-2 py-1 rounded text-slate-600 font-bold transition">EN</button>
-                    </div>
-                </div>
-
-                <!-- Tombol Mobile Menu & Bahasa -->
-                <div class="flex items-center gap-1.5 md:hidden">
-                    <div class="flex items-center bg-slate-100 p-0.5 rounded-md border border-slate-200 text-[10px]">
-                        <button onclick="switchLanguage('id')" class="px-1 py-0.5 rounded bg-brand-blue text-white font-bold">ID</button>
-                        <button onclick="switchLanguage('en')" class="px-1 py-0.5 rounded text-slate-600 font-bold">EN</button>
-                    </div>
-                    
-                    <button id="menu-btn" class="text-slate-700 hover:text-brand-blue p-2 focus:outline-none" aria-label="Open Menu">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
-
-            </div>
+    <!-- WhatsApp Melayang -->
+    <a href="https://wa.me/6281770570669" target="_blank" class="whatsapp-float">
+        <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+            <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
         </div>
+    </a>
 
-        <!-- Menu Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-2 shadow-inner">
-            <a href="#beranda" class="block px-3 py-2 rounded-md text-brand-blue bg-slate-50 font-medium">Beranda</a>
-            <a href="#keunggulan" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50">Mengapa Kami</a>
-            <a href="#layanan" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50">Paket Layanan</a>
-            <a href="#armada" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50">Armada Kami</a>
-            <a href="#rute-populer" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50">Rute Populer</a>
-            <a href="#faq" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50">FAQ</a>
-            <a href="blog/index.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50">Blog</a>
-        </div>
-    </nav>
-
-    <!-- 2. HERO SECTION -->
-    <section id="beranda" class="relative bg-brand-dark min-h-[80vh] flex items-center text-white overflow-hidden py-16">
-        <div class="absolute inset-0 bg-[url('images/hero-bg.jpg')] bg-cover bg-center opacity-30"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7 space-y-6">
-                <span class="bg-brand-orange text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                    Lombok Professional Transport Service
-                </span>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-                    Layanan Transportasi & Sewa Mobil <span class="text-brand-orange">Dengan Sopir</span> di Lombok
-                </h1>
-                <p class="text-lg text-slate-300 max-w-xl">
-                    Kami menyediakan kendaraan bersih, nyaman, lengkap dengan pengemudi profesional. Melayani antar jemput bandara, wisata, dan perjalanan ke seluruh penjuru Lombok. <strong class="text-brand-orange">Tidak melayani sewa lepas kunci.</strong>
-                </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#rute-populer" class="bg-brand-orange text-white px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition shadow-lg shadow-brand-orange/20">Jelajahi Paket</a>
-                    <a href="contact.html" class="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/20 transition">Hubungi Kontak</a>
-                </div>
+    <!-- Top Bar -->
+    <div class="bg-primary text-white text-xs md:text-sm py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fa-solid fa-check-circle mr-2"></i>Free Cancellation (7 days before)</span>
+                <span><i class="fa-solid fa-shield-halved mr-2"></i>Best Price Guarantee</span>
+                <span><i class="fa-solid fa-lock mr-2"></i>Secure Booking</span>
             </div>
-        </div>
-    </section>
-
-    <!-- 3. MENGAPA MEMILIH KAMI (DITAMBAH POIN KE-4) -->
-    <section id="keunggulan" class="py-16 sm:py-20 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
-                <span class="text-brand-orange font-bold text-xs sm:text-sm uppercase tracking-wider">Kelebihan Kami</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-1 sm:mt-2">Mengapa Memilih TransportKita?</h2>
-                <p class="text-slate-500 mt-2 sm:mt-4 text-sm sm:text-base">Kepercayaan pelanggan adalah aset terbesar kami. Kami terus memastikan setiap aspek perjalanan Anda ditangani secara profesional.</p>
-            </div>
-
-            <div id="why-slider" class="flex md:grid md:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 px-2 sm:px-0">
-                <!-- Poin 1 -->
-                <div class="w-[82vw] max-w-[280px] sm:w-auto md:w-full snap-center shrink-0 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="w-10 h-10 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-user-tie"></i></div>
-                    <h4 class="font-bold text-base text-brand-blue mb-2">Pelayanan Profesional</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Tim kami selalu siap membantu mulai dari proses pemesanan hingga perjalanan selesai dengan ramah dan responsif.</p>
-                </div>
-                <!-- Poin 2 -->
-                <div class="w-[82vw] max-w-[280px] sm:w-auto md:w-full snap-center shrink-0 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="w-10 h-10 bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-tags"></i></div>
-                    <h4 class="font-bold text-base text-brand-blue mb-2">Harga Transparan</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Harga kompetitif tanpa biaya tersembunyi. Anda akan mengetahui rincian biaya secara jelas sebelum berangkat.</p>
-                </div>
-                <!-- Poin 3 -->
-                <div class="w-[82vw] max-w-[280px] sm:w-auto md:w-full snap-center shrink-0 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="w-10 h-10 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-compass"></i></div>
-                    <h4 class="font-bold text-base text-brand-blue mb-2">Driver Berpengalaman</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Pengemudi andal yang memahami seluk-beluk rute Lombok dengan tetap mengutamakan aspek keselamatan.</p>
-                </div>
-                <!-- Poin 4 (BARU DITAMBAH) -->
-                <div class="w-[82vw] max-w-[280px] sm:w-auto md:w-full snap-center shrink-0 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="w-10 h-10 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-user-check"></i></div>
-                    <h4 class="font-bold text-base text-brand-blue mb-2">Termasuk Pengemudi</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Semua paket sudah termasuk sopir & BBM. Anda tinggal duduk santai menikmati perjalanan tanpa menyetir sendiri.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. PILIHAN LAYANAN -->
-    <section id="layanan" class="py-16 sm:py-20 bg-slate-100 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-16">
-                <span class="text-brand-orange font-bold text-xs sm:text-sm tracking-wider uppercase">Layanan Kami</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-1 sm:mt-2">Pilihan Layanan & Kualitas Armada</h2>
-                <p class="text-slate-500 mt-2 sm:mt-4 text-sm sm:text-base">Seluruh armada kami dibersihkan secara rutin, dilengkapi AC dingin, dan dirawat berkala untuk memastikan kenyamanan penuh.</p>
-            </div>
-
-            <div id="serv-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 px-2 sm:px-0">
-                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-orange-50 text-brand-orange text-xl flex items-center justify-center rounded-xl mb-4"><i class="fa-solid fa-route"></i></div>
-                    <h3 class="text-lg font-bold text-brand-blue mb-2">Rute Perjalanan</h3>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Informasi jadwal rute perjalanan reguler antarkota, peta jalur perjalanan dinas/keluarga teroptimasi di area Pulau Lombok.</p>
-                    <a href="#rute-populer" class="w-full block text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-xs sm:text-sm hover:bg-opacity-95 transition">Lihat Pilihan Rute <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
-                </div>
-                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue text-xl flex items-center justify-center rounded-xl mb-4"><i class="fa-solid fa-plane-arrival"></i></div>
-                    <h3 class="text-lg font-bold text-brand-blue mb-2">Antar-Jemput Bandara</h3>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Layanan antar-jemput terjadwal langsung secara privat dari atau menuju Bandara Internasional Lombok secara aman dan tepat waktu.</p>
-                    <a href="#rute-populer" class="w-full block text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-xs sm:text-sm hover:bg-opacity-95 transition">Lihat Pilihan Rute <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
-                </div>
-                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-orange-50 text-brand-orange text-xl flex items-center justify-center rounded-xl mb-4"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <h3 class="text-lg font-bold text-brand-blue mb-2">Tour Wisata Destinasi</h3>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Trip eksplorasi destinasi populer: Senggigi, Kuta Mandalika, Sembalun, Tetebatu, hingga transfer penyeberangan ke Gili Trawangan.</p>
-                    <a href="#rute-populer" class="w-full block text-center bg-brand-blue text-white py-2.5 rounded-xl font-medium text-xs sm:text-sm hover:bg-opacity-95 transition">Lihat Pilihan Rute <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: PILIHAN ARMADA KAMI (DIPERTEGAS LAGI) -->
-    <section id="armada" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase">Armada Kendaraan</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2">Pilihan Armada Prima Kami</h2>
-                <p class="text-slate-500 mt-4">Kendaraan bersih, terawat, dan <strong>selalu termasuk pengemudi profesional</strong>. <strong class="text-brand-orange">KAMI TIDAK MELAYANI SEWA LEPAS KUNCI.</strong> Harga yang tertera sudah mencakup jasa pengemudi dan BBM.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-xl transition duration-300">
-                    <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
-                        <img src="images/mobil-senggigi.jpg" alt="Avanza / Xenia / Ertiga" class="w-full h-full object-cover block" loading="lazy">
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue">Avanza / Xenia / Ertiga</h3>
-                    <p class="text-slate-500 text-xs mt-1">Ideal untuk perjalanan keluarga atau rombongan kecil.</p>
-                    <div class="mt-4 space-y-2 text-xs text-slate-600">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> Kapasitas Maks. 5 Penumpang</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> Bagasi 2-3 Koper</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-snowflake text-brand-orange"></i> Full AC Dual Zone</div>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-xl transition duration-300">
-                    <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
-                        <img src="images/mobil-bangsal.jpg" alt="Innova Reborn / Zenix" class="w-full h-full object-cover block" loading="lazy">
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue">Innova Reborn / Zenix</h3>
-                    <p class="text-slate-500 text-xs mt-1">Kenyamanan ekstra premium untuk perjalanan jarak jauh.</p>
-                    <div class="mt-4 space-y-2 text-xs text-slate-600">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> Kapasitas Maks. 6 Penumpang</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> Bagasi 3-4 Koper Besar</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-couch text-brand-orange"></i> Kabin Luas & Suspensi Nyaman</div>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-xl transition duration-300">
-                    <div class="h-48 w-full bg-slate-200 rounded-xl mb-4 overflow-hidden relative">
-                        <img src="images/mobil-sembalun.jpg" alt="Toyota HiAce Commuter / Premio" class="w-full h-full object-cover block" loading="lazy">
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue">Toyota HiAce Commuter/Premio</h3>
-                    <p class="text-slate-500 text-xs mt-1">Solusi terbaik untuk grup besar & tim pendaki.</p>
-                    <div class="mt-4 space-y-2 text-xs text-slate-600">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-user text-brand-orange"></i> Kapasitas 12 - 14 Penumpang</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-suitcase text-brand-orange"></i> Kapasitas Bagasi Melimpah</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-van-shuttle text-brand-orange"></i> Kabin Tinggi & Legah</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KOTAK PROMO RINJANI -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
-        <div class="p-6 sm:p-8 bg-gradient-to-r from-brand-blue to-slate-900 rounded-2xl text-white shadow-xl flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="space-y-2 text-center sm:text-left">
-                <span class="bg-brand-orange text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block">Layanan Khusus Pendaki</span>
-                <h3 class="text-xl sm:text-2xl font-black text-white">Transportasi & Paket Pendakian Rinjani</h3>
-                <p class="text-slate-300 text-xs sm:text-sm max-w-xl">Layanan jemput privat Bandara ke Basecamp Senaru/Sembalun + dukungan penuh logistik pendakian Rinjani.</p>
-            </div>
-            <div class="shrink-0 w-full sm:w-auto">
-                <a href="rinjani/list-trekking.html" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-sm">
-                    <i class="fa-solid fa-mountain"></i> Lihat Paket Rinjani
-                </a>
+            <div>
+                <span><i class="fa-solid fa-headset mr-2"></i>24/7 Customer Support</span>
             </div>
         </div>
     </div>
 
-    <!-- 5. PILIHAN RUTE POPULER (DITAMBAH KETERANGAN HARGA) -->
-    <section id="rute-populer" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase">Jalur Terfavorit</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-brand-blue mt-2">Pilihan Rute Populer</h2>
-                <p class="text-slate-500 mt-4">Berbagai pilihan rute perjalanan terbaik dengan armada prima siap mengantar Anda ke destinasi utama di Lombok.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- RUTE 1 -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div><div class="w-full bg-slate-50 overflow-hidden"><img src="images/mobil-senaru.jpg" alt="Airport - Senaru" class="w-full h-48 object-cover block" loading="lazy"></div>
-                    <div class="p-6 text-center"><h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Senaru</h3><span class="text-brand-orange font-black text-lg block mb-3">Mulai Rp 650.000</span><p class="text-slate-500 text-sm leading-relaxed">Ideal dan praktis untuk para pendaki yang ingin menuju kawasan Gunung Rinjani.</p><p class="text-brand-blue text-xs font-semibold mt-2">*Harga sudah termasuk sopir & BBM</p></div></div>
-                    <div class="px-6 pb-6"><a href="packages/itinerary-senaru.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition">Pesan Sekarang</a></div>
-                </div>
-                <!-- RUTE 2 -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div><div class="w-full bg-slate-50 overflow-hidden"><img src="images/airport-bangsal1.png" alt="Airport - Bangsal" class="w-full h-48 object-cover block" loading="lazy"></div>
-                    <div class="p-6 text-center"><h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Bangsal</h3><span class="text-brand-orange font-black text-lg block mb-3">Mulai Rp 350.000</span><p class="text-slate-500 text-sm leading-relaxed">Akses cepat dan nyaman menuju pelabuhan penyeberangan Gili Trawangan.</p><p class="text-brand-blue text-xs font-semibold mt-2">*Harga sudah termasuk sopir & BBM</p></div></div>
-                    <div class="px-6 pb-6"><a href="packages/airport-bangsal.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition">Pesan Sekarang</a></div>
-                </div>
-                <!-- RUTE 3 -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div><div class="w-full bg-slate-50 overflow-hidden"><img src="images/airport-senggigi2.png" alt="Airport - Senggigi" class="w-full h-48 object-cover block" loading="lazy"></div>
-                    <div class="p-6 text-center"><h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Senggigi</h3><span class="text-brand-orange font-black text-lg block mb-3">Mulai Rp 300.000</span><p class="text-slate-500 text-sm leading-relaxed">Menuju kawasan pusat hotel, resort, dan keindahan pantai barat Lombok.</p><p class="text-brand-blue text-xs font-semibold mt-2">*Harga sudah termasuk sopir & BBM</p></div></div>
-                    <div class="px-6 pb-6"><a href="packages/airport-senggigi.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition">Pesan Sekarang</a></div>
-                </div>
-                <!-- RUTE 4 -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div><div class="w-full bg-slate-50 overflow-hidden"><img src="images/airport-kuta3.png" alt="Airport - Kuta" class="w-full h-48 object-cover block" loading="lazy"></div>
-                    <div class="p-6 text-center"><h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Kuta</h3><span class="text-brand-orange font-black text-lg block mb-3">Mulai Rp 200.000</span><p class="text-slate-500 text-sm leading-relaxed">Rute langsung menuju Sirkuit Mandalika dan keindahan Pantai Selatan.</p><p class="text-brand-blue text-xs font-semibold mt-2">*Harga sudah termasuk sopir & BBM</p></div></div>
-                    <div class="px-6 pb-6"><a href="packages/airport-kuta.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition">Pesan Sekarang</a></div>
-                </div>
-                <!-- RUTE 5 -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div><div class="w-full bg-slate-50 overflow-hidden"><img src="images/airport-sembalun4.png" alt="Airport - Sembalun" class="w-full h-48 object-cover block" loading="lazy"></div>
-                    <div class="p-6 text-center"><h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Sembalun</h3><span class="text-brand-orange font-black text-lg block mb-3">Mulai Rp 650.000</span><p class="text-slate-500 text-sm leading-relaxed">Perjalanan nyaman menuju kawasan wisata pegunungan berudara sejuk.</p><p class="text-brand-blue text-xs font-semibold mt-2">*Harga sudah termasuk sopir & BBM</p></div></div>
-                    <div class="px-6 pb-6"><a href="packages/airport-sembalun.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition">Pesan Sekarang</a></div>
-                </div>
-                <!-- RUTE 6 -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition duration-300">
-                    <div><div class="w-full bg-slate-50 overflow-hidden"><img src="images/airport-mataram5.png" alt="Airport - Mataram" class="w-full h-48 object-cover block" loading="lazy"></div>
-                    <div class="p-6 text-center"><h3 class="text-xl font-bold text-brand-blue mb-1">Airport - Mataram</h3><span class="text-brand-orange font-black text-lg block mb-3">Mulai Rp 250.000</span><p class="text-slate-500 text-sm leading-relaxed">Layanan drop-off menuju pusat pemerintahan, bisnis, dan kuliner Kota Mataram.</p><p class="text-brand-blue text-xs font-semibold mt-2">*Harga sudah termasuk sopir & BBM</p></div></div>
-                    <div class="px-6 pb-6"><a href="packages/airport-mataram.html" class="w-full block text-center bg-brand-blue text-white py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition">Pesan Sekarang</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONI PELANGGAN -->
-    <section class="py-16 sm:py-20 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-                <span class="text-brand-orange font-bold text-xs sm:text-sm tracking-wider uppercase">Ulasan Wisatawan</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-1 sm:mt-2">Apa Kata Pelanggan Kami?</h2>
-            </div>
-
-            <div id="testi-slider" class="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 px-2 sm:px-0">
-                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="text-brand-orange mb-3 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-xs sm:text-sm italic">"Driver datang tepat waktu di bandara BIL membawa papan nama. Mobil sangat bersih dan pelayanan ramah menuju Senaru. Sangat direkomendasikan!"</p>
-                    <div class="mt-6 pt-4 border-t border-slate-200">
-                        <h5 class="font-bold text-brand-blue text-sm">Budi Santoso</h5>
-                        <span class="text-xs text-slate-400">Jakarta (Wisatawan Pendaki)</span>
-                    </div>
-                </div>
-                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="text-brand-orange mb-3 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-xs sm:text-sm italic">"Layanan luar biasa! Driver membantu kami hingga area penyeberangan ke Gili Trawangan di Pelabuhan Bangsal. Perjalanan sangat mulus."</p>
-                    <div class="mt-6 pt-4 border-t border-slate-200">
-                        <h5 class="font-bold text-brand-blue text-sm">Sarah Jenkins</h5>
-                        <span class="text-xs text-slate-400">Australia (Tourist)</span>
-                    </div>
-                </div>
-                <div class="w-[82vw] max-w-[320px] sm:w-auto md:w-full snap-center shrink-0 p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div class="text-brand-orange mb-3 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm italic">"Harga transparan tanpa biaya tersembunyi sesuai kesepakatan WA. Mobil Innova bersih dan nyaman untuk perjalanan keluarga ke Kuta Mandalika."</p>
-                    <div class="mt-6 pt-4 border-t border-slate-200">
-                        <h5 class="font-bold text-brand-blue text-sm">Hendrik Kurniawan</h5>
-                        <span class="text-xs text-slate-400">Surabaya (Liburan Keluarga)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-16 sm:py-20 bg-slate-50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-brand-orange font-bold text-xs sm:text-sm uppercase tracking-wider">Informasi</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-brand-blue mt-2">Pertanyaan yang Sering Diajukan</h2>
-            </div>
-
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Apakah Anda menyediakan sewa mobil lepas kunci?</h4>
-                    <p class="text-slate-600 text-sm">Maaf, kami tidak melayani sewa mobil lepas kunci. Seluruh layanan kami adalah sewa mobil lengkap dengan pengemudi profesional.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Bagaimana cara melakukan pemesanan?</h4>
-                    <p class="text-slate-600 text-sm">Cukup hubungi kami lewat WhatsApp di nomor <strong>+62 817-7057-0669</strong>, sampaikan tanggal, jam penjemputan, lokasi jemput, dan tujuan. Kami akan segera berikan rincian harga dan ketersediaan.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Apa saja yang sudah termasuk dalam harga?</h4>
-                    <p class="text-slate-600 text-sm">Semua harga sudah mencakup pengemudi berpengalaman, bahan bakar, dan biaya parkir. Biaya tiket penyeberangan, retribusi wisata, atau penginapan pengemudi (jika diperlukan) menjadi tanggungan penumpang kecuali disepakati lain.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Berapa kapasitas penumpang setiap kendaraan?</h4>
-                    <p class="text-slate-600 text-sm">
-                        • Avanza/Xenia/Ertiga: maksimal 5 penumpang<br>
-                        • Innova Reborn/Zenix: maksimal 6 penumpang<br>
-                        • Toyota HiAce: 12–14 penumpang
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Bagaimana jika pesawat terlambat atau ada perubahan jadwal?</h4>
-                    <p class="text-slate-600 text-sm">Kami memantau jadwal penerbangan secara berkala. Pengemudi akan menunggu tanpa biaya tambahan. Mohon kabari kami jika ada perubahan jadwal agar kami bisa mengatur ulang dengan baik.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Bisakah saya mengubah tujuan atau jadwal setelah pesan?</h4>
-                    <p class="text-slate-600 text-sm">Perubahan bisa dilakukan paling lambat 12 jam sebelum keberangkatan, tergantung ketersediaan armada.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Aturan pembatalannya bagaimana?</h4>
-                    <p class="text-slate-600 text-sm">
-                        • Batal ≥ 24 jam sebelum berangkat: Tanpa biaya<br>
-                        • Batal < 24 jam sebelum berangkat: Dikenakan biaya 50%<br>
-                        • Tidak hadir tanpa kabar: Dikenakan biaya 100%
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-brand-blue mb-2">Apakah melayani rute yang tidak tercantum di website?</h4>
-                    <p class="text-slate-600 text-sm">Tentu saja! Kami melayani seluruh rute di Pulau Lombok maupun penyeberangan ke area sekitarnya. Silakan tanyakan harga khusus untuk rute yang Anda butuhkan.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PENGUMUMAN PENTING (BARU DITAMBAH SEBELUM FOOTER) -->
-    <section class="py-8 bg-brand-blue text-white text-center">
-        <div class="max-w-3xl mx-auto px-4">
-            <p class="text-sm sm:text-base font-medium">
-                <i class="fa-solid fa-info-circle mr-2"></i>
-                <strong>INFORMASI PENTING:</strong> Seluruh layanan TransportKita adalah <strong>Sewa Mobil Lengkap dengan Sopir</strong>. Kami tidak melayani penyewaan kendaraan lepas kunci. Terima kasih atas pengertian Anda.
-            </p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-brand-dark text-slate-400 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-            <div class="space-y-4">
-                <span class="text-2xl font-black text-white tracking-wider flex items-center gap-2">
-                    <i class="fa-solid fa-car-side text-brand-orange"></i> TRANSPORTKITA
-                </span>
-                <p class="text-sm">Partner transportasi resmi andalan Anda di Pulau Lombok.</p>
-            </div>
+   <!-- Header / Navbar -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo Bisa Diklik ke Atas Halaman, Gambar di Kiri, Teks di Kanan -->
+        <a href="#" class="flex items-center gap-3 group">
+            <!-- Gambar Logo dari folder images/ -->
+            <img src="images/logo.png" alt="AVENTRA Logo" class="h-10 w-auto rounded-lg">
+            <!-- Teks di Sebelah Kanan Logo -->
             <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Hubungi Kami</h4>
-                <p class="text-sm"><i class="fa-solid fa-phone text-brand-orange mr-2"></i> +62 817-7057-0669</p>
-                <p class="text-sm mt-2"><i class="fa-solid fa-envelope text-brand-orange mr-2"></i> info.rinjanitransport@gmail.com</p>
-                <p class="text-sm mt-2"><i class="fa-solid fa-location-dot text-brand-orange mr-2"></i> Karang Bajo, Lombok, NTB</p>
+                <h1 class="text-2xl font-bold text-dark tracking-tight leading-none">AVENTRA</h1>
+                <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest">Official Rinjani Trekking Agency</p>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Halaman Resmi</h4>
-                <a href="contact.html" class="text-sm hover:text-white transition block">Halaman Kontak Perusahaan</a>
+        </a>
+
+        <!-- Bagian Kanan: WhatsApp + Tombol Book Now -->
+        <div class="flex items-center gap-4">
+            <a href="https://wa.me/6281770570669" class="hidden lg:flex items-center gap-2 text-gray-600 hover:text-primary font-medium transition-colors">
+                <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i>
+                +62 817-7057-0669
+            </a>
+            <a href="https://wa.me/6281770570669" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm md:text-base flex items-center gap-2">
+                Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Bagian Hero -->
+    <section class="relative bg-dark hero-section">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="images/hero.webp" alt="Mount Rinjani Summit" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
+        </div>
+
+        <div class="relative container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 text-center md:text-left flex flex-col md:flex-row items-center">
+            
+            <div class="w-full md:w-2/3 lg:w-1/2 text-white z-10">
+                <div class="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                    🏆 Rated #1 Rinjani Trekking Agency — Licensed & Certified
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                    Mount Rinjani Trekking<br>
+                    <span class="font-cursive text-secondary text-5xl md:text-7xl lg:text-8xl font-normal tracking-wide">From $127</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-200 mb-4">
+                    All-inclusive: Guide · Porter · Meals · Gear · Permit · Transport
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6 text-sm">
+                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Guide</span>
+                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Porter</span>
+                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Meals</span>
+                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Gear</span>
+                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Permit</span>
+                    <span class="bg-white/10 px-3 py-1 rounded-full">✅ Transport</span>
+                </div>
+
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-8 text-sm font-medium text-gray-300">
+                    <i class="fa-solid fa-location-dot text-secondary"></i>
+                    <p>Senaru, North Lombok — Officially Licensed Agency</p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                    <a href="#packages" class="w-full sm:w-auto bg-primary hover:bg-blue-700 text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all shadow-lg shadow-primary/30">
+                        View Packages
+                    </a>
+                    <a href="https://wa.me/6281770570669" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Chat on WhatsApp
+                    </a>
+                </div>
+                
+                <div class="mt-10 flex items-center justify-center md:justify-start gap-4">
+                    <div class="flex -space-x-3">
+                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Traveler">
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-800 text-xs flex items-center justify-center font-bold">5k+</div>
+                    </div>
+                    <p class="text-sm font-medium text-gray-300">Trusted by <span class="text-white font-bold">5,000+</span> trekkers since 2018.</p>
+                </div>
+            </div>
+
+            <div class="hidden md:block w-full md:w-1/3 lg:w-auto absolute right-10 top-1/2 transform -translate-y-1/2 z-10">
+                <div class="bg-white rounded-2xl p-6 shadow-2xl text-center border-t-4 border-secondary animate-bounce" style="animation-duration: 3s;">
+                    <div class="text-secondary font-bold text-sm uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-fire"></i> Special Offer
+                    </div>
+                    <div class="text-gray-800 font-bold text-xl mb-1">2D1N Summit</div>
+                    <div class="text-5xl font-extrabold text-primary mb-2">$127</div>
+                    <p class="text-gray-500 text-sm mb-4">Group of 7+ people. All-inclusive.</p>
+                    <a href="https://wa.me/6281770570669" target="_blank" class="block w-full bg-secondary hover:bg-orange-600 text-white font-bold py-2 rounded-xl transition-colors">
+                        Book Now on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Formulir Pemesanan -->
+    <div class="container mx-auto px-4 relative z-20 floating-form-container">
+        <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 -mt-20 md:-mt-24 border border-gray-100">
+            
+            <div class="flex gap-4 md:gap-8 border-b border-gray-200 mb-6 pb-4 overflow-x-auto whitespace-nowrap">
+                <button class="text-primary font-bold border-b-2 border-primary pb-4 -mb-[17px] flex items-center gap-2">
+                    <i class="fa-solid fa-person-hiking"></i> Trekking Packages
+                </button>
+                <a href="https://wa.me/6281770570669" target="_blank" class="text-gray-500 hover:text-green-600 font-medium pb-4 flex items-center gap-2 transition-colors">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="mailto:info.transportkita@gmail.com" class="text-gray-500 hover:text-blue-600 font-medium pb-4 flex items-center gap-2 transition-colors">
+                    <i class="fa-solid fa-envelope"></i> Email Us
+                </a>
+            </div>
+
+            <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors cursor-pointer">
+                    <i class="fa-solid fa-location-dot text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
+                    <div class="ml-2 w-full">
+                        <label class="block text-xs text-gray-500 font-semibold uppercase">Select Trek</label>
+                        <select class="w-full bg-transparent font-bold text-gray-800 outline-none appearance-none cursor-pointer">
+                            <option>2 Days 1 Night Summit</option>
+                            <option>3 Days 2 Night Summit</option>
+                            <option>4 Days 3 Nights Complete</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors">
+                    <i class="fa-regular fa-calendar text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
+                    <div class="ml-2 w-full">
+                        <label class="block text-xs text-gray-500 font-semibold uppercase">Trek Date</label>
+                        <input type="date" class="w-full bg-transparent font-bold text-gray-800 outline-none" id="trekDate">
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors">
+                    <i class="fa-solid fa-user-group text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
+                    <div class="ml-2 w-full">
+                        <label class="block text-xs text-gray-500 font-semibold uppercase">Participants</label>
+                        <select class="w-full bg-transparent font-bold text-gray-800 outline-none appearance-none cursor-pointer">
+                            <option>1 Person</option>
+                            <option>2-3 People</option>
+                            <option>4-6 People</option>
+                            <option>7+ People (Best Price!)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors hidden lg:flex">
+                    <i class="fa-solid fa-route text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
+                    <div class="ml-2 w-full">
+                        <label class="block text-xs text-gray-500 font-semibold uppercase">Start Route</label>
+                        <select class="w-full bg-transparent font-bold text-gray-800 outline-none appearance-none cursor-pointer">
+                            <option>Senaru Route</option>
+                            <option>Sembalun Route</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <a href="https://wa.me/6281770570669" target="_blank" class="w-full h-full bg-primary hover:bg-blue-800 text-white font-bold rounded-xl py-4 transition-colors shadow-md text-lg flex items-center justify-center">
+                        Book Now <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Paket Trekking -->
+    <section id="packages" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Our Trekking Packages</h2>
+                    <p class="text-gray-500">All prices include guide, porter, meals, gear, permit & transport.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Paket 1: 2D1N Summit -->
+                <div class="package-card bg-white rounded-2xl overflow-hidden border border-gray-100 relative group cursor-pointer">
+                    <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
+                        Popular Choice
+                    </div>
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/2d1n-summit.jpg" alt="2D1N Summit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                            <h3 class="text-white font-bold text-xl">2 Days 1 Night Summit</h3>
+                            <p class="text-gray-300 text-sm"><i class="fa-solid fa-clock mr-1"></i> 2 Days / 1 Night</p>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-4">Reach the summit and return in one night. Perfect if you have limited time but still want to experience the sunrise from the top of Rinjani.</p>
+                        <div class="flex justify-between items-end border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="text-sm text-gray-500">From</p>
+                                <p class="text-2xl font-extrabold text-gray-900">$127 <span class="text-sm font-normal">/person</span></p>
+                            </div>
+                            <a href="https://wa.me/6281770570669?text=Hi%2C%20I%20want%20to%20book%202D1N%20Summit%20package" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-xl font-bold transition-colors">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paket 2: 3D2N Summit & Lake -->
+                <div class="package-card bg-white rounded-2xl overflow-hidden border border-gray-100 relative group cursor-pointer">
+                    <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
+                        ⭐ Best Seller
+                    </div>
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/3d2n-lake.webp" alt="3D2N Summit & Lake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                            <h3 class="text-white font-bold text-xl">3 Days 2 Night Summit & Lake</h3>
+                            <p class="text-gray-300 text-sm"><i class="fa-solid fa-clock mr-1"></i> 3 Days / 2 Nights</p>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-4">The complete experience — summit sunrise, camp by Segara Anak Lake, visit natural hot springs. Recommended for most trekkers.</p>
+                        <div class="flex justify-between items-end border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="text-sm text-gray-500">From</p>
+                                <p class="text-2xl font-extrabold text-gray-900">$145 <span class="text-sm font-normal">/person</span></p>
+                            </div>
+                            <a href="https://wa.me/6281770570669?text=Hi%2C%20I%20want%20to%20book%203D2N%20Summit%20%26%20Lake%20package" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-xl font-bold transition-colors">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paket 3: 4D3N Complete -->
+                <div class="package-card bg-white rounded-2xl overflow-hidden border border-gray-100 relative group cursor-pointer">
+                    <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
+                        Premium
+                    </div>
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/4d3n-summit-lake.jpg" alt="4D3N Complete" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                            <h3 class="text-white font-bold text-xl">4 Days 3 Nights Complete</h3>
+                            <p class="text-gray-300 text-sm"><i class="fa-solid fa-clock mr-1"></i> 4 Days / 3 Nights</p>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-4">Leisure pace with more time to enjoy the lake, hot springs, and scenery. No rush — fully experience the beauty of Rinjani.</p>
+                        <div class="flex justify-between items-end border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="text-sm text-gray-500">From</p>
+                                <p class="text-2xl font-extrabold text-gray-900">$150 <span class="text-sm font-normal">/person</span></p>
+                            </div>
+                            <a href="https://wa.me/6281770570669?text=Hi%2C%20I%20want%20to%20book%204D3N%20Complete%20package" target="_blank" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-xl font-bold transition-colors">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-center text-xs">
-            <p>&copy; 2026 TransportKita. All Rights Reserved.</p>
+    </section>
+
+    
+    <!-- Apa yang Termasuk & Tidak Termasuk -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">What's Included & Excluded</h2>
+                <p class="text-gray-500">Transparent pricing — know exactly what you pay for.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Termasuk -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-green-100">
+                    <h3 class="text-xl font-bold text-green-700 mb-5 flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Price Includes
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>Licensed English Speaking Guide</strong> — Professional and certified local guide</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>Experienced Porters</strong> — Carrying camping gear & food</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>Camping Equipment</strong> — Tent, Sleeping Bag, Mattress, Toilet Tent</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>All Meals & Drinks</strong> — Including fresh fruits during the trek</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>National Park Entrance Fee</strong> — Official permit included</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span><strong>Transport Pick-up & Drop-off</strong> — From/to your hotel in Lombok</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tidak Termasuk -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-red-100">
+                    <h3 class="text-xl font-bold text-red-600 mb-5 flex items-center gap-2">
+                        <i class="fa-solid fa-xmark-circle"></i> Price Excludes
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-minus text-red-400 mt-1"></i>
+                            <span><strong>Personal Porter</strong> — For carrying your own daypack (available as add-on)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-minus text-red-400 mt-1"></i>
+                            <span><strong>Tipping for Guide & Porters</strong> — At your discretion</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-minus text-red-400 mt-1"></i>
+                            <span><strong>Trekking Shoes & Jacket</strong> — Recommended to bring your own</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-minus text-red-400 mt-1"></i>
+                            <span><strong>Travel Insurance</strong> — Highly recommended to arrange before arrival</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Pertanyaan Umum -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Common Questions</h2>
+                <p class="text-gray-500">Pertanyaan Umum — Click to expand</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">Why Choose AVENTRA?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>We are an officially licensed trekking agency authorized by Mount Rinjani National Park. Our guides are certified English speakers with years of experience. We provide transparent pricing with no hidden fees, quality camping equipment, nutritious meals including fresh fruits, and reliable transport. Your safety and comfort are our top priorities.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">What is the Best Time to Climb Mount Rinjani?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>The best trekking season is from <strong>April to October</strong> during the dry season. The weather is clear, trails are dry, and views are spectacular. The peak season is July–August. Trekking is generally closed during the rainy season (November–March) due to safety risks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">Do I Need a Permit to Trek Mount Rinjani?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>Yes. Entry permit to Mount Rinjani National Park is <strong>included in our package price</strong> — we arrange everything for you. You just need to provide your full name, nationality, and passport details when booking.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">Is Accommodation Included the Night Before the Trek?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>Hotel accommodation before and after the trek is <strong>not included</strong> in the package price. However, we can recommend and book hotels in Senaru or Sembalun for you at special rates. We also provide free pick-up from your hotel to the starting point.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">What is Your Average Group Size?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>We operate both <strong>private tours</strong> (just you and your group) and <strong>shared groups</strong> (max 6–8 trekkers per guide). Larger groups can be arranged upon request. Smaller groups ensure better service and safety.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">Sembalun vs Senaru Route — Which One to Choose?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p><strong>Sembalun Route:</strong> Starts higher up — steeper but shorter ascent to the summit. Better for sunrise. Recommended for fit trekkers.<br><br><strong>Senaru Route:</strong> Gentler and more gradual ascent. Better views of the forest and waterfalls. Easier and more beginner-friendly. Most popular choice.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">Is Trekking Mount Rinjani Suitable for Beginners?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>The <strong>2D1N Senaru route</strong> is suitable for beginners with reasonable fitness. The summit push is challenging but achievable with our experienced guides. The 3D2N and 4D3N packages give you more time and are also suitable for first-timers. We recommend training and walking regularly before your trek!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">What Kind of Food is Provided During the Trek?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>We provide <strong>three meals a day plus snacks and hot drinks</strong>. Meals include rice, noodles, vegetables, eggs, chicken or fish, soup, biscuits, chocolate, tea, coffee, and mineral water. Fresh fruits are also included. We can accommodate vegetarian and dietary requirements — just inform us before booking!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="p-5 flex justify-between items-center">
+                        <h4 class="font-bold text-gray-800 text-lg">Are There Toilet Facilities on the Mountain?</h4>
+                        <span class="faq-icon text-red-500 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-600 border-t border-gray-100 pt-2">
+                        <p>Public toilets are available at some campsites but are basic. For your comfort, we provide a <strong>private toilet tent</strong> with portable toilet for our groups — you'll have your own private toilet throughout the trek. This is one of the ways we ensure a comfortable experience!</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center mt-10">
+                <p class="text-gray-600 mb-4">Still have questions?</p>
+                <a href="https://wa.me/6281770570669" target="_blank" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full transition-colors">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Ask Us on WhatsApp — We Reply Fast!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabel Harga -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Price List</h2>
+                <p class="text-gray-500">USD per person — All prices include everything listed above</p>
+            </div>
+            <div class="overflow-x-auto max-w-5xl mx-auto">
+                <table class="w-full border-collapse rounded-xl overflow-hidden shadow-lg">
+                    <thead>
+                        <tr class="bg-primary text-white">
+                            <th class="px-6 py-4 text-left font-bold">Package Type</th>
+                            <th class="px-4 py-4 text-center font-bold">1 Person</th>
+                            <th class="px-4 py-4 text-center font-bold">2-3 People</th>
+                            <th class="px-4 py-4 text-center font-bold">4-6 People</th>
+                            <th class="px-4 py-4 text-center font-bold">7+ People</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="bg-white hover:bg-blue-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold">2 Days 1 Night Summit</td>
+                            <td class="px-4 py-4 text-center">$140</td>
+                            <td class="px-4 py-4 text-center">$135</td>
+                            <td class="px-4 py-4 text-center font-bold text-primary bg-blue-50">$130</td>
+                            <td class="px-4 py-4 text-center font-bold text-secondary bg-orange-50">$127</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-blue-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold">3 Days 2 Night Summit</td>
+                            <td class="px-4 py-4 text-center">$160</td>
+                            <td class="px-4 py-4 text-center">$155</td>
+                            <td class="px-4 py-4 text-center font-bold text-primary bg-blue-50">$150</td>
+                            <td class="px-4 py-4 text-center font-bold text-secondary bg-orange-50">$145</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-blue-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold">4 Days 3 Nights Complete</td>
+                            <td class="px-4 py-4 text-center">$165</td>
+                            <td class="px-4 py-4 text-center">$160</td>
+                            <td class="px-4 py-4 text-center font-bold text-primary bg-blue-50">$155</td>
+                            <td class="px-4 py-4 text-center font-bold text-secondary bg-orange-50">$150</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center mt-6">
+                <a href="https://wa.me/6281770570669" target="_blank" class="inline-block bg-secondary hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-md">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Book Now via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="bg-primary text-white p-2 rounded-lg">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold tracking-tight">AVENTRA</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Officially licensed Mount Rinjani trekking agency. Certified English-speaking guides, quality equipment, and all-inclusive packages since 2018.</p>
+                    <p class="text-gray-500 text-xs mb-4">Licensed by Mount Rinjani National Park Authority</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"><i class="fa-brands fa-youtube text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Trekking Packages</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">2D1N Summit — From $127</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">3D2N Summit & Lake — From $145</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">4D3N Complete — From $150</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Useful Info</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Preparation Guide</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ & Equipment Checklist</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cancellation Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-green-400"></i>
+                            <p>+62 817-7057-0669 (WhatsApp, 24/7)</p>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-primary"></i>
+                            <a href="mailto:info.transportkita@gmail.com" class="hover:text-white transition-colors">info.transportkita@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                            <p>Jalan Pariwisata Senaru, 83354, North Lombok, Indonesia</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">© 2026 AVENTRA Expeditions. All rights reserved. Officially licensed by Mount Rinjani National Park.</p>
+                <div class="flex gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" class="h-6 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" class="h-6 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/200px-PayPal.svg.png" alt="PayPal" class="h-6 bg-white rounded px-1">
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- TOMBOL WHATSAPP (TEKS AWAL SUDAH DIPERBAIKI) -->
-    <a href="https://wa.me/6281770570669?text=Halo%20TransportKita,%20saya%20ingin%20tanya%20mengenai%20layanan%20sewa%20mobil%20dengan%20sopir" 
-       target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp"
-       class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl hover:scale-105 transition-all duration-300">
-        <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
-        <span class="hidden sm:inline font-bold text-xs sm:text-sm ml-2">Chat via WhatsApp</span>
-    </a>
+    <!-- JavaScript -->
+    <script>
+        // Set minimum trek date to 7 days from today
+        const trekDateInput = document.getElementById('trekDate');
+        if (trekDateInput) {
+            const today = new Date();
+            today.setDate(today.getDate() + 7);
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            trekDateInput.value = trekDateInput.min = `${yyyy}-${mm}-${dd}`;
+        }
 
-    <script src="js/main.js" defer></script>
+        // FAQ Toggle Function
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
