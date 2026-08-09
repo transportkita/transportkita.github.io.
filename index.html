@@ -80,9 +80,6 @@
             .hero-section {
                 padding-bottom: 5rem;
             }
-            .floating-form-container {
-                margin-top: -3.5rem;
-            }
         }
 
         html {
@@ -143,7 +140,7 @@
         </div>
     </header>
 
-    <!-- Bagian Hero (Dibuat Lebih Pendek/Compact) -->
+    <!-- Bagian Hero -->
     <section class="relative bg-dark hero-section">
         <div class="absolute inset-0 overflow-hidden">
             <img src="images/hero.webp" alt="Mount Rinjani Summit" class="w-full h-full object-cover opacity-60">
@@ -198,76 +195,6 @@
 
         </div>
     </section>
-
-    <!-- Formulir Pemesanan -->
-    <div class="container mx-auto px-4 relative z-20 floating-form-container">
-        <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 -mt-10 md:-mt-14 border border-gray-100">
-            
-            <div class="flex gap-4 md:gap-8 border-b border-gray-200 mb-6 pb-4 overflow-x-auto whitespace-nowrap">
-                <button class="text-primary font-bold border-b-2 border-primary pb-4 -mb-[17px] flex items-center gap-2">
-                    <i class="fa-solid fa-person-hiking"></i> Trekking Packages
-                </button>
-                <a href="https://wa.me/6281770570669" target="_blank" class="text-gray-500 hover:text-green-600 font-medium pb-4 flex items-center gap-2 transition-colors">
-                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-                </a>
-                <a href="mailto:info.transportkita@gmail.com" class="text-gray-500 hover:text-blue-600 font-medium pb-4 flex items-center gap-2 transition-colors">
-                    <i class="fa-solid fa-envelope"></i> Email Us
-                </a>
-            </div>
-
-            <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors cursor-pointer">
-                    <i class="fa-solid fa-location-dot text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
-                    <div class="ml-2 w-full">
-                        <label class="block text-xs text-gray-500 font-semibold uppercase">Select Trek</label>
-                        <select class="w-full bg-transparent font-bold text-gray-800 outline-none appearance-none cursor-pointer">
-                            <option>2 Days 1 Night Summit</option>
-                            <option>3 Days 2 Night Summit</option>
-                            <option>4 Days 3 Nights Complete</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors">
-                    <i class="fa-regular fa-calendar text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
-                    <div class="ml-2 w-full">
-                        <label class="block text-xs text-gray-500 font-semibold uppercase">Trek Date</label>
-                        <input type="date" class="w-full bg-transparent font-bold text-gray-800 outline-none" id="trekDate">
-                    </div>
-                </div>
-
-                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors">
-                    <i class="fa-solid fa-user-group text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
-                    <div class="ml-2 w-full">
-                        <label class="block text-xs text-gray-500 font-semibold uppercase">Participants</label>
-                        <select class="w-full bg-transparent font-bold text-gray-800 outline-none appearance-none cursor-pointer">
-                            <option>1 Person</option>
-                            <option>2-3 People</option>
-                            <option>4-6 People</option>
-                            <option>7+ People (Best Price!)</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-3 flex items-center group hover:border-primary transition-colors hidden lg:flex">
-                    <i class="fa-solid fa-route text-gray-400 group-hover:text-primary text-xl w-8 text-center"></i>
-                    <div class="ml-2 w-full">
-                        <label class="block text-xs text-gray-500 font-semibold uppercase">Start Route</label>
-                        <select class="w-full bg-transparent font-bold text-gray-800 outline-none appearance-none cursor-pointer">
-                            <option>Senaru Route</option>
-                            <option>Sembalun Route</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-1">
-                    <a href="https://wa.me/6281770570669" target="_blank" class="w-full h-full bg-primary hover:bg-blue-800 text-white font-bold rounded-xl py-4 transition-colors shadow-md text-lg flex items-center justify-center">
-                        Book Now <i class="fa-brands fa-whatsapp ml-2"></i>
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Paket Trekking -->
     <section id="packages" class="py-16 bg-gray-50">
@@ -723,17 +650,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Set minimum trek date to 7 days from today
-        const trekDateInput = document.getElementById('trekDate');
-        if (trekDateInput) {
-            const today = new Date();
-            today.setDate(today.getDate() + 7);
-            const yyyy = today.getFullYear();
-            const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const dd = String(today.getDate()).padStart(2, '0');
-            trekDateInput.value = trekDateInput.min = `${yyyy}-${mm}-${dd}`;
-        }
-
         // FAQ Toggle
         function toggleFaq(element) {
             element.classList.toggle('active');
