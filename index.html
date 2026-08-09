@@ -652,16 +652,17 @@
     <footer class="bg-dark text-white pt-16 pb-8 border-t border-gray-800">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Kolom 1: Logo & Info -->
                 <div class="lg:col-span-1">
-                    <div class="flex items-center gap-2 mb-4">
-                        < <a href="#" class="flex items-center gap-2 group">
-                <img src="images/logo.png" alt="AVENTRA Logo" class="h-7 md:h-9 w-auto rounded-lg">
-                <div>
-                    <h1 class="text-base md:text-lg font-bold text-dark tracking-tight leading-none">AVENTRA</h1>
-                    <p class="text-[7px] md:text-[8px] text-gray-500 font-medium uppercase tracking-wider mt-0.5">Official Rinjani Trekking Agency</p>
-                </div>
-            </a>>
-                        <h2 class="text-2xl font-bold tracking-tight">AVENTRA</h2>
+                    <div class="mb-5">
+                        <a href="#" class="flex items-center gap-2 group inline-flex">
+                            <img src="images/logo.png" alt="AVENTRA Logo" class="h-8 md:h-10 w-auto rounded-lg">
+                            <div>
+                                <h1 class="text-lg md:text-xl font-bold text-white tracking-tight leading-none">AVENTRA</h1>
+                                <p class="text-[8px] md:text-[9px] text-gray-400 font-medium uppercase tracking-wider mt-0.5">Official Rinjani Agency</p>
+                            </div>
+                        </a>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed mb-4">Officially licensed Mount Rinjani trekking agency. Certified English-speaking guides, quality equipment, and all-inclusive packages since 2018.</p>
                     <p class="text-gray-500 text-xs mb-4">Licensed by Mount Rinjani National Park Authority</p>
@@ -672,6 +673,7 @@
                     </div>
                 </div>
 
+                <!-- Kolom 2: Link Paket -->
                 <div>
                     <h4 class="font-bold text-lg mb-4">Trekking Packages</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
@@ -681,6 +683,7 @@
                     </ul>
                 </div>
 
+                <!-- Kolom 3: Info Berguna -->
                 <div>
                     <h4 class="font-bold text-lg mb-4">Useful Info</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
@@ -691,6 +694,7 @@
                     </ul>
                 </div>
 
+                <!-- Kolom 4: Kontak -->
                 <div>
                     <h4 class="font-bold text-lg mb-4">Contact Us</h4>
                     <ul class="space-y-3 text-sm text-gray-400">
@@ -710,17 +714,26 @@
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2026 AVENTRA Expeditions. All rights reserved. Officially licensed by Mount Rinjani National Park.</p>
-                <div class="flex gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" class="h-6 bg-white rounded px-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" class="h-6 bg-white rounded px-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/200px-PayPal.svg.png" alt="PayPal" class="h-6 bg-white rounded px-1">
+            <!-- Bagian Bawah: Copyright & Metode Pembayaran -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col lg:flex-row justify-between items-center gap-6">
+                <p class="text-sm text-gray-500 text-center lg:text-left">© 2026 AVENTRA Expeditions. All rights reserved. Officially licensed by Mount Rinjani National Park.</p>
+                
+                <!-- Pembayaran Transfer Bank Mandiri -->
+                <div class="flex flex-col sm:flex-row items-center gap-3">
+                    <span class="text-xs text-gray-500 uppercase tracking-wider font-medium">Payment Transfer :</span>
+                    <div class="flex items-center gap-3 bg-gray-800/80 border border-gray-700 px-4 py-2 rounded-xl">
+                        <!-- Pastikan path gambar Mandiri benar -->
+                        <img src="images/logo-mandiri.jpg" alt="Bank Mandiri" class="h-6 w-auto rounded-sm object-contain">
+                        <div class="text-left">
+                            <p class="text-sm font-bold text-white tracking-widest leading-none">161 00 11 738 957</p>
+                            <p class="text-[10px] text-gray-400 mt-1 uppercase font-medium">A.N PERMAN</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </footer>
-
     <!-- JavaScript -->
     <script>
         // FAQ Toggle
