@@ -1,5 +1,0 @@
-# robots.txt — AVENTRA
-User-agent: *
-Allow: /
-
-Sitemap: https://www.tranportkita.com/sitemap.xml
