@@ -114,12 +114,6 @@ footer[id] {
 .gallery-item:hover img {
     transform: scale(1.06);
 }
-.lightbox {
-    display: none;
-}
-.lightbox.open {
-    display: flex;
-}
 
 /* ---------- Responsif ---------- */
 @media (max-width: 768px) {
@@ -140,4 +134,53 @@ button:focus-visible {
         transition: none !important;
         animation: none !important;
     }
+}
+
+/* ---------- Halaman Itinerary (packages/) ---------- */
+.day-card .day-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+.day-card.open .day-body {
+    max-height: 2000px;
+}
+.day-card .day-chevron {
+    transition: transform 0.3s ease;
+}
+.day-card.open .day-chevron {
+    transform: rotate(180deg);
+}
+
+/* Garis waktu di dalam tiap hari */
+.timeline {
+    position: relative;
+    padding-left: 1.75rem;
+}
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.45rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: #dbeafe;
+}
+.timeline-item {
+    position: relative;
+}
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.6rem;
+    top: 0.4rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background: #fff;
+    border: 3px solid #1d4ed8;
+}
+.timeline-item.highlight::before {
+    border-color: #f97316;
+    background: #f97316;
 }
