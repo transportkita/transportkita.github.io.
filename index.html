@@ -623,57 +623,124 @@
         </div>
     </section>
 
-    <!-- PRICE -->
-    <section id="price" data-nav-section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Price List</h2>
-                <p class="text-gray-500">USD per person — All prices include everything listed above</p>
-            </div>
-            <div class="overflow-x-auto max-w-5xl mx-auto">
-                <table class="w-full border-collapse rounded-xl overflow-hidden shadow-lg">
-                    <thead>
-                        <tr class="bg-primary text-white">
-                            <th class="px-6 py-4 text-left font-bold">Package Type</th>
-                            <th class="px-4 py-4 text-center font-bold">1 Person</th>
-                            <th class="px-4 py-4 text-center font-bold">2-3 People</th>
-                            <th class="px-4 py-4 text-center font-bold">4-6 People</th>
-                            <th class="px-4 py-4 text-center font-bold">7+ People</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr class="bg-white hover:bg-blue-50 transition-colors">
-                            <td class="px-6 py-4 font-semibold">2 Days 1 Night Summit</td>
-                            <td class="px-4 py-4 text-center">$140</td>
-                            <td class="px-4 py-4 text-center">$135</td>
-                            <td class="px-4 py-4 text-center font-bold text-primary bg-blue-50">$130</td>
-                            <td class="px-4 py-4 text-center font-bold text-secondary bg-orange-50">$127</td>
-                        </tr>
-                        <tr class="bg-gray-50 hover:bg-blue-50 transition-colors">
-                            <td class="px-6 py-4 font-semibold">3 Days 2 Nights Summit & Lake</td>
-                            <td class="px-4 py-4 text-center">$160</td>
-                            <td class="px-4 py-4 text-center">$155</td>
-                            <td class="px-4 py-4 text-center font-bold text-primary bg-blue-50">$150</td>
-                            <td class="px-4 py-4 text-center font-bold text-secondary bg-orange-50">$145</td>
-                        </tr>
-                        <tr class="bg-white hover:bg-blue-50 transition-colors">
-                            <td class="px-6 py-4 font-semibold">4 Days 3 Nights Complete</td>
-                            <td class="px-4 py-4 text-center">$165</td>
-                            <td class="px-4 py-4 text-center">$160</td>
-                            <td class="px-4 py-4 text-center font-bold text-primary bg-blue-50">$155</td>
-                            <td class="px-4 py-4 text-center font-bold text-secondary bg-orange-50">$150</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="text-center mt-6">
-                <a href="https://wa.me/6281770570669" target="_blank" class="inline-block bg-secondary hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-md">
-                    <i class="fa-brands fa-whatsapp mr-2"></i> Book Now via WhatsApp
-                </a>
+   <!-- PRICE SECTION -->
+<section id="price" data-nav-section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Price List</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">USD per person — Choose between our Trek Only package or full All-Inclusive package with pickup transport and hotel.</p>
+        </div>
+
+        <!-- Tab Switches -->
+        <div class="flex justify-center mb-8">
+            <div class="inline-flex bg-gray-100 p-1.5 rounded-full border border-gray-200">
+                <button id="btn-trek-only" onclick="switchPriceTab('trek-only')" class="px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all bg-blue-700 text-white shadow-sm">
+                    Trek Only (Without Hotel & Transport)
+                </button>
+                <button id="btn-all-inclusive" onclick="switchPriceTab('all-inclusive')" class="px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all text-gray-600 hover:text-gray-900">
+                    All-Inclusive (With Hotel & Transport)
+                </button>
             </div>
         </div>
-    </section>
 
+        <!-- TAB 1: Trek Only (Tanpa Transport & Hotel) -->
+        <div id="tab-trek-only" class="overflow-x-auto max-w-5xl mx-auto">
+            <table class="w-full border-collapse rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                <thead>
+                    <tr class="bg-blue-700 text-white">
+                        <th class="px-6 py-4 text-left font-bold">Package Program</th>
+                        <th class="px-4 py-4 text-center font-bold">1 Person</th>
+                        <th class="px-4 py-4 text-center font-bold">2-3 People</th>
+                        <th class="px-4 py-4 text-center font-bold">4-6 People</th>
+                        <th class="px-4 py-4 text-center font-bold">7+ People</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white text-gray-800">
+                    <tr class="hover:bg-blue-50 transition-colors">
+                        <td class="px-6 py-4 font-semibold">2 Days 1 Night Summit</td>
+                        <td class="px-4 py-4 text-center">$140</td>
+                        <td class="px-4 py-4 text-center">$135</td>
+                        <td class="px-4 py-4 text-center font-bold text-blue-700 bg-blue-50">$130</td>
+                        <td class="px-4 py-4 text-center font-bold text-orange-600 bg-orange-50">$127</td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition-colors bg-gray-50">
+                        <td class="px-6 py-4 font-semibold">3 Days 2 Nights Summit & Lake</td>
+                        <td class="px-4 py-4 text-center">$160</td>
+                        <td class="px-4 py-4 text-center">$155</td>
+                        <td class="px-4 py-4 text-center font-bold text-blue-700 bg-blue-50">$150</td>
+                        <td class="px-4 py-4 text-center font-bold text-orange-600 bg-orange-50">$145</td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition-colors">
+                        <td class="px-6 py-4 font-semibold">4 Days 3 Nights Complete</td>
+                        <td class="px-4 py-4 text-center">$165</td>
+                        <td class="px-4 py-4 text-center">$160</td>
+                        <td class="px-4 py-4 text-center font-bold text-blue-700 bg-blue-50">$155</td>
+                        <td class="px-4 py-4 text-center font-bold text-orange-600 bg-orange-50">$150</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-xs text-gray-500 mt-2 text-center">*Includes guide, porters, camping gear, national park permit, and meals during the trek.</p>
+        </div>
+
+        <!-- TAB 2: All Inclusive (Include Transport & Hotel) -->
+        <div id="tab-all-inclusive" class="hidden overflow-x-auto max-w-5xl mx-auto">
+            <table class="w-full border-collapse rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                <thead>
+                    <tr class="bg-orange-500 text-white">
+                        <th class="px-6 py-4 text-left font-bold">Program</th>
+                        <th class="px-6 py-4 text-left font-bold">Destination</th>
+                        <th class="px-4 py-4 text-center font-bold">1 Pax</th>
+                        <th class="px-4 py-4 text-center font-bold">2–3 Pax</th>
+                        <th class="px-4 py-4 text-center font-bold">4–6 Pax</th>
+                        <th class="px-4 py-4 text-center font-bold">7–12 Pax</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white text-gray-800">
+                    <tr class="hover:bg-orange-50 transition-colors">
+                        <td class="px-6 py-4 font-bold">2 Days 1 Night</td>
+                        <td class="px-6 py-4 text-gray-700">Crater Rim Senaru</td>
+                        <td class="px-4 py-4 text-center">250 USD</td>
+                        <td class="px-4 py-4 text-center">142 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-blue-700 bg-blue-50">138 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-orange-600 bg-orange-50">135 USD</td>
+                    </tr>
+                    <tr class="hover:bg-orange-50 transition-colors bg-gray-50">
+                        <td class="px-6 py-4 font-bold">2 Days 1 Night</td>
+                        <td class="px-6 py-4 text-gray-700">Sembalun Crater Rim + Summit</td>
+                        <td class="px-4 py-4 text-center">155 USD</td>
+                        <td class="px-4 py-4 text-center">145 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-blue-700 bg-blue-50">140 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-orange-600 bg-orange-50">137 USD</td>
+                    </tr>
+                    <tr class="hover:bg-orange-50 transition-colors">
+                        <td class="px-6 py-4 font-bold">3 Days 2 Nights</td>
+                        <td class="px-6 py-4 text-gray-700">Crater Rim, Summit & Lake</td>
+                        <td class="px-4 py-4 text-center">170 USD</td>
+                        <td class="px-4 py-4 text-center">155 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-blue-700 bg-blue-50">150 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-orange-600 bg-orange-50">147 USD</td>
+                    </tr>
+                    <tr class="hover:bg-orange-50 transition-colors bg-gray-50">
+                        <td class="px-6 py-4 font-bold">4 Days 3 Nights</td>
+                        <td class="px-6 py-4 text-gray-700">Crater Rim, Summit & Lake</td>
+                        <td class="px-4 py-4 text-center text-gray-400">—</td>
+                        <td class="px-4 py-4 text-center">345 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-blue-700 bg-blue-50">295 USD</td>
+                        <td class="px-4 py-4 text-center font-bold text-orange-600 bg-orange-50">275 USD</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-xs text-gray-500 mt-2 text-center">*Includes Lombok pickup/dropoff transport, 1 night pre-trek hotel in Senaru, guide, porters, camping gear, entrance fee, and all meals.</p>
+        </div>
+
+        <!-- Tombol Book WhatsApp -->
+        <div class="text-center mt-8">
+            <a href="https://wa.me/6281770570669" target="_blank" class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-md">
+                <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> Book Now via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
     <!-- GALLERY (baru) -->
     <section id="gallery" data-nav-section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
