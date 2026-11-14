@@ -129,3 +129,27 @@ document.addEventListener('click', function (e) {
         });
     }
 });
+
+// =========================================
+// Formulir kontak -> WhatsApp (halaman contact/)
+// Tidak ada data yang disimpan di website.
+// =========================================
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('waForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const f = form.elements;
+        const lines = [
+            'Hi AVENTRA, my name is ' + f.name.value.trim() + '.',
+            'Trek: ' + f.package.value,
+            'Date: ' + (f.date.value || 'not decided yet'),
+            'Number of people: ' + f.people.value,
+            'Staying at: ' + (f.stay.value.trim() || '-')
+        ];
+        if (f.message.value.trim()) lines.push('Question: ' + f.message.value.trim());
+        const url = 'https://wa.me/' + form.dataset.wa + '?text=' + encodeURIComponent(lines.join('\n'));
+        if (typeof gtag === 'function') gtag('event', 'whatsapp_click', { link_url: url, page_title: 'Contact form' });
+        window.open(url, '_blank');
+    });
+});
